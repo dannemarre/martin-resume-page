@@ -9,23 +9,24 @@
 - Location: Stockholm, Sweden
 - Employer (consulting): Theodora Tech
 - LinkedIn: https://www.linkedin.com/in/martin-dannelind-24ab88198/
+- GitHub: https://github.com/dannemarre
 - Email: martin.dannelind@gmail.com
 - Canonical site: https://martin-dannelind-7f7f0.web.app/
 - Full content: https://martin-dannelind-7f7f0.web.app/llms-full.txt
 
 ## Experience
 
-- [AI Engineer at CAIA Cosmetics (2026-Q1 – ongoing)](https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics): TBD — one-line elevator pitch for this engagement.
-- [AI Engineer at SVT (2025-Q1 – ongoing)](https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer): Proposed and built SVT's first MCP server so analytics teams could query BigQuery in natural language; grew into an org-wide MCP mesh on LibreChat.
-- [Data Engineer at SVT (2024-Q4 – ongoing)](https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer): Built SVT's end-to-end survey data pipeline and a centralized PowerBI semantic model — now the single source of truth for survey data across the organisation.
-- [Data Scientist at Momang (2024-Q3 – 2024-Q4)](https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist): Deployed a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their consultant and project database.
+- [AI Engineer at CAIA Cosmetics (2026-Q1 – ongoing)](https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics): Built CAIA's semantic data layer and exposed it through an MCP server so non-SQL teammates can self-serve answers from BigQuery in natural language.
+- [AI Engineer at SVT (2025-Q1 – 2026-Q1)](https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer): Proposed and built SVT's first MCP server so analytics teams could query BigQuery in natural language; grew into an org-wide MCP mesh on LibreChat.
+- [Data Engineer at SVT (2024-Q4 – 2026-Q1)](https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer): Built SVT's end-to-end survey data pipeline and a centralized PowerBI semantic model — now the single source of truth for survey data across the organisation.
+- [Data Scientist at Momang (2024-Q3 – 2024-Q4)](https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist): Built a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their database of consultants and projects.
 - [Cloud Migration Engineer at Tink (2024-Q1 – 2024-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2024-q1-tink-cloud-migration): Co-led a major customer's AWS → GCP migration — Tink's first time hosting transactional PII on GCP — and delivered it without service disruption.
 - [Security Engineer at Visa (2024-Q1 – 2024-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer): Joined Visa's security task force as a Security Champion, validating CI/CD-flagged findings and leading a team of Tink staff through Visa's security standards.
-- [AI Engineer at Tink (2023-Q1 – 2024-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant): Used AI to extract and categorize organizational and product data from transaction descriptions, building the entity backbone for Tink's Merchant Information product.
+- [AI Engineer at Tink (2023-Q1 – 2024-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant): Built the AI pipeline that turned raw transaction descriptions into structured merchant, product, and location data — the entity backbone for Tink's Merchant Information product.
 - [Data Scientist at Tink (2022-Q3 – 2024-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization): Refactored Tink's long-running transaction categorization product and migrated the backend from Go to Python on Vertex AI — making the first Tink product to run on Vertex AI.
 - [Machine Learning Engineer at Tink (2022-Q1 – 2022-Q2)](https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting): Investigated feasibility of forecasting checking-account balances so banks could warn customers before they overdrafted — the prototype became a production product.
-- [Lead Software Developer at Mender (2021-Q1 – 2022-Q2)](https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer): Built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing repair professionals, monetized via Stripe.
-- [Fullstack Developer at Valtech (Radon) (2021-Q3 – 2022-Q1)](https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack): Rebuilt the backend of Radon's digital marketing platform to keep pace with social-media API changes and integrated a scalable microservices architecture.
+- [Co-Founder & Lead Developer at Mender (2021-Q1 – 2022-Q2)](https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer): Co-built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing-repair professionals, monetised via Stripe.
+- [Fullstack Developer at Valtech (Radon) (2021-Q3 – 2022-Q1)](https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack): Rebuilt the backend of Radon's digital marketing platform — restored social-media API integrations and split them out into independent microservices.
 - [Fullstack Developer at Decerno AB (2021-Q2 – 2021-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack): Built a new OAuth/JWT auth system for a healthcare client's web platform — had to work both standalone and integrated with their existing legacy platform.
 - [Fullstack Developer at Steven (2020-Q2 – 2020-Q3)](https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack): Built a PII-safe support web platform for Steven so a new support contractor could handle cases without seeing more user data than they needed.
 

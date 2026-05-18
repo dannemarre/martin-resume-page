@@ -13,10 +13,12 @@ availableFor: AI Engineer, Data Scientist, ML Engineer, Data Engineer
 - Fullstack Developer
 - Security Engineer
 - Cloud Migration Engineer
+- Co-Founder
 
 ## Industries
 
 - Fintech
+- SaaS
 - Advertising
 - Healthcare
 - Fashion

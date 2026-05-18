@@ -21,6 +21,7 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 - DBT
 - DBT Fusion
+- Dataform
 - Snowflake Schema
 - Apache Airflow
 - Apache Spark

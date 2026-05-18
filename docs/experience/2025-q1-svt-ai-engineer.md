@@ -6,8 +6,8 @@ companyUrl: https://www.svt.se/
 projectTitle: Corporate Domain — MCP mesh & Survey Insights
 industry: Broadcasting
 start: 2025-Q1
-end: null
-ongoing: true
+end: 2026-Q1
+ongoing: false
 nda: false
 tags:
   - Python
@@ -41,4 +41,4 @@ Sveriges Television (SVT) is Sweden's national public broadcaster, producing imp
 
 ## Outcome
 
-Multiple MCP servers are rolling out across SVT, making data and data analysis substantially more accessible, consistent, and efficient. Teams can pull up-to-date insights faster, and decision-making no longer queues behind an SQL-fluent analyst.
+By the end of the engagement, multiple MCP servers were live across SVT — extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.

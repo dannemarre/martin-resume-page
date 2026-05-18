@@ -30,13 +30,13 @@ summary: Investigated feasibility of forecasting checking-account balances so ba
 
 ## Context
 
-Tink wanted a new value-added service: account balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk.
+Tink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master's thesis at Uppsala, partnered with one of Tink's product teams.
 
 ## What I did
 
-- Took on the feasibility investigation for one of the product teams.
-- Used a mix of regression models and supervised learning on anonymized checking-account transactional data, splitting it into subgroups to handle the noisy, random, infrequent large transactions cleanly.
+- Tested a range of model families on anonymised checking-account data — regression baselines, XGBoost, Facebook Prophet, and RNN variants (GRU/LSTM) — to find what gave acceptable error rates for forward-looking predictions.
+- Found that splitting transactional data into subgroups (e.g. recurring bills, salary inflows, one-off purchases) and forecasting each separately minimised the error contribution from rare high-variance transactions.
 
 ## Outcome
 
-Concluded that splitting transactional data into subgroups and forecasting them separately was a viable approach — it minimized the error contribution from infrequent, high-variance transactions. The project was later productized.
+The subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy.

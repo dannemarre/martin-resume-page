@@ -3,7 +3,7 @@ slug: 2026-q1-caia-cosmetics
 role: AI Engineer
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: TBD — fill in the assignment focus
+projectTitle: Semantic data layer + MCP exposure
 industry: Fashion
 start: 2026-Q1
 end: null
@@ -13,26 +13,29 @@ featured: true
 tags:
   - GCP
   - BigQuery
+  - Dataform
+  - FastMCP
+  - Cloud Run
+  - MCP Servers
   - LLM
+  - Claude
+  - OpenAI
   - Python
-summary: TBD — one-line elevator pitch for this engagement.
+  - SQL
+  - Semantic Modelling
+summary: Built CAIA's semantic data layer and exposed it through an MCP server so non-SQL teammates can self-serve answers from BigQuery in natural language.
 ---
 
 ## Context
 
-CAIA Cosmetics is a Northern European direct-to-consumer beauty brand (makeup, skincare, haircare, fragrance) headquartered in Stockholm, founded in 2018. They sell across multiple Nordic markets.
-
-> **TBD — add the specific problem CAIA needed solved.** Use `/update-experience` to replace this placeholder.
+CAIA Cosmetics is a Stockholm-based DTC beauty brand (makeup, skincare, haircare, fragrance) selling across the Nordics. As the org grew, every product, marketing, and merchandising data question queued behind a small SQL-fluent analyst team. CAIA wanted non-technical teammates to query the warehouse directly without learning SQL.
 
 ## What I did
 
-> **TBD — bullets describing the work.** A few starter prompts:
->
-> - Which CAIAverse / semantic-layer pieces have you touched?
-> - Any MCP server work analogous to SVT's MCP mesh?
-> - Data-pipeline / dbt / BigQuery work?
-> - LLM / GenAI features in the customer-facing experience or internal tooling?
+- Built a Snowflake-style semantic data layer on BigQuery + Dataform — a single coherent view of product, order, marketing, and customer data.
+- Built an MCP server on FastMCP + Cloud Run that exposes the semantic layer to LLMs (Claude, OpenAI, Gemini). The MCP knows the schema, respects table-level access, and translates natural-language questions into safe BigQuery reads.
+- Wired the MCP into the team's agent workflows (Claude Code, custom agents) so data questions get grounded answers instead of guesses.
 
 ## Outcome
 
-> **TBD — what changed for CAIA.** What's better, faster, or possible now that wasn't before?
+Non-SQL teammates now self-serve answers directly. Product managers, marketing, and merchandising can ask questions like "which fragrance SKUs grew most in Sweden last month?" and get a grounded answer — without the analyst loop.

@@ -20,14 +20,13 @@ summary: Built a new OAuth/JWT auth system for a healthcare client's web platfor
 
 ## Context
 
-Interned at **Decerno AB**, a Swedish IT consultancy, on a project for a healthcare-sector client (under NDA). The client needed help with login and authentication on their new web platform. The complexity wasn't the surface — the auth flow had to function as a standalone system **and** integrate seamlessly with the client's existing legacy platform, on a tight deadline.
+Interned at **Decerno AB**, a Swedish IT consultancy, on a project for a healthcare-sector client (under NDA). The client needed help with login and authentication on their new web platform. The auth flow had to function as a standalone system **and** integrate with the client's existing legacy platform — on a tight deadline.
 
 ## What I did
 
-- Worked in a small Decerno team on a compressed timeline.
-- Built frontend pieces — new login page, logout flow — which were the simpler half of the work.
-- The harder half was the backend integration: coordinating changes across both the legacy platform and the new one so the auth model worked consistently in either context.
+- Built the frontend pieces — new login page, logout flow — for the new web platform.
+- Coordinated the backend changes across the legacy platform and the new one so the same OAuth/JWT identity model worked from either entry point.
 
 ## Outcome
 
-Delivered a robust OAuth/JWT authentication system that worked both independently and inside the client's legacy platform. Improved security and flexibility on a tight deadline, and the resulting UX was well-received.
+Shipped on the tight timeline. The auth system worked standalone for the new platform and as the entry point into the client's legacy system — a single identity model spanning both surfaces.

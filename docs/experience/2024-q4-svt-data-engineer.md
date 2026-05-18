@@ -6,8 +6,8 @@ companyUrl: https://www.svt.se/
 projectTitle: Corporate Domain — Survey pipeline & PSR
 industry: Broadcasting
 start: 2024-Q4
-end: null
-ongoing: true
+end: 2026-Q1
+ongoing: false
 nda: false
 tags:
   - BigQuery
@@ -44,8 +44,7 @@ SVT had made a strategic shift toward becoming a more data-driven organisation w
 - Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.
 - Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model — now the single source of truth for survey data.
 - Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.
-- Worked closely with team leadership and key stakeholders on data governance and reporting across the whole organisation.
 
 ## Outcome
 
-Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. Workflows were streamlined, data products standardized, and the analytical foundation got measurably stronger — all of which feeds SVT's transition toward a more data-driven, insight-focused organisation.
+Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on — turning what had been multiple legacy systems into one source of truth.

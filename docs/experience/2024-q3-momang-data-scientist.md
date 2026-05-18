@@ -4,7 +4,7 @@ role: Data Scientist
 company: Momang
 companyUrl: https://www.momang.com/
 projectTitle: AI Search
-industry: Fintech
+industry: SaaS
 start: 2024-Q3
 end: 2024-Q4
 ongoing: false
@@ -25,19 +25,19 @@ tags:
   - Retrieval QA Chains
   - Pydantic
   - Prompt engineering
-summary: Deployed a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their consultant and project database.
+summary: Built a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their database of consultants and projects.
 ---
 
 ## Context
 
-Momang is a CRM tailored for sales consultants — a SaaS for managing client interactions, leads, consultants, and subcontractors. To enhance the search experience for its users, Momang wanted a sophisticated question-answering capability on top of its extensive database of consultants and projects.
+Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for managing clients, leads, consultants, and subcontractors. Sales reps spent meaningful time hunting through Momang's database to find the right consultants and projects for each lead. Momang wanted natural-language search on top of it.
 
 ## What I did
 
-- Spearheaded deployment of a Retrieval-Augmented Generation (RAG) system at Momang.
-- Built a vector database with Vertex AI Vector Search; orchestrated workflows with LangChain; used OpenAI's models for embeddings and retrieval QA chains.
-- Wired the architecture so users could pose complex, context-specific queries and get fast, accurate matches.
+- Built a Retrieval-Augmented Generation pipeline on Vertex AI: vector database via Vector Search, LangChain for orchestration, OpenAI models for embeddings and retrieval QA chains.
+- Modelled Momang's consultant + project data so the RAG system could answer cross-entity questions (e.g. "which Stockholm-based React developers worked on healthcare projects?").
+- Tuned prompts and retrieval to balance recall (don't miss a real match) against precision (don't surface noise).
 
 ## Outcome
 
-Momang now has interactive, RAG-powered search delivering swift access to the right consultants and projects — accelerating both client and internal matching workflows.
+Sales reps now find the right consultants and projects faster, asking the system in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question.
