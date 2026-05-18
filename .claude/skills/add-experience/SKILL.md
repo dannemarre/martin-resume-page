@@ -1,74 +1,91 @@
 ---
 name: add-experience
-description: Use when Martin wants to add a new consulting assignment or job to his resume site. Creates a properly-formatted markdown file under `docs/experience/`, regenerates content, and confirms the new entry shows up.
+description: Use when Martin wants to add a new consulting assignment, job, or project to his resume site. Creates a properly-structured markdown file under `docs/experience/` with valid frontmatter and a body that follows the writing style guide. Regenerates content and verifies the new entry surfaces.
 ---
 
 # /add-experience
 
 Add a new experience entry to the resume site.
 
-## What you need from the user
+## Before you touch anything
 
-If the user didn't already provide them, ask for:
+**Read [docs/STYLE.md](../../../docs/STYLE.md)** — the canonical writing guide. It defines voice, structure, length, tag conventions, and anti-patterns. Every line you write should pass that guide's bar.
 
-- **Role** (e.g. "AI Engineer", "Data Scientist")
-- **Company** (client name; if NDA, ask if they want it anonymized)
-- **Company URL** (homepage of the company, e.g. `https://tink.com/`) — optional but strongly recommended for non-NDA entries; surfaces as a link on the detail page
-- **Project title** — short label for what they were working on
-- **Industry** — one of the values listed in `docs/profile/identity.md` (Fintech, Advertising, Healthcare, Fashion, Media, Broadcasting, …)
-- **Start** as `YYYY-Qn` (e.g. `2025-Q3`)
-- **End** as `YYYY-Qn` or "ongoing"
-- **Tags** — tech stack and concepts, comma-separated
-- **A one-line summary** (the elevator pitch)
-- **Context / What I did / Outcome** — 1–3 bullets or paragraphs each
+## What to collect from Martin
 
-If you have an existing description (e.g. a PDF resume blurb), don't force the user to re-type — extract the fields yourself and confirm.
+If he didn't already volunteer them, ask for:
 
-## Steps
+| Field | Notes |
+|---|---|
+| Role | e.g. "AI Engineer", "Data Scientist". Match LinkedIn or his usual framing; don't inflate. |
+| Company | Real name. If NDA, ask whether to anonymize. |
+| Company URL | Homepage. e.g. `https://tink.com/`. Omit only for NDA/defunct. |
+| Project title | Short label — what the engagement was about. |
+| Industry | Pick from `docs/profile/identity.md` (Fintech, Advertising, Healthcare, Fashion, Media, Broadcasting, …). |
+| Start | `YYYY-Qn`. |
+| End | `YYYY-Qn` or "ongoing". |
+| Tags | Tech stack + concepts. See "Tag hygiene" below. |
+| Summary | One sentence — see STYLE.md for the bar. |
+| Context / What I did / Outcome | 1–3 paragraphs each, or notes you'll shape into bullets. |
 
-1. **Build the slug**: `YYYY-Qx-company-role` — kebab-case, all lowercase. E.g. `2025-q3-acme-ai-engineer`. Strip parentheses and special chars.
-2. **Pick the path**: `docs/experience/{slug}.md`. If a file already exists at that path, suggest a disambiguating suffix (e.g. add `-project-name`).
-3. **Write the file** using this template — every required frontmatter field must be filled in:
+If Martin gave you a blob of prose, extract the fields yourself and confirm before writing the file.
+
+## Procedure
+
+1. **Slug**: `YYYY-Qx-company-role`, kebab-case, lowercase. e.g. `2026-q2-acme-ai-engineer`. Strip parentheses, special chars, and "the".
+2. **Path**: `docs/experience/{slug}.md`. If a file already exists at that path, suggest a disambiguating suffix (e.g. `-project-name`).
+3. **Tag hygiene** before writing the frontmatter:
+   - Run `grep -hE "^  - " docs/experience/*.md | sort -u | head -80` to see the canonical tag set.
+   - Reuse existing casing (`Vertex AI`, not `VertexAI`; `BigQuery`, not `Big Query`).
+   - 8–20 tags. Both broad (`LLM`, `RAG`) and specific (`LangChain`, `FAISS`).
+4. **Write the file** using this template, then fill in the body per STYLE.md:
 
    ```markdown
    ---
    slug: {slug}
    role: {role}
    company: {company}
-   companyUrl: {https://... or null}
-   projectTitle: {projectTitle}        # or remove the field if there's none
+   companyUrl: {url or null}
+   projectTitle: {projectTitle}
    industry: {industry}
    start: {YYYY-Qn}
    end: {YYYY-Qn or null}
    ongoing: {true/false}
-   nda: {true if company name should be anonymized}
-   featured: {true to mark current / signature work; default false}
+   nda: {true/false}
+   featured: {true/false}
    tags:
      - Tag1
      - Tag2
-   summary: One-line elevator pitch.
+   summary: One-line elevator pitch (12–25 words; see STYLE.md).
    ---
 
    ## Context
 
-   What the situation / client was.
+   1–3 sentences on the client and what they needed. Third person.
 
    ## What I did
 
-   - Bullet 1
-   - Bullet 2
+   - Verb-first bullet, past tense, named tech.
+   - 3–6 bullets total.
 
    ## Outcome
 
-   The result and business value.
+   1–3 sentences on what changed. Customer/business value framing.
    ```
 
-4. **Regenerate content** by running `pnpm content` from the repo root. This rewrites `site/app/generated/content.ts`, `site/public/llms.txt`, and `site/public/sitemap.xml`.
-5. **Verify** — if the dev server is running, the new entry appears in the experience list and at `/experience/{slug}`. Otherwise run `pnpm dev` and walk it once.
-6. **Commit** the new `docs/experience/{slug}.md` plus the regenerated `site/app/generated/content.ts`, `site/public/llms.txt`, and `site/public/sitemap.xml`. Don't push or deploy — that's `/deploy-site`'s job.
+5. **Quality bar — verify before saving**:
+   - [ ] Summary doesn't use any banned adjective (*robust*, *scalable*, *innovative*, *significant*, *pivotal*) without backing it with a number.
+   - [ ] Every "What I did" bullet starts with a specific verb (*Built*, *Migrated*, *Led*), not vague ones (*Worked on*, *Contributed to*).
+   - [ ] Body 100–350 words total. If longer, cut elaboration.
+   - [ ] Tags use canonical casing.
+   - [ ] If the role was teamwork, language reflects that ("co-led", "as part of a team that…").
+6. **Regenerate** with `pnpm content`. Frontmatter validates; the script fails loudly on a missing required field.
+7. **Verify** — if the dev server is running, the new entry should appear in the experience list and at `/experience/{slug}`. Otherwise spin up `pnpm dev` and walk it once.
+8. **Commit** the new `docs/experience/{slug}.md` plus the regenerated `site/app/generated/content.ts`, `site/public/llms.txt`, `site/public/llms-full.txt`, `site/public/sitemap.xml`. Don't deploy — that's `/deploy-site`'s job.
 
-## Errors to watch for
+## Common pitfalls
 
-- `pnpm content` will fail loudly if a required frontmatter field is missing. Read the error, fix the file, re-run.
-- If the company is under NDA, set `nda: true` and use a descriptive but anonymous string for `company` (e.g. "Healthcare company (NDA)").
-- Tags should match existing tags where they exist (e.g. `Vertex AI` not `VertexAI`) — check `docs/skills/technologies.md` first.
+- **Consultancy-brochure voice**: if your draft starts with "Martin played a pivotal role…", rewrite. The PDF source uses that voice; we don't.
+- **Inflated titles**: don't write "Lead Architect" when the role was "Software Developer".
+- **Stuffing every tag you can think of**: tags should be ones you actually used, not aspirational.
+- **Missing outcome**: every entry needs a result, even a qualitative one.
