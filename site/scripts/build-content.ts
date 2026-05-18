@@ -411,15 +411,19 @@ Sitemap: ${origin}/sitemap.xml
 }
 
 function buildSecurityTxt(profile: Profile): string {
-  // .well-known/security.txt per RFC 9116. One-year expiry; the build regenerates
-  // this on every content build so it stays fresh as long as you run pnpm content.
-  const oneYearFromNow = new Date();
-  oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+  // .well-known/security.txt per RFC 9116. Expires is snapped to Dec 31 of next
+  // year (stable across the whole current calendar year, advances once on Jan 1)
+  // so the file doesn't drift on every build. RFC 9116 recommends < 1 year out;
+  // this can land at ~12 months early in the year and ~24 months late — within
+  // common practice.
+  const nextYearEnd = new Date(
+    Date.UTC(new Date().getUTCFullYear() + 1, 11, 31, 23, 59, 59),
+  );
   const contact = profile.contact.email
     ? `mailto:${profile.contact.email}`
     : profile.contact.linkedin;
   return `Contact: ${contact}
-Expires: ${oneYearFromNow.toISOString()}
+Expires: ${nextYearEnd.toISOString()}
 Preferred-Languages: en, sv
 `;
 }
