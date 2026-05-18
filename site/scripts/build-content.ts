@@ -449,7 +449,7 @@ function main() {
   const skills = buildSkillGroups();
 
   // Default origin used in generated artifacts. Override with SITE_ORIGIN at build time once domain is known.
-  const origin = process.env.SITE_ORIGIN ?? "https://martin-dannelind.web.app";
+  const origin = process.env.SITE_ORIGIN ?? "https://martin-dannelind-7f7f0.web.app";
 
   writeFileSync(OUT, emit(experiences, profile, education, skills), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/llms.txt"), buildLlmsTxt(profile, experiences, education, origin), "utf8");

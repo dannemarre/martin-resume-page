@@ -3,7 +3,7 @@ import { education, experiences, profile } from "~/generated/content";
 
 export const ORIGIN: string =
   (typeof import.meta !== "undefined" && import.meta.env?.VITE_SITE_ORIGIN) ||
-  "https://martin-dannelind.web.app";
+  "https://martin-dannelind-7f7f0.web.app";
 
 export function personJsonLd() {
   const sameAs: string[] = [];

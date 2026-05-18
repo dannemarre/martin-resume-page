@@ -10,6 +10,8 @@ import { education, experiences, profile, skillGroups } from "~/generated/conten
 export const meta = () => [
   { title: `${profile.bio.name} — ${profile.bio.headline}` },
   { name: "description", content: profile.bio.tagline },
+  { property: "og:title", content: `${profile.bio.name} — ${profile.bio.headline}` },
+  { property: "og:description", content: profile.bio.tagline },
 ];
 
 export default function HomeRoute() {

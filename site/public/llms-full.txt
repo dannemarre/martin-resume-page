@@ -6,7 +6,7 @@ Location: Stockholm, Sweden
 Employer of record: Theodora Tech
 LinkedIn: https://www.linkedin.com/in/martin-dannelind-24ab88198/
 Email: martin.dannelind@gmail.com
-Canonical site: https://martin-dannelind.web.app/
+Canonical site: https://martin-dannelind-7f7f0.web.app/
 
 ## About
 
@@ -27,7 +27,7 @@ Recent work has been with SVT (Sweden's national public broadcaster) building an
 - Company URL: https://caiacosmetics.com/
 - Project: TBD — fill in the assignment focus
 - Tags: GCP, BigQuery, LLM, Python
-- Page: https://martin-dannelind.web.app/experience/2026-q1-caia-cosmetics
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics
 
 ## Context
 
@@ -55,7 +55,7 @@ CAIA Cosmetics is a Northern European direct-to-consumer beauty brand (makeup, s
 - Company URL: https://www.svt.se/
 - Project: Corporate Domain — MCP mesh & Survey Insights
 - Tags: Python, DBT, BigQuery, OpenAI, LLM, PowerBI, SQL, Data Analysis, Prompt engineering, GitLab, DBT Fusion, FastMCP, Cloud Run, MCP Servers, Cursor, LibreChat
-- Page: https://martin-dannelind.web.app/experience/2025-q1-svt-ai-engineer
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer
 
 ## Context
 
@@ -78,7 +78,7 @@ Multiple MCP servers are rolling out across SVT, making data and data analysis s
 - Company URL: https://www.svt.se/
 - Project: Corporate Domain — Survey pipeline & PSR
 - Tags: BigQuery, DBT, DBT Fusion, Snowflake Schema, PowerBI, Cloud Run, GCS, GCP, Python, SQL, Apache Airflow, GitLab, Data Products, Tableau, Semantic Modelling, Data Analysis, Data Mesh, Alteryx, Cloud Functions, Stakeholder management, Cross-functional teams, Agile development
-- Page: https://martin-dannelind.web.app/experience/2024-q4-svt-data-engineer
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer
 
 ## Context
 
@@ -102,7 +102,7 @@ Multi-year survey analyses became faster and more reliable; teams can ingest and
 - Company URL: https://www.momang.com/
 - Project: AI Search
 - Tags: LLM, RAG, GCP, AI Pipelines, Vertex AI, LangChain, OpenAI, BigQuery, Python, SQL, Vector Search, FAISS, Retrieval QA Chains, Pydantic, Prompt engineering
-- Page: https://martin-dannelind.web.app/experience/2024-q3-momang-data-scientist
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist
 
 ## Context
 
@@ -125,7 +125,7 @@ Momang now has interactive, RAG-powered search delivering swift access to the ri
 - Company URL: https://tink.com/
 - Project: AWS → GCP migration
 - Tags: Python, SQL, BigQuery, Athena, AWS, GCP, Pydantic
-- Page: https://martin-dannelind.web.app/experience/2024-q1-tink-cloud-migration
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-tink-cloud-migration
 
 ## Context
 
@@ -148,7 +148,7 @@ Migration completed cleanly. The customer's infrastructure now runs on GCP with 
 - Company URL: https://www.visa.com/
 - Project: Code security task force at Tink
 - Tags: Python, CI/CD, Checkmarx, Code Security, Code maintenance, Staff management
-- Page: https://martin-dannelind.web.app/experience/2024-q1-visa-security-engineer
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer
 
 ## Context
 
@@ -171,7 +171,7 @@ Tink's codebase improved meaningfully, achieving greater stability and pushing t
 - Company URL: https://tink.com/
 - Project: Merchant Information
 - Tags: Python, Java, LLM, NER, Vertex AI, Regex, Label Studio, SQL, Copilot, BigQuery, Wikidata, Wikimedia, Brandfetch, Cursor, Buildkite, Apache Hadoop, Apache Spark, Apache Airflow, GitHub, Looker, Docker, VS Code, Pandas, Scikit-learn, Data Visualization, Data Transformation, Monitoring & Alerting, Checkmarx, MySQL, PyTorch, TensorFlow, LangChain, Kubeflow, Claude
-- Page: https://martin-dannelind.web.app/experience/2023-q1-tink-ai-engineer-merchant
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant
 
 ## Context
 
@@ -195,7 +195,7 @@ Tink's transaction enrichment got measurably more precise, giving banks and thei
 - Company URL: https://tink.com/
 - Project: Transaction categorization
 - Tags: Python, Apache Airflow, AWS, GCP, Looker, S3, GCS, Vertex AI, Golang, Go, XGBoost, Fasttext, Label Studio, Regex, Sonarcloud
-- Page: https://martin-dannelind.web.app/experience/2022-q3-tink-data-scientist-categorization
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization
 
 ## Context
 
@@ -217,7 +217,7 @@ Data scientists got real leverage over the categorization product again. The nex
 - Company URL: https://tink.com/
 - Project: Forecasting checking-account balance
 - Tags: Python, SQL, Jupyter, Transformer models, Facebook Prophet, PyTorch, Regression Models, Scikit-learn, XGBoost, GRU, LSTM, RNN, Time Series Forecasting, Account Balance Forecasting, Supervised Machine Learning
-- Page: https://martin-dannelind.web.app/experience/2022-q1-tink-ml-engineer-forecasting
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting
 
 ## Context
 
@@ -238,7 +238,7 @@ Concluded that splitting transactional data into subgroups and forecasting them 
 - Industry: Fashion
 - Project: App development
 - Tags: VueJS, NodeJS, MongoDB, S3, Stripe, Webhooks
-- Page: https://martin-dannelind.web.app/experience/2021-q1-mender-lead-developer
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer
 
 ## Context
 
@@ -261,7 +261,7 @@ Mender launched as a user-friendly, eco-friendly clothing-repair platform with s
 - Company URL: https://www.valtech.com/
 - Project: Digital marketing platform
 - Tags: Java, Python, JavaScript, Clojure, API, MACH, Microservices, Frontend, Backend, CSS, Bitbucket, HTML, React Native
-- Page: https://martin-dannelind.web.app/experience/2021-q3-valtech-radon-fullstack
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack
 
 ## Context
 
@@ -284,7 +284,7 @@ Radon could once again manage and track multi-channel campaigns reliably. Data a
 - Company URL: https://www.decerno.se/
 - Project: Authentication and login for a healthcare client
 - Tags: React, TypeScript, .NET, C#, OAuth/JWT
-- Page: https://martin-dannelind.web.app/experience/2021-q2-healthcare-fullstack
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack
 
 ## Context
 
@@ -306,7 +306,7 @@ Delivered a robust OAuth/JWT authentication system that worked both independentl
 - Industry: Fintech
 - Project: Data security project
 - Tags: React, TypeScript, SQL, JavaScript, Stakeholder management
-- Page: https://martin-dannelind.web.app/experience/2020-q2-steven-fullstack
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack
 
 ## Context
 

@@ -6,6 +6,7 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useLoaderData,
+  useLocation,
 } from "react-router";
 
 import { GA4_MEASUREMENT_ID } from "~/lib/analytics";
@@ -14,20 +15,11 @@ import { profile } from "~/generated/content";
 
 import "./styles/app.css";
 
+// Note: per-route meta exports REPLACE root meta in RR7. Tags that should
+// appear on every page live in <head> JSX below instead.
 export const meta = () => [
   { title: `${profile.bio.name} — ${profile.bio.headline}` },
   { name: "description", content: profile.bio.tagline },
-  { tagName: "link", rel: "canonical", href: `${ORIGIN}/` },
-  { property: "og:title", content: `${profile.bio.name} — ${profile.bio.headline}` },
-  { property: "og:description", content: profile.bio.tagline },
-  { property: "og:type", content: "profile" },
-  { property: "og:url", content: `${ORIGIN}/` },
-  { property: "og:image", content: `${ORIGIN}/og-image.svg` },
-  { property: "og:image:width", content: "1200" },
-  { property: "og:image:height", content: "630" },
-  { property: "og:image:alt", content: `${profile.bio.name} — ${profile.bio.headline}` },
-  { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:image", content: `${ORIGIN}/og-image.svg` },
 ];
 
 export const loader = () => ({
@@ -37,11 +29,15 @@ export const loader = () => ({
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   const ga4 = data?.ga4 ?? null;
+  const location = useLocation();
+  const pageUrl = `${ORIGIN}${location.pathname === "/" ? "/" : location.pathname}`;
+  const ogImage = `${ORIGIN}/og-image.svg`;
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={pageUrl} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -49,6 +45,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${profile.bio.name} — ${profile.bio.headline}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={ogImage} />
         <Meta />
         <Links />
         <script

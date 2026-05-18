@@ -14,14 +14,8 @@ export const meta = ({ params }: { params: { slug?: string } }) => {
   return [
     { title: `${exp.role} at ${company} — ${profile.bio.name}` },
     { name: "description", content: exp.summary },
-    { tagName: "link", rel: "canonical", href: url },
     { property: "og:title", content: `${exp.role} at ${company}` },
     { property: "og:description", content: exp.summary },
-    { property: "og:url", content: url },
-    { property: "og:type", content: "article" },
-    { property: "og:image", content: `${ORIGIN}/og-image.svg` },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:image", content: `${ORIGIN}/og-image.svg` },
     {
       "script:ld+json": roleJsonLd(exp, url),
     },
