@@ -1,4 +1,34 @@
+# robots.txt for https://martin-dannelind-7f7f0.web.app
+# Default: everyone is welcome.
+
 User-agent: *
+Allow: /
+
+# Explicit allows for major search + AI agents. Listed by name so future
+# opt-out-by-default policies preserve indexing.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: MistralAI-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: cohere-ai
+User-agent: YouBot
+User-agent: BraveBot
+User-agent: Kagibot
+User-agent: Phindbot
 Allow: /
 
 Sitemap: https://martin-dannelind-7f7f0.web.app/sitemap.xml

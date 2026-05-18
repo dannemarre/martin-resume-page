@@ -45,6 +45,45 @@ export function personJsonLd() {
   };
 }
 
+/**
+ * `ProfilePage` is what Google's profile-page rich result key off — wraps the
+ * `Person` graph as the page's mainEntity. Required shape per
+ * https://developers.google.com/search/docs/appearance/structured-data/profile-page
+ */
+export function profilePageJsonLd() {
+  const today = new Date().toISOString().slice(0, 10);
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${ORIGIN}/#profilepage`,
+    url: `${ORIGIN}/`,
+    name: `${profile.bio.name} — ${profile.bio.headline}`,
+    description: profile.bio.tagline,
+    dateCreated: today,
+    dateModified: today,
+    mainEntity: { "@id": `${ORIGIN}/#person` },
+    inLanguage: "en",
+  };
+}
+
+/**
+ * `WebSite` node — helps search engines understand the canonical site identity
+ * and connect multiple URLs to one entity. We deliberately omit `potentialAction`
+ * because the site has no real search endpoint.
+ */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${ORIGIN}/#website`,
+    url: `${ORIGIN}/`,
+    name: profile.bio.name,
+    description: profile.bio.tagline,
+    publisher: { "@id": `${ORIGIN}/#person` },
+    inLanguage: "en",
+  };
+}
+
 export function roleJsonLd(exp: Experience, canonicalUrl: string) {
   return {
     "@context": "https://schema.org",

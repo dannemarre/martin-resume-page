@@ -4,7 +4,7 @@
  *
  * Run via `pnpm content` (also wired as `predev` and `prebuild`).
  */
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import matter from "gray-matter";
@@ -363,10 +363,64 @@ ${body}
 }
 
 function buildRobotsTxt(origin: string): string {
-  return `User-agent: *
+  // Default: allow everything. Then list each major AI agent explicitly so that
+  // future opt-out-by-default policies keep us indexed. List sourced from the
+  // ai-robots-txt registry + OpenAI/Anthropic/Google/Perplexity/Mistral docs.
+  const aiAgents = [
+    // Search engines (traditional) — already covered by User-agent: * but listing the
+    // big ones helps with crawl-budget visibility in Search Console.
+    "Googlebot",
+    "Bingbot",
+    "DuckDuckBot",
+    "Applebot",
+    // AI training + AI search crawlers. Agent-specific tokens.
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "MistralAI-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "Meta-ExternalAgent",
+    "cohere-ai",
+    "YouBot",
+    "BraveBot",
+    "Kagibot",
+    "Phindbot",
+  ];
+  const agentGroup = aiAgents.map((ua) => `User-agent: ${ua}`).join("\n");
+  return `# robots.txt for ${origin}
+# Default: everyone is welcome.
+
+User-agent: *
+Allow: /
+
+# Explicit allows for major search + AI agents. Listed by name so future
+# opt-out-by-default policies preserve indexing.
+${agentGroup}
 Allow: /
 
 Sitemap: ${origin}/sitemap.xml
+`;
+}
+
+function buildSecurityTxt(profile: Profile): string {
+  // .well-known/security.txt per RFC 9116. One-year expiry; the build regenerates
+  // this on every content build so it stays fresh as long as you run pnpm content.
+  const oneYearFromNow = new Date();
+  oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+  const contact = profile.contact.email
+    ? `mailto:${profile.contact.email}`
+    : profile.contact.linkedin;
+  return `Contact: ${contact}
+Expires: ${oneYearFromNow.toISOString()}
+Preferred-Languages: en, sv
 `;
 }
 
@@ -451,11 +505,16 @@ function main() {
   // Default origin used in generated artifacts. Override with SITE_ORIGIN at build time once domain is known.
   const origin = process.env.SITE_ORIGIN ?? "https://martin-dannelind-7f7f0.web.app";
 
+  // Ensure .well-known directory exists before writing into it.
+  const wellKnownDir = path.join(REPO_ROOT, "site/public/.well-known");
+  if (!existsSync(wellKnownDir)) mkdirSync(wellKnownDir, { recursive: true });
+
   writeFileSync(OUT, emit(experiences, profile, education, skills), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/llms.txt"), buildLlmsTxt(profile, experiences, education, origin), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/llms-full.txt"), buildLlmsFullTxt(profile, experiences, education, origin), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/sitemap.xml"), buildSitemapXml(experiences, origin), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/robots.txt"), buildRobotsTxt(origin), "utf8");
+  writeFileSync(path.join(wellKnownDir, "security.txt"), buildSecurityTxt(profile), "utf8");
 
   console.log(
     `[build-content] wrote ${experiences.length} experiences, ${education.length} education entries, ${skills.length} skill groups`,
