@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://martin-dannelind.web.app/sitemap.xml
+Sitemap: https://martin-dannelind-7f7f0.web.app/sitemap.xml
