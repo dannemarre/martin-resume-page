@@ -53,15 +53,32 @@ The site lands on `https://<project-id>.web.app` by default. A custom domain can
 
 ## SEO & agent-findability
 
-- Per-route `meta` tags + Open Graph + Twitter Card + canonical URL.
-- Static `og-image.svg` at [site/public/og-image.svg](site/public/og-image.svg).
-- JSON-LD `Person` schema on the home page (with full `hasOccupation: Role[]`), and a `Role` schema on each experience detail page — see [site/app/lib/seo.ts](site/app/lib/seo.ts).
-- `<time>` elements for date ranges and ISO 8601 dates inside JSON-LD.
-- `sitemap.xml` and `robots.txt` generated at content build.
-- `llms.txt` — short structured index following the [llms.txt convention](https://llmstxt.org/).
-- `llms-full.txt` — long-form digest with full experience bodies, optimized for LLM retrieval and grounding.
+Every route emits:
 
-Set `SITE_ORIGIN` and `VITE_SITE_ORIGIN` to your real domain before deploying, so URLs in the generated artifacts (`sitemap.xml`, `llms.txt`, JSON-LD, canonical, OG) point to the production host.
+- Unique `<title>` + `<meta name="description">` + canonical URL + Open Graph + Twitter Card.
+- Static `og-image.svg` at [site/public/og-image.svg](site/public/og-image.svg).
+- Schema.org JSON-LD via [site/app/lib/seo.ts](site/app/lib/seo.ts):
+  - **Person** on every page (full `hasOccupation: Role[]` + `sameAs` + `alumniOf` + `knowsAbout`).
+  - **ProfilePage** + **WebSite** on the home page — required shape for Google's profile-page rich result.
+  - **Role** on each experience detail page, linked back to the Person via `@id`.
+
+Generated at content-build time and committed to `site/public/`:
+
+- `robots.txt` — `User-agent: *` plus explicit allows for ~20 major search/AI agents (Googlebot, GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, …) so future opt-out-by-default policies preserve indexing.
+- `sitemap.xml` — every prerendered route.
+- `llms.txt` — short structured index following the [llmstxt.org](https://llmstxt.org) convention.
+- `llms-full.txt` — long-form digest with full experience bodies, for LLM retrieval + grounding.
+- `.well-known/security.txt` — RFC 9116 contact channel for security disclosures.
+
+Set `SITE_ORIGIN` and `VITE_SITE_ORIGIN` to your real domain before deploying, so URLs in the generated artifacts point to the production host.
+
+### One-time submissions to do after the first deploy
+
+These nudge search engines to index faster — none are required but each takes a minute:
+
+- **Google Search Console** → <https://search.google.com/search-console>: add the property (`https://martin-dannelind-7f7f0.web.app/`), verify via DNS or HTML file, submit the sitemap URL.
+- **Bing Webmaster Tools** → <https://www.bing.com/webmasters>: same flow. Bing also reaches Yahoo and DuckDuckGo.
+- (Optional) **IndexNow** → <https://www.indexnow.org>: ping endpoint that fan-outs to Bing, Yandex, Seznam, Naver. Not yet wired into deploy — defer until traffic warrants it.
 
 ## Conventions
 

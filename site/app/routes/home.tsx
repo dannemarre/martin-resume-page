@@ -6,12 +6,15 @@ import { ExperienceList } from "~/components/ExperienceList";
 import { Hero } from "~/components/Hero";
 import { Skills } from "~/components/Skills";
 import { education, experiences, profile, skillGroups } from "~/generated/content";
+import { profilePageJsonLd, websiteJsonLd } from "~/lib/seo";
 
 export const meta = () => [
   { title: `${profile.bio.name} — ${profile.bio.headline}` },
   { name: "description", content: profile.bio.tagline },
   { property: "og:title", content: `${profile.bio.name} — ${profile.bio.headline}` },
   { property: "og:description", content: profile.bio.tagline },
+  { "script:ld+json": profilePageJsonLd() },
+  { "script:ld+json": websiteJsonLd() },
 ];
 
 export default function HomeRoute() {
