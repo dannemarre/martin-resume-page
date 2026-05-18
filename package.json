@@ -1,0 +1,17 @@
+{
+  "name": "martin-resume-page",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter site dev",
+    "build": "pnpm --filter site build",
+    "start": "pnpm --filter site start",
+    "content": "pnpm --filter site content",
+    "lint": "pnpm --filter site lint",
+    "format": "pnpm --filter site format",
+    "typecheck": "pnpm --filter site typecheck",
+    "deploy": "pnpm build && firebase deploy --only hosting"
+  },
+  "packageManager": "pnpm@11.1.2"
+}

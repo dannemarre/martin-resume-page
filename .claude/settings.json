@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install)",
+      "Bash(pnpm content)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm build)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm format)",
+      "Bash(pnpm rebuild)",
+      "Bash(pnpm rebuild *)",
+      "Bash(pnpm --filter *)",
+      "Bash(curl http://localhost:*)",
+      "Bash(curl -sL http://localhost:*)",
+      "Bash(curl -I http://localhost:*)",
+      "Bash(ls *)",
+      "Bash(tree docs)",
+      "Bash(tree site)"
+    ]
+  }
+}
