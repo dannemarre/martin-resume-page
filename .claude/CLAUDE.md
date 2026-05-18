@@ -16,9 +16,17 @@ If you find yourself wanting to add a hardcoded string in a component, ask: shou
 |---|---|
 | Add a new assignment | `/add-experience` |
 | Edit an existing one | `/update-experience` |
+| Change bio / contact / identity | `/update-profile` |
+| Manage the tech taxonomy | `/update-skills` |
+| Add or edit an education entry | `/update-education` |
+| Cross-content quality review | `/audit-content` |
 | Pull updates from LinkedIn | `/refresh-from-linkedin` |
 | Deploy live | `/deploy-site` |
 | See visitor stats | `/analytics-report` |
+
+## Writing style
+
+All content writing — experiences, profile prose, education — follows **[docs/STYLE.md](../docs/STYLE.md)**. The skills above reference it; read it once before touching `docs/` for the first time, then re-skim the relevant section before each significant content edit. It defines voice, structure, length, anti-patterns, and the canonical tag taxonomy.
 
 ## Coding conventions
 
