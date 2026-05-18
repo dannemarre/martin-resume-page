@@ -11,53 +11,33 @@ ongoing: false
 nda: false
 tags:
   - Python
-  - Java
   - LLM
   - NER
   - Vertex AI
-  - Regex
-  - Label Studio
-  - SQL
-  - Copilot
-  - BigQuery
-  - Wikidata
-  - Wikimedia
-  - Brandfetch
-  - Cursor
-  - Buildkite
-  - Apache Hadoop
-  - Apache Spark
-  - Apache Airflow
-  - GitHub
-  - Looker
-  - Docker
-  - VS Code
-  - Pandas
-  - Scikit-learn
-  - Data Visualization
-  - Data Transformation
-  - Monitoring & Alerting
-  - Checkmarx
-  - MySQL
-  - PyTorch
-  - TensorFlow
+  - Vector Search
   - LangChain
-  - Kubeflow
-  - Claude
-summary: Used AI to extract and categorize organizational and product data from transaction descriptions, building the entity backbone for Tink's Merchant Information product.
+  - PyTorch
+  - Label Studio
+  - Apache Airflow
+  - Apache Spark
+  - Regex
+  - Wikidata
+  - Brandfetch
+  - BigQuery
+  - SQL
+summary: Built the AI pipeline that turned raw transaction descriptions into structured merchant, product, and location data — the entity backbone for Tink's Merchant Information product.
 ---
 
 ## Context
 
-Tink is a leading open banking platform in Europe, empowering banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to disclose more comprehensive transaction details to customers, and Tink needed a Merchant Information product to meet that bar — but the data required wasn't readily available in existing sources.
+Tink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to surface richer transaction detail to customers — but Tink's existing data sources didn't have the merchant, product, or location detail the mandate demanded. Merchant Information had to be built from scratch.
 
 ## What I did
 
-- Played a pivotal role in building Merchant Information from scratch.
-- Used advanced AI techniques (LLMs, NER, vector search) to extract and categorize organizational and product data directly from raw transaction descriptions.
-- Managed data labelling and data labelers; built a vast entity database that established brand and merchant connections.
-- Pulled organization, product, payment-provider, and location details out of descriptions and linked them back to canonical entities.
+- Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.
+- Built the entity database that mapped extracted strings to canonical brands and merchants — disambiguating "AMZN MKTPL", "Amazon.de", and "Amazon EU SARL" as the same entity.
+- Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.
 
 ## Outcome
 
-Tink's transaction enrichment got measurably more precise, giving banks and their customers deeper insight into merchant relations and consumer behaviour. The work reinforced Tink's leadership in value-added financial services and unlocked product strategies built on richer transaction data.
+With richer enrichment, Tink's customer banks could now surface "what is this charge?" answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity — use cases not reachable from the raw transaction strings alone.

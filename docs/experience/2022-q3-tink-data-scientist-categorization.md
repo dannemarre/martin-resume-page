@@ -18,7 +18,6 @@ tags:
   - S3
   - GCS
   - Vertex AI
-  - Golang
   - Go
   - XGBoost
   - Fasttext
@@ -34,9 +33,9 @@ Tink had offered transaction categorization to its customers for years. By the t
 
 ## What I did
 
-- Led a major refactoring effort to improve and simplify the codebase: fixed bugs, removed dead code, introduced new testing methodologies, raised the quality bar across the product.
-- Spearheaded the migration of the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. This unlocked the data science team's ability to iterate freely on model architecture.
+- Led a refactoring pass through the codebase: fixed bugs, removed dead code, introduced testing methodologies the team didn't have.
+- Migrated the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
 
 ## Outcome
 
-Data scientists got real leverage over the categorization product again. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move.
+The data-science team could iterate on model architecture again without backend rewrites. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move.

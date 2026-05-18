@@ -25,10 +25,10 @@ Visa is a global leader in digital payments. Since Visa acquired Tink in 2021, t
 
 ## What I did
 
-- Joined one of the task forces as a Security Champion, reviewing and validating code flagged by CI/CD security tooling and working directly with code authors to drive compliance.
+- Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.
 - Completed an intensive multi-day security course through Visa University.
-- Took on a management role after the course — led a team from Visa coordinating the rotation of trained staff at Tink to address and resolve security findings.
+- Stepped into a leadership role after the course — led a Visa team that rotated trained Tink staff through the queue of open security findings until it drained.
 
 ## Outcome
 
-Tink's codebase improved meaningfully, achieving greater stability and pushing the platform close to its 99.99% monthly uptime target.
+Tink's codebase stability climbed toward Visa's 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down.

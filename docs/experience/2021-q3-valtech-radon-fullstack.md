@@ -23,19 +23,19 @@ tags:
   - Bitbucket
   - HTML
   - React Native
-summary: Rebuilt the backend of Radon's digital marketing platform to keep pace with social-media API changes and integrated a scalable microservices architecture.
+summary: Rebuilt the backend of Radon's digital marketing platform — restored social-media API integrations and split them out into independent microservices.
 ---
 
 ## Context
 
-Valtech is a global consultancy delivering business-transformation solutions. Their recently acquired agency, Radon, ran a digital marketing platform for managing customer campaigns across multiple social platforms. The platform had drifted out of sync with the social-media APIs, eroding the accuracy of campaign tracking — exactly the kind of data clients pay for.
+Valtech is a global consultancy. I joined their MACH talent program — structured onboarding for fullstack developers specialising in Microservices, API-first, Cloud-native, and Headless architectures — and was placed on their recently acquired agency Radon. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking clients paid for.
 
 ## What I did
 
-- Contributed to the frontend, but my main remit was leading backend technical improvements and the API integrations with the various social platforms.
-- Redesigned the backend architecture around scalable microservices and API-first communication patterns.
-- Focused throughout on maintainable, straightforward code — long-term usability mattered more than clever short-term wins.
+- Owned the backend rewrites for Radon's campaign platform: re-integrated with each social-media API (Facebook, Google, etc.) so campaign metrics flowed accurately again.
+- Restructured the backend around microservices and API-first patterns so each social integration could evolve independently of the others.
+- Touched the frontend where the new backend exposed new fields — extending the campaign-config UI to match.
 
 ## Outcome
 
-Radon could once again manage and track multi-channel campaigns reliably. Data accuracy and campaign performance tracking improved — directly raising the quality of the insights they delivered to clients.
+Radon could once again manage and track multi-channel campaigns reliably. With per-integration microservices in place, future API changes from any one social platform became localised patches instead of full backend reworks.

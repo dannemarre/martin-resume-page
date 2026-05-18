@@ -24,9 +24,9 @@ Steven is an app for splitting shared expenses — people log what they bought f
 
 ## What I did
 
-- Worked closely with stakeholders across the organisation to map the actual data flows.
-- Built new pages in React, integrated into Steven's support system.
-- Updated the JavaScript backend's database interactions so the new features were fully functional and tightly scoped on the data they exposed.
+- Mapped the data flows between Steven's database, support system, and the new contractor's view — identifying what PII could be hidden and what had to remain visible for support agents to do their job.
+- Built the new support pages in React and wired them into Steven's existing support system.
+- Updated the JavaScript backend's database interactions so the new pages exposed only the minimum data each support task required — query filters, auth scopes, and per-page field allowlists.
 
 ## Outcome
 

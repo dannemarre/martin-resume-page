@@ -1,6 +1,6 @@
 ---
 slug: 2021-q1-mender-lead-developer
-role: Lead Software Developer
+role: Co-Founder & Lead Developer
 company: Mender
 companyUrl: null
 projectTitle: App development
@@ -16,19 +16,19 @@ tags:
   - S3
   - Stripe
   - Webhooks
-summary: Built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing repair professionals, monetized via Stripe.
+summary: Co-built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing-repair professionals, monetised via Stripe.
 ---
 
 ## Context
 
-Mender provides users access to high-quality clothing repair, promoting environmental sustainability and catering to demand for eco-friendly fashion choices. Turning the idea into a real product needed three building blocks: a responsive web platform usable on both desktop and mobile, a chat feature between users and repair professionals, and a payment system that took Mender's percentage from each transaction.
+Mender is a sustainable-fashion app: users find and book clothing-repair professionals near them. Turning the idea into a real product needed three pieces — a responsive web platform usable on desktop and mobile, an in-app chat between users and repair pros, and a payment system that took Mender's percentage from each transaction.
 
 ## What I did
 
-- Together with a small team, built the entire Mender application from conceptualisation to deploy.
-- Frontend in Vue.js; backend in Node.js; MongoDB for the primary database; AWS S3 for metadata storage; webhook-based chat between users and repair pros; Stripe SDK handling payments.
-- Contributed to both the technical execution and the broader business shape of the product.
+- Co-built the Mender app with a small team — Vue.js frontend, Node.js backend, MongoDB, AWS S3 for metadata.
+- Wired the webhook-based chat between users and repair professionals, and integrated the Stripe SDK to handle payments plus Mender's per-transaction cut.
+- Owned architecture decisions and the path from concept to public launch as a co-founder alongside the engineering work.
 
 ## Outcome
 
-Mender launched as a user-friendly, eco-friendly clothing-repair platform with smooth communication and transaction flows — turning a sustainability concept into something people actually use.
+Mender launched as a working clothing-repair marketplace — users booking actual services through the app, with the architecture small enough that the team could maintain it post-launch without rewrites.
