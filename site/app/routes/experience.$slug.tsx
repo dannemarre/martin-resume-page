@@ -12,10 +12,14 @@ export const meta = ({ params }: { params: { slug?: string } }) => {
   if (!exp) return [{ title: `Not found | ${profile.bio.name}` }];
   const company = exp.nda ? "Confidential client" : exp.company;
   const url = `${ORIGIN}/experience/${exp.slug}`;
+  // Lead with the project so several projects at one workplace still get unique titles.
+  const heading = exp.projectTitle
+    ? `${exp.projectTitle} · ${exp.role} at ${company}`
+    : `${exp.role} at ${company}`;
   return [
-    { title: `${exp.role} at ${company} | ${profile.bio.name}` },
+    { title: `${heading} | ${profile.bio.name}` },
     { name: "description", content: exp.summary },
-    { property: "og:title", content: `${exp.role} at ${company}` },
+    { property: "og:title", content: heading },
     { property: "og:description", content: exp.summary },
     {
       "script:ld+json": roleJsonLd(exp, url),
