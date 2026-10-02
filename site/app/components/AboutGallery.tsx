@@ -202,18 +202,32 @@ function Clip({
 }) {
   const ref = useRef<HTMLVideoElement>(null);
 
-  // Muted, looping ambient clip. Respect reduced-motion by leaving it on its poster.
+  // Muted, looping ambient clip that plays only while on screen. Browsers pause video in a
+  // hidden tab panel, so a play() at mount (while the About tab is closed) never starts it;
+  // an IntersectionObserver starts it when it scrolls or tabs into view. Respects
+  // reduced-motion by staying on its poster.
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
     const sync = () => {
-      if (reduce.matches) video.pause();
-      else void video.play().catch(() => {});
+      if (visible && !reduce.matches) void video.play().catch(() => {});
+      else video.pause();
     };
-    sync();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry?.isIntersecting ?? false;
+        sync();
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(video);
     reduce.addEventListener("change", sync);
-    return () => reduce.removeEventListener("change", sync);
+    return () => {
+      observer.disconnect();
+      reduce.removeEventListener("change", sync);
+    };
   }, []);
 
   return (
