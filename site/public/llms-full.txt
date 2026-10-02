@@ -1,56 +1,195 @@
-# Martin Dannelind — AI Engineer
+# Martin Dannelind | Senior AI Consultant · AI Lead
 
-I build AI systems that turn raw data into decisions people can act on.
+I'm a builder who likes to bring ideas into reality and build products that people actually want to use.
 
 Location: Stockholm, Sweden
 Employer of record: Theodora Tech
 LinkedIn: https://www.linkedin.com/in/martin-dannelind-24ab88198/
 GitHub: https://github.com/dannemarre
-Email: martin.dannelind@gmail.com
+Email (Personal): martin.dannelind@gmail.com
+Email (Theodora Tech): martin@theodoratech.se
+Email (CAIA Cosmetics): martin.dannelind@caiacosmetics.com
+Phone: +46 73 823 99 30
 Canonical site: https://martin-dannelind-7f7f0.web.app/
 
 ## About
 
-I build AI systems that turn raw data into decisions people can act on.
+I'm a builder who likes to bring ideas into reality and build products that people actually want to use.
 
-I design and ship AI systems end-to-end — from the data pipelines that feed them to the cloud infrastructure that serves them. My work tends to sit at the seam between raw data and the people who need to act on it: building MCP servers so analysts can query BigQuery in natural language, RAG systems that surface knowledge buried in databases, classifiers that enrich millions of transactions, forecasting models that help banks warn customers before they overdraft.
+After shipping data and ML products at Tink, Visa and SVT, and co‑founding a startup along the way, I'm now a Senior AI Consultant at Theodora Tech and AI Lead at CAIA Cosmetics, creating data platforms and AI systems side by side with the people who use them. Much of that work runs on applied brains and artificial users: AI agents that use the platforms the way real colleagues would, so every gap they hit becomes a feedback loop that makes the platform better. We've since turned that approach into conversational analytics that Theodora delivers to other companies. Staying on top of the AI wave has always mattered to me, and I'm excited about where software development, and the way we make things in general, is heading.
 
-I'm hands-on across the stack — Python, SQL, GCP, BigQuery, DBT, Vertex AI, LangChain, OpenAI — and equally comfortable in the fullstack and security work that pays the rent for the AI work. I move fast, learn fast, and care a lot about the colleagues I do it with.
+Hi, and thanks for stopping by my website and CV!
 
-Recent work has been with SVT (Sweden's national public broadcaster) building an internal MCP mesh that makes data analysis accessible without SQL, and Tink (the Visa-owned open banking platform) on merchant enrichment, transaction categorization, and the AWS→GCP migration of a major customer.
+I'm Martin, an active guy who loves building and creating new things, everything from kitchen tables to cutting-edge AI platforms. I live in Bromma with my girlfriend Frida. I grew up in Västerhaninge, just south of Stockholm, as the middle child between two sisters, with a little dog called Ralf and family close by.
+
+Growing up, most of my spare time and weekends were spent in the garage, on the motocross track or out on the enduro trails. Training, racing and competing have been a big part of my life ever since. I've skied Vasaloppet seven times and completed two Swedish Classics (En Svensk Klassiker), one of them a Super Classic. In summer much of my time is spent on the bike, and I race for Ängby CC.
+
+I'm lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains, and in summer in the forests of Småland, where my parents have a summer house in Ventzelholm: an old school house from 1917.
 
 ## Experience
 
-### AI Engineer at CAIA Cosmetics
+### Senior AI Consultant at Theodora Tech
 
-- Dates: 2026-Q1 – ongoing
+- Dates: since 2024-Q3
+- Industry: Consulting
+- Company URL: https://www.theodoratech.se/
+- Project: AI consulting and recruitment
+- Tags: Technical Leadership, Recruitment, Consulting, Conversational Analytics, Productisation, LLM, GCP, BigQuery
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q3-theodora-tech
+
+## Context
+
+Theodora Tech is a smaller, gradually growing team of expert data enthusiasts. We build smart systems using and for AI from the ground up, from the data platform underneath to the AI products on top. I joined in September 2024, and it is my employer of record for my consulting assignments.
+
+## What I did
+
+- Delivered Theodora's client assignments as a Senior AI Consultant: data and AI engineering at SVT, AI search for Momang, and AI Lead at CAIA Cosmetics, where I own the AI roadmap.
+- Productised the work from SVT and CAIA into a conversational analytics offering: a governed data layer that people can query in natural language from their AI tools. Theodora now delivers it to other companies, including companies in Verdane's portfolio.
+- Took on part of the responsibility for recruitment, and held interviews for many of the colleagues I work with today.
+
+## Outcome
+
+What started as client assignments is now a product Theodora sells to other companies. The team keeps growing, and many of the people I interviewed are now my colleagues. The assignments listed below under CAIA Cosmetics, SVT and Momang were all delivered through Theodora.
+
+References:
+- [Theodora Tech](https://www.theodoratech.se/)
+
+### AI Lead at CAIA Cosmetics
+
+- Dates: since 2026-Q1
 - Industry: Fashion
 - Company URL: https://caiacosmetics.com/
-- Project: Semantic data layer + MCP exposure
-- Tags: GCP, BigQuery, Dataform, FastMCP, Cloud Run, MCP Servers, LLM, Claude, OpenAI, Python, SQL, Semantic Modelling
+- Project: CAIAverse: semantic data layer + MCP
+- Tags: Technical Leadership, GCP, BigQuery, Dataform, Kimball, Semantic Modelling, FastMCP, MCP Servers, Cloud Run, OAuth/JWT, Vertex AI, Data Governance, Claude, LLM, Python, SQL
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics
 
 ## Context
 
-CAIA Cosmetics is a Stockholm-based DTC beauty brand (makeup, skincare, haircare, fragrance) selling across the Nordics. As the org grew, every product, marketing, and merchandising data question queued behind a small SQL-fluent analyst team. CAIA wanted non-technical teammates to query the warehouse directly without learning SQL.
+CAIA Cosmetics is a Stockholm-founded direct-to-consumer beauty brand (makeup, skincare, haircare and fragrance) selling across the Nordics and Europe. Data lived in dozens of SaaS tools and every question queued behind a small SQL-fluent team. As AI Lead I own CAIA's AI roadmap and build it hands-on, reporting to CAIA's leadership and to Verdane, CAIA's part-owner. The first goal was to make the warehouse the single, AI-readable source of truth.
 
 ## What I did
 
-- Built a Snowflake-style semantic data layer on BigQuery + Dataform — a single coherent view of product, order, marketing, and customer data.
-- Built an MCP server on FastMCP + Cloud Run that exposes the semantic layer to LLMs (Claude, OpenAI, Gemini). The MCP knows the schema, respects table-level access, and translates natural-language questions into safe BigQuery reads.
-- Wired the MCP into the team's agent workflows (Claude Code, custom agents) so data questions get grounded answers instead of guesses.
+- Designed and built CAIAverse in Dataform on BigQuery: a Kimball-style layered model (sources → staging → intermediate → outputs) with 415 output models, on scheduled daily and hourly workflows with freshness monitoring.
+- Built ingestion for 20 sources, including Voyado, Sitoo, Klarna, Zendesk, Meta, TikTok, Snapchat, Google Ads and GA4, mostly as Cloud Run Jobs, with a data contract per source.
+- Built the CAIAverse MCP server on FastMCP + Cloud Run with domain-restricted Google OAuth. Queries run under the caller's own identity, so BigQuery permissions and column-level policy tags (PII, Restricted) are enforced per person.
+- Made the layer discoverable to LLMs: a catalog-search tool matches questions against a registry of 726 answerable questions (September 2026) using Vertex AI embeddings, and logs unanswerable ones as a gap list that drives the modelling backlog.
+- Packaged CAIAverse as organisation-wide Claude skills, so every colleague's Claude knows how to find, query and cite the right data.
 
 ## Outcome
 
-Non-SQL teammates now self-serve answers directly. Product managers, marketing, and merchandising can ask questions like "which fragrance SKUs grew most in Sweden last month?" and get a grounded answer — without the analyst loop.
+Colleagues ask CAIAverse questions directly from Claude and get answers grounded in governed warehouse data, with access controls following each person. Usage grew from 7 colleagues in the first two days after launch (March 2026) to 34 colleagues making 10,181 authenticated requests in a single week (31 August to 7 September 2026), peaking at 40 colleagues in a three-day window in late September. The same layer now feeds the AI council, the Power BI migration and new dashboards.
+
+### AI Lead at CAIA Cosmetics
+
+- Dates: since 2026-Q1
+- Industry: Fashion
+- Company URL: https://caiacosmetics.com/
+- Project: CAIAcouncil: multi-agent business review
+- Tags: Technical Leadership, Multi-agent Systems, LLM, Claude, Claude Skills, OpenAI, Python, BigQuery, Web Search, API, FastMCP, MCP Servers, Cloud Run, Cloud Scheduler, Terraform, GCS
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-council
+
+## Context
+
+CAIA's leadership needed a weekly read of the business that cut across finance, marketing channels, retail, assortment and press, faster than analysts could assemble by hand, and honest about what the data could and could not support.
+
+## What I did
+
+- Designed the council: 23 specialist experts across finance, marketing channels, product, assortment, retail and press, defined in one roster file. Each runs as its own service account with scoped tools: governed CAIAverse queries in BigQuery, web search and external APIs.
+- Ran the experts on both Anthropic and OpenAI models on purpose. Different model families read the same week differently, so the council gets genuinely different views instead of one model agreeing with itself.
+- Gave each expert a role, not an assignment. Experts decide how to investigate their own area, guided by skills for doing the work and for writing free-form reports, so every run takes a partly randomised path through the data. Over time that gives a fuller, more interesting picture of the company than a hardcoded checklist.
+- Built the orchestrator that reconciles the expert reports into ranked decisions and open questions, guarded by six hard vetoes (attribution override, stock, margin floor, data freshness, magnitude sanity and unverified urgency).
+- Scheduled weekly runs over the closed ISO week with Cloud Scheduler and Terraform, and built a read-only CAIAcouncil MCP server (FastMCP, Cloud Run) that serves the reports to Claude, ChatGPT and Cursor.
+- Turned the council into a feedback loop for CAIAverse. The experts put the data layer under realistic, artificial load every week, and what they can't answer shows where data or aggregates are missing. Those gaps drive what gets modelled next, steering the build-out of conversational analytics.
+
+## Outcome
+
+Everyone at CAIA can read the weekly reports, and leadership goes through them in its weekly meeting. Teams use their own experts: marketing gets weekly press mentions of CAIA from the press expert, the product team follows how products perform, and customer support tracks its own performance and recurring ticket themes. Disagreements, caveats and vetoes are shown, not hidden, and figures are checked against CAIAverse before they reach finance or leadership. It also keeps improving the data platform that everyone else queries, week by week.
+
+### AI Lead at CAIA Cosmetics
+
+- Dates: since 2026-Q4
+- Industry: Fashion
+- Company URL: https://caiacosmetics.com/
+- Project: PLM: product, packaging and compliance data
+- Tags: Technical Leadership, PLM, Data Modelling, Data Governance, Regulatory Compliance, PPWR, Semantic Modelling, BigQuery, Dataform, GCS, Cloud Run, Document Extraction
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q4-caia-plm
+
+## Context
+
+CAIA's product, packaging and compliance data lived in supplier documents and shared folders. The EU Packaging and Packaging Waste Regulation ([PPWR, Regulation (EU) 2025/40](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500040)) requires brands to know, for every packaging, what it is made of, how much of it is recycled, how recyclable it is and how much was placed on each market. CAIA needed one system to hold that, next to the product and ingredient data that cosmetics regulation already demands, and chose to build its own PLM in-house.
+
+## What I did
+
+- Designed the data model that links each SKU to its packaging, each packaging to its components (bottle, pump, cap, carton) and each component to its materials. Packaging gets its own ID, because one packaging is often shared by many shades, and each is tagged by level: sales, grouped, transport or e-commerce packaging.
+- Defined the compliance data per component and material: supplier article code, weight, dimensions, whether it can be separated by hand, virgin or recycled material, recycled share, recyclability class and heavy-metal content (sum below 100 mg/kg). Each packaging also carries a versioned, dated PPWR traceability number.
+- Specified document tracking for drawings, material specifications, heavy-metal and recycled-content certificates and declarations of conformity, each with version, date and status (complete, missing or expired).
+- Added the product side: formula ID and version, ingredient lists with concentrations and CAS numbers, ingredient origin, PAO, warnings, approved markets, substantiated claims, and links to each product's PIF and CPSR.
+- Built the platform on GCS file storage with extractors that read product drawings, packaging plans, specifications and legal contracts and turn them into structured data, a supplier portal where suppliers upload their documents, and a web app on Cloud Run for the team to review and complete the data.
+- Building the integration with CAIAverse, so units sold per SKU, year, country and channel (with Sweden separate), together with purchased component volumes, turn into tonnes of each material placed on each market.
+
+## Outcome
+
+In progress. When complete, CAIA will have one place to answer what PPWR asks per packaging and per market, and material reporting can be produced from data instead of assembled by hand from documents.
+
+References:
+- [Regulation (EU) 2025/40 on packaging and packaging waste (PPWR), EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500040)
+
+### AI Lead at CAIA Cosmetics
+
+- Dates: since 2026-Q3
+- Industry: Fashion
+- Company URL: https://caiacosmetics.com/
+- Project: CAIA Design System
+- Tags: Design Systems, React, TypeScript, Tailwind, shadcn/ui, Next.js, Design Tokens, Claude, Claude Skills, GitHub Packages, CI/CD
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q3-caia-design-system
+
+## Context
+
+With more of CAIA's reports, decks and dashboards being produced with AI, CAIA needed one source of brand truth that both people and agents could apply. The interesting part is that a design system for AI agents has to describe more than colours and components: it has to capture CAIA's tone of voice, vibe and feeling, so an agent can create any kind of content that still feels like CAIA.
+
+## What I did
+
+- Wrote down CAIA's tone of voice, vibe and feeling in a form AI agents can follow, alongside the visual rules, so generated copy and layouts sound and look like CAIA.
+- Built shared foundations (colour and type tokens, the Artico typeface, radius and wordmark assets), split into an internal track and a website track that share foundations but keep distinct voices.
+- Built the internal component set (Button, Badge, Chip, Card, Field, KPI tile, Callout, bar chart, data table) plus templates for leadership reports, market dashboards and board decks, with 36 slide archetypes.
+- Wrote the website track's guidance for the Next.js / Tailwind / shadcn/ui stack, including a Tailwind v4 token bridge.
+- Published it as an npm package on GitHub Packages and as the organisation's default design system skill on claude.ai, guarded by an adherence CI that lints brand values, token parity and assets.
+
+## Outcome
+
+Colleagues use it daily in Claude: when someone asks for a deck, dashboard or memo, the brand and voice are applied through the organisation skill rather than by hand, including for board and leadership decks. The website track is planned for adoption with CAIA's new website from 2027.
+
+### AI Lead at CAIA Cosmetics
+
+- Dates: since 2026-Q1
+- Industry: Fashion
+- Company URL: https://caiacosmetics.com/
+- Project: From Power BI to conversational analytics
+- Tags: Technical Leadership, PowerBI, Conversational Analytics, BigQuery, Dataform, MCP Servers, Claude, Self-service BI, React, Vite, Cloud Run, IAP, SQL
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-conversational-analytics
+
+## Context
+
+CAIA's reporting ran on 22 Power BI reports, and a new question typically meant a new dashboard request. The goal is to make the governed semantic layer the single source of truth and let people ask questions directly instead of waiting for a report.
+
+## What I did
+
+- Catalogued all 22 Power BI reports from their PBIP sources into a migration matrix, and rebuilt their marts on top of CAIAverse in Dataform, validating parity against the originals (all within 1% at validation).
+- Moved ad-hoc analysis onto the CAIAverse MCP, so questions that used to become dashboard requests are answered in Claude against the same governed models.
+- Built a dashboard app on Cloud Run behind IAP where colleagues create and change dashboards by describing them in plain language, with a path to bring claude.ai live artifacts into it.
+- Connected the CAIAverse and CAIAcouncil connectors in Claude, so teams build their own dashboards and reports in Claude on governed data instead of filing dashboard requests.
+
+## Outcome
+
+Dashboarding and reporting can now be built directly in Claude through the CAIAverse and CAIAcouncil connectors, and teams have taken ownership of their own data and reports. Dashboard requests have dropped, Power BI reports have been retired and licences saved, and Power BI is now being shut down completely.
 
 ### AI Engineer at SVT
 
-- Dates: 2025-Q1 – 2026-Q1
+- Dates: 2025-Q1 to 2026-Q1
 - Industry: Broadcasting
 - Company URL: https://www.svt.se/
-- Project: Corporate Domain — MCP mesh & Survey Insights
-- Tags: Python, DBT, BigQuery, OpenAI, LLM, PowerBI, SQL, Data Analysis, Prompt engineering, GitLab, DBT Fusion, FastMCP, Cloud Run, MCP Servers, Cursor, LibreChat
+- Project: Corporate Domain: MCP mesh & Survey Insights
+- Tags: Python, DBT, BigQuery, OpenAI, LLM, PowerBI, SQL, Prompt engineering, GitLab, DBT Fusion, FastMCP, Cloud Run, MCP Servers, Cursor, LibreChat
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer
 
 ## Context
@@ -59,40 +198,42 @@ Sveriges Television (SVT) is Sweden's national public broadcaster, producing imp
 
 ## What I did
 
-- Proposed an MCP server that lets teams query data using natural language. The idea grew into an SVT-wide initiative — an MCP mesh accessible through an internally hosted version of LibreChat, with individual MCP servers owned by separate teams but available to the whole organisation.
-- Spearheaded development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.
-- Extended the MCP to support PowerBI work — it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
+- Proposed and built SVT's first MCP server, letting teams query data in natural language. The idea grew into an SVT-wide initiative: an MCP mesh accessible through an internally hosted version of LibreChat, with MCP servers owned by separate teams but available to the whole organisation.
+- Coached other teams as they built their own MCP servers for the mesh, and presented the initiative internally to spread it across SVT.
+- Led development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.
+- Extended the MCP to support PowerBI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
 
 ## Outcome
 
-By the end of the engagement, multiple MCP servers were live across SVT — extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
+By the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
 
 ### Data Engineer at SVT
 
-- Dates: 2024-Q4 – 2026-Q1
+- Dates: 2024-Q4 to 2026-Q1
 - Industry: Broadcasting
 - Company URL: https://www.svt.se/
-- Project: Corporate Domain — Survey pipeline & PSR
-- Tags: BigQuery, DBT, DBT Fusion, Snowflake Schema, PowerBI, Cloud Run, GCS, GCP, Python, SQL, Apache Airflow, GitLab, Data Products, Tableau, Semantic Modelling, Data Analysis, Data Mesh, Alteryx, Cloud Functions, Stakeholder management, Cross-functional teams, Agile development
+- Project: Corporate Domain: Survey pipeline & PSR
+- Tags: AI Agents, BigQuery, DBT, DBT Fusion, Snowflake Schema, PowerBI, Cloud Run, GCS, GCP, Python, SQL, Apache Airflow, GitLab, Data Products, Tableau, Semantic Modelling, Data Mesh, Alteryx, Cloud Functions, Stakeholder management
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer
 
 ## Context
 
-SVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables — including the Public Service Report (PSR) and user demographic reporting — that needed both new data products and continued maintenance.
+SVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables, including the Public Service Report (PSR) and user demographic reporting, that needed both new data products and continued maintenance. Every year SVT sends out several nationwide surveys, about SVT itself and about the "temperature" of the Swedish public, which over the years add up to hundreds of thousands of responses.
 
 ## What I did
 
 - Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.
-- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model — now the single source of truth for survey data.
+- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model, now the single source of truth for survey data.
 - Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.
+- Gave analysts an early agent-based way to analyse the survey data, with AI agents querying BigQuery through the bq CLI. That work led directly to the MCP servers that followed.
 
 ## Outcome
 
-Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on — turning what had been multiple legacy systems into one source of truth.
+Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on, turning what had been multiple legacy systems into one source of truth.
 
 ### Data Scientist at Momang
 
-- Dates: 2024-Q3 – 2024-Q4
+- Dates: 2024-Q3 to 2024-Q4
 - Industry: SaaS
 - Company URL: https://www.momang.com/
 - Project: AI Search
@@ -101,7 +242,7 @@ Multi-year survey analyses became faster and more reliable; teams can ingest and
 
 ## Context
 
-Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for managing clients, leads, consultants, and subcontractors. Sales reps spent meaningful time hunting through Momang's database to find the right consultants and projects for each lead. Momang wanted natural-language search on top of it.
+Momang is a CRM tailored for consultancy and staffing businesses: a SaaS for managing clients, leads, consultants and subcontractors. Our consultancy's operations team used it to match consultants with incoming assignments, and finding the right match meant hunting through the database by hand. The goal was natural-language search on top of it, used in-house first.
 
 ## What I did
 
@@ -111,11 +252,34 @@ Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for m
 
 ## Outcome
 
-Sales reps now find the right consultants and projects faster, asking the system in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question.
+The operations team finds matching consultants and past projects for new assignments faster, by asking in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question.
+
+### Security Engineer at Visa
+
+- Dates: 2024-Q1 to 2024-Q3
+- Industry: Fintech
+- Company URL: https://www.visa.com/
+- Project: Code security task force at Tink
+- Tags: Python, CI/CD, Checkmarx, Code Security, Code maintenance, Security Champion, Secure Coding, Code Review, Reliability
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer
+
+## Context
+
+Visa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink's platform up to Visa's stringent security standards, establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.
+
+## What I did
+
+- Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.
+- Completed an intensive multi-day security course through Visa University.
+- Was given the role by Visa to improve code quality and uptime across Tink's entire product suite, after a period of downtime incidents. Together with the task force I made sure other teams followed high code standards and drained their backlog of flagged findings.
+
+## Outcome
+
+Tink's codebase stability climbed toward Visa's 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down.
 
 ### Cloud Migration Engineer at Tink
 
-- Dates: 2024-Q1 – 2024-Q3
+- Dates: 2024-Q1 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://tink.com/
 - Project: AWS → GCP migration
@@ -124,196 +288,213 @@ Sales reps now find the right consultants and projects faster, asking the system
 
 ## Context
 
-Tink needed to move a major customer's data from AWS to GCP, primarily to unlock GCP-only products for upsell. Constraint: the live service had to stay live, and this would be the first time the customer's transactional personally identifiable information (PII) sat on GCP — a security and compliance bar to clear before the cutover.
+Tink needed to move the data of one of Sweden's major banks, a Tink customer, from AWS to GCP. The point was commercial: some of Tink's products ran only on GCP, so the move would let Tink sell them to the bank. It was also complex. All of the bank's transactional and personal data had to move, the live service had to stay live, and it was the first time this customer's personally identifiable information (PII) would sit on GCP, a security and compliance bar to clear before the cutover.
 
 ## What I did
 
-- Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS) — table-by-table moves with parity checks to prove the new side matched the old before cutting traffic over.
+- Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS), moving table by table with parity checks to prove the new side matched the old before any traffic moved.
 - Designed the PII-handling on GCP: encryption, IAM scoping, and audit trails good enough to satisfy the security review before any production data landed.
-- Coordinated the cutover across Tink's and the customer's teams: sequencing, rollback path, who-owns-what on the day.
+- Built the migration as a job that ran for months, moving the bank's customers to GCP gradually instead of in one big cutover, so risk and downtime for end users stayed minimal.
+- Coordinated the rollout across Tink's and the bank's teams: sequencing, rollback paths and who owned what at each step.
 
 ## Outcome
 
-The customer's infrastructure moved to GCP cleanly, with no service disruption during cutover. With transactional PII now on GCP, the customer became eligible for the GCP-only products Tink couldn't previously sell into them — turning the migration from a cost line into an upsell channel.
-
-### Security Engineer at Visa
-
-- Dates: 2024-Q1 – 2024-Q3
-- Industry: Fintech
-- Company URL: https://www.visa.com/
-- Project: Code security task force at Tink
-- Tags: Python, CI/CD, Checkmarx, Code Security, Code maintenance, Staff management
-- Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer
-
-## Context
-
-Visa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink's platform up to Visa's stringent security standards — establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.
-
-## What I did
-
-- Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.
-- Completed an intensive multi-day security course through Visa University.
-- Stepped into a leadership role after the course — led a Visa team that rotated trained Tink staff through the queue of open security findings until it drained.
-
-## Outcome
-
-Tink's codebase stability climbed toward Visa's 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down.
+The bank's data moved to GCP cleanly over several months, without service disruption for its users. With its transactional and personal data on GCP, the bank became eligible for Tink's GCP-only products, which made the migration a high-impact sale: a cost line turned into an upsell channel into the bank.
 
 ### AI Engineer at Tink
 
-- Dates: 2023-Q1 – 2024-Q3
+- Dates: 2023-Q1 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://tink.com/
 - Project: Merchant Information
-- Tags: Python, LLM, NER, Vertex AI, Vector Search, LangChain, PyTorch, Label Studio, Apache Airflow, Apache Spark, Regex, Wikidata, Brandfetch, BigQuery, SQL
+- Tags: Technical Leadership, People Management, Python, LLM, NER, Vertex AI, Vector Search, LangChain, PyTorch, Label Studio, Apache Airflow, Apache Spark, Regex, Wikidata, Brandfetch, BigQuery, SQL
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant
 
 ## Context
 
-Tink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to surface richer transaction detail to customers — but Tink's existing data sources didn't have the merchant, product, or location detail the mandate demanded. Merchant Information had to be built from scratch.
+Tink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to surface richer transaction detail to customers, but Tink's existing data sources didn't have the merchant, product, or location detail the mandate demanded. [Merchant Information](https://tink.com/products/merchant-information/) had to be built from scratch: a product that tells banks and their users which merchant, brand and location is behind every transaction.
 
 ## What I did
 
 - Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.
-- Built the entity database that mapped extracted strings to canonical brands and merchants — disambiguating "AMZN MKTPL", "Amazon.de", and "Amazon EU SARL" as the same entity.
+- Built the entity database that mapped extracted strings to canonical brands and merchants, disambiguating "AMZN MKTPL", "Amazon.de", and "Amazon EU SARL" as the same entity.
 - Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.
+- Held personnel responsibility for a team of six labellers and developers while the product was built.
 
 ## Outcome
 
-With richer enrichment, Tink's customer banks could now surface "what is this charge?" answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity — use cases not reachable from the raw transaction strings alone.
+Merchant Information [went live](https://tink.com/blog/news/meet-merchant-information/) in Europe, enriching millions of transactions per day. With richer enrichment, Tink's customer banks could now surface "what is this charge?" answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity. None of these were reachable from the raw transaction strings alone.
+
+References:
+- [Merchant Information, Tink product page](https://tink.com/products/merchant-information/)
+- [Meet Merchant Information, Tink launch announcement](https://tink.com/blog/news/meet-merchant-information/)
 
 ### Data Scientist at Tink
 
-- Dates: 2022-Q3 – 2024-Q3
+- Dates: 2022-Q3 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://tink.com/
 - Project: Transaction categorization
-- Tags: Python, Apache Airflow, AWS, GCP, Looker, S3, GCS, Vertex AI, Go, XGBoost, Fasttext, Label Studio, Regex, Sonarcloud
+- Tags: NER, Data Lake, Python, Apache Airflow, AWS, GCP, Looker, S3, GCS, Vertex AI, Go, XGBoost, Fasttext, Label Studio, Regex, Sonarcloud
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization
 
 ## Context
 
-Tink had offered transaction categorization to its customers for years. By the time I joined the categorization team, the need to improve quality had become acute — recurring transaction prediction, risk work, and customer complaints all surfaced the same underlying issues. The product had been developed over several years by multiple authors, with a Fasttext + XGBoost classifier stack and a layer of static regex patterns. Newer model architectures were on the table, but the Go backend made experimentation painful.
+Categorization is harder than it looks. A single wrong label turns a user's weekly groceries at their local store into "gifts", and every budget, insight and risk signal built on top of it is wrong. Tink had offered [categorization](https://tink.com/blog/open-banking/what-is-data-categorisation/) for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.
 
 ## What I did
 
-- Led a refactoring pass through the codebase: fixed bugs, removed dead code, introduced testing methodologies the team didn't have.
-- Migrated the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
+- Led the refactoring of the codebase: fixed bugs, removed dead code and introduced testing methods the team didn't have.
+- Migrated the categorization service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
+- Introduced a new categorization approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.
 
 ## Outcome
 
-The data-science team could iterate on model architecture again without backend rewrites. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move.
+The data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorization beyond static rules. Customer complaints about wrong categories dropped as quality improved.
+
+References:
+- [What is data categorisation?, Tink blog](https://tink.com/blog/open-banking/what-is-data-categorisation/)
 
 ### Machine Learning Engineer at Tink
 
-- Dates: 2022-Q1 – 2022-Q2
+- Dates: 2022-Q1 to 2022-Q2
 - Industry: Fintech
 - Company URL: https://tink.com/
 - Project: Forecasting checking-account balance
-- Tags: Python, SQL, Jupyter, Transformer models, Facebook Prophet, PyTorch, Regression Models, Scikit-learn, XGBoost, GRU, LSTM, RNN, Time Series Forecasting, Account Balance Forecasting, Supervised Machine Learning
+- Tags: TensorFlow, Keras, Python, SQL, Jupyter, Facebook Prophet, PyTorch, Regression Models, Scikit-learn, XGBoost, GRU, LSTM, RNN, Time Series Forecasting, Account Balance Forecasting, Supervised Machine Learning
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting
 
 ## Context
 
-Tink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master's thesis at Uppsala, partnered with one of Tink's product teams.
+Tink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master's thesis at Uppsala University, partnered with one of Tink's product teams: [Forecasting checking account balance using supervised machine learning](https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf) (UPTEC IT 22011, June 2022).
 
 ## What I did
 
-- Tested a range of model families on anonymised checking-account data — regression baselines, XGBoost, Facebook Prophet, and RNN variants (GRU/LSTM) — to find what gave acceptable error rates for forward-looking predictions.
-- Found that splitting transactional data into subgroups (e.g. recurring bills, salary inflows, one-off purchases) and forecasting each separately minimised the error contribution from rare high-variance transactions.
+- Built a comparison framework that ran seven models (a naive baseline, Facebook Prophet, XGBoost, LSTM and GRU, including two optimised variants) on 24 datasets built from 377 anonymised checking accounts, scored on RMSE, MAE and MAPE.
+- Found that splitting transactions into subgroups (recurring income, recurring bills, one-off purchases) and forecasting each separately limited the damage from rare, large, random transactions. Recurring income was the easiest subgroup to forecast.
+- Found multivariate XGBoost with feature selection performed best overall, with GRU close behind and best at rebuilding the full balance from its subgroups.
 
 ## Outcome
 
 The subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy.
 
+References:
+- [Forecasting checking account balance using supervised machine learning, Master's thesis, Uppsala University (2022)](https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf)
+
 ### Co-Founder & Lead Developer at Mender
 
-- Dates: 2021-Q1 – 2022-Q2
+- Dates: 2021-Q1 to 2022-Q2
 - Industry: Fashion
 - Project: App development
-- Tags: VueJS, NodeJS, MongoDB, S3, Stripe, Webhooks
+- Tags: VueJS, NodeJS, MongoDB, S3, Stripe, Webhooks, Startup, Product Development, Payments, AWS
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer
 
 ## Context
 
-Mender is a sustainable-fashion app: users find and book clothing-repair professionals near them. Turning the idea into a real product needed three pieces — a responsive web platform usable on desktop and mobile, an in-app chat between users and repair pros, and a payment system that took Mender's percentage from each transaction.
+Mender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals ("menders") near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.
 
 ## What I did
 
-- Co-built the Mender app with a small team — Vue.js frontend, Node.js backend, MongoDB, AWS S3 for metadata.
-- Wired the webhook-based chat between users and repair professionals, and integrated the Stripe SDK to handle payments plus Mender's per-transaction cut.
-- Owned architecture decisions and the path from concept to public launch as a co-founder alongside the engineering work.
+- Co-built the Mender app as the team's lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.
+- Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender's cut of each transaction.
+- Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.
 
 ## Outcome
 
-Mender launched as a working clothing-repair marketplace — users booking actual services through the app, with the architecture small enough that the team could maintain it post-launch without rewrites.
+Mender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company's life, and the product had to be built to move with it.
 
-### Fullstack Developer at Valtech (Radon)
+### Fullstack Developer at Valtech
 
-- Dates: 2021-Q3 – 2022-Q1
+- Dates: 2021-Q3 to 2022-Q1
 - Industry: Advertising
 - Company URL: https://www.valtech.com/
-- Project: Digital marketing platform
+- Project: MACH talent programme
+- Tags: MACH, Headless, Microservices, API, Cloud-native, Frontend, Backend, JavaScript, Java
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-mach-talent-programme
+
+## Context
+
+Valtech is a global digital consultancy. Its talent programme brings in developers early and trains them in the way Valtech builds for clients. I chose the MACH track: Microservices, API-first, Cloud-native and Headless architecture.
+
+## What I did
+
+- Followed the MACH track, learning to design systems as independent services behind clean APIs, with the frontend decoupled from the backend.
+- Worked full-time at Valtech while studying full-time at Uppsala University.
+- Put the training straight into client work on the Radon assignment, where the platform was rebuilt around exactly these patterns.
+
+## Outcome
+
+The programme gave me the architecture habits I still build with: small services with clear contracts, so one part of a system can change without breaking the rest. I left Valtech when the chance came to write my Master's thesis at Tink.
+
+### Fullstack Developer at Valtech
+
+- Dates: 2021-Q3 to 2022-Q1
+- Industry: Advertising
+- Company URL: https://www.valtech.com/
+- Project: Radon: digital marketing platform
 - Tags: Java, Python, JavaScript, Clojure, API, MACH, Microservices, Frontend, Backend, CSS, Bitbucket, HTML, React Native
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack
 
 ## Context
 
-Valtech is a global consultancy. I joined their MACH talent program — structured onboarding for fullstack developers specialising in Microservices, API-first, Cloud-native, and Headless architectures — and was placed on their recently acquired agency Radon. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking clients paid for.
+My main assignment at Valtech was for Radon (House of Radon, now Valtech Radon), a creative agency Valtech acquired in February 2021. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking its clients paid for.
 
 ## What I did
 
-- Owned the backend rewrites for Radon's campaign platform: re-integrated with each social-media API (Facebook, Google, etc.) so campaign metrics flowed accurately again.
-- Restructured the backend around microservices and API-first patterns so each social integration could evolve independently of the others.
-- Touched the frontend where the new backend exposed new fields — extending the campaign-config UI to match.
+- Owned the backend rewrite of Radon's campaign platform and re-integrated it with Twitter (now X), Facebook, LinkedIn and Instagram, so campaign metrics flowed accurately again.
+- Restructured the backend around microservices and API-first patterns, so each social integration could evolve on its own when a platform changed its API.
+- Extended the frontend where the new backend exposed new fields, so the campaign-config UI matched.
 
 ## Outcome
 
-Radon could once again manage and track multi-channel campaigns reliably. With per-integration microservices in place, future API changes from any one social platform became localised patches instead of full backend reworks.
+Radon could once again manage and track multi-channel campaigns reliably. With one microservice per integration, a change from any single social platform became a local patch instead of a backend rework.
+
+References:
+- [Valtech Radon](https://www.valtechradon.com/)
 
 ### Fullstack Developer at Decerno AB
 
-- Dates: 2021-Q2 – 2021-Q3
+- Dates: 2021-Q2 to 2021-Q3
 - Industry: Healthcare
 - Company URL: https://www.decerno.se/
-- Project: Authentication and login for a healthcare client
-- Tags: React, TypeScript, .NET, C#, OAuth/JWT
+- Project: Login solution for a healthcare region
+- Tags: React, TypeScript, .NET, C#, OAuth/JWT, Authentication, Frontend, Backend, Legacy Integration
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack
 
 ## Context
 
-Interned at **Decerno AB**, a Swedish IT consultancy, on a project for a healthcare-sector client (under NDA). The client needed help with login and authentication on their new web platform. The auth flow had to function as a standalone system **and** integrate with the client's existing legacy platform — on a tight deadline.
+Interned at **Decerno AB**, a Swedish IT consultancy, on a project for a Swedish healthcare region (under NDA). The region needed login and authentication for its new web platform. Instead of an off-the-shelf product, it was a login solution of its own, which had to work as a standalone system **and** integrate with the region's existing legacy platform, on a tight deadline.
 
 ## What I did
 
-- Built the frontend pieces — new login page, logout flow — for the new web platform.
-- Coordinated the backend changes across the legacy platform and the new one so the same OAuth/JWT identity model worked from either entry point.
+- Built the frontend for the new web platform in React: a new login page and logout flow.
+- Worked on the .NET backend and coordinated the changes across the legacy platform and the new one, so the same OAuth/JWT identity model worked from either entry point.
 
 ## Outcome
 
-Shipped on the tight timeline. The auth system worked standalone for the new platform and as the entry point into the client's legacy system — a single identity model spanning both surfaces.
+Shipped on the tight timeline. The login solution worked standalone for the new platform and as the entry point into the region's legacy system, giving one identity model across both. The internship ended with a job offer from Decerno.
 
 ### Fullstack Developer at Steven
 
-- Dates: 2020-Q2 – 2020-Q3
+- Dates: 2020-Q2 to 2020-Q3
 - Industry: Fintech
 - Project: Data security project
-- Tags: React, TypeScript, SQL, JavaScript, Stakeholder management
+- Tags: React, TypeScript, SQL, JavaScript, Stakeholder management, PII, Data Security, Access Control, Frontend, Backend, Remote Collaboration
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack
 
 ## Context
 
-Steven is an app for splitting shared expenses — people log what they bought for an event or trip and the app evens everyone out. After a change of support contractor, Steven prioritized data security: keep effective support operations, but minimize what personal information the new vendor could see.
+Steven is an app for splitting shared expenses: people log what they bought for an event or trip and the app evens everyone out. I joined for a summer, working with a development team that was fully remote in another country, so all collaboration happened online. Steven had outsourced its customer support to a third party it did not fully trust, and needed support to keep working while the vendor saw as little personal data as possible.
 
 ## What I did
 
-- Mapped the data flows between Steven's database, support system, and the new contractor's view — identifying what PII could be hidden and what had to remain visible for support agents to do their job.
+- Mapped the data flows between Steven's database, support system and the vendor's view, identifying which personal data could be hidden and what support agents needed to see to do their job.
+- Designed tiers of access, so each support task exposed only the data it required, and enforced them in the JavaScript backend with query filters, auth scopes and per-page field allowlists.
 - Built the new support pages in React and wired them into Steven's existing support system.
-- Updated the JavaScript backend's database interactions so the new pages exposed only the minimum data each support task required — query filters, auth scopes, and per-page field allowlists.
 
 ## Outcome
 
-A PII-safe support web platform shipped on time. The support contractor sees only the data they need to do their job — reducing risk without compromising support quality.
+A support platform that protected users' personal data shipped on time. The outside vendor sees only the data each task needs, which reduced the risk of handing support to a third party without hurting support quality.
 
 ## Education
 

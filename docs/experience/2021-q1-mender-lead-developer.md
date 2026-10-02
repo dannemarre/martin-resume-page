@@ -16,19 +16,23 @@ tags:
   - S3
   - Stripe
   - Webhooks
-summary: Co-built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing-repair professionals, monetised via Stripe.
+  - Startup
+  - Product Development
+  - Payments
+  - AWS
+summary: "Co-founded Mender with a group of friends and built it as lead developer: a sustainable-fashion marketplace connecting people with clothing-repair professionals."
 ---
 
 ## Context
 
-Mender is a sustainable-fashion app: users find and book clothing-repair professionals near them. Turning the idea into a real product needed three pieces — a responsive web platform usable on desktop and mobile, an in-app chat between users and repair pros, and a payment system that took Mender's percentage from each transaction.
+Mender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals ("menders") near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.
 
 ## What I did
 
-- Co-built the Mender app with a small team — Vue.js frontend, Node.js backend, MongoDB, AWS S3 for metadata.
-- Wired the webhook-based chat between users and repair professionals, and integrated the Stripe SDK to handle payments plus Mender's per-transaction cut.
-- Owned architecture decisions and the path from concept to public launch as a co-founder alongside the engineering work.
+- Co-built the Mender app as the team's lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.
+- Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender's cut of each transaction.
+- Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.
 
 ## Outcome
 
-Mender launched as a working clothing-repair marketplace — users booking actual services through the app, with the architecture small enough that the team could maintain it post-launch without rewrites.
+Mender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company's life, and the product had to be built to move with it.

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "content": "tsx scripts/build-content.ts",
-    "predev": "pnpm content",
+    "predev": "LETTER_DRAFTS=1 pnpm content",
     "prebuild": "pnpm content",
     "dev": "react-router dev",
     "build": "react-router build",

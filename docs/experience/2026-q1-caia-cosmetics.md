@@ -1,9 +1,9 @@
 ---
 slug: 2026-q1-caia-cosmetics
-role: AI Engineer
+role: AI Lead
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: Semantic data layer + MCP exposure
+projectTitle: "CAIAverse: semantic data layer + MCP"
 industry: Fashion
 start: 2026-Q1
 end: null
@@ -11,31 +11,37 @@ ongoing: true
 nda: false
 featured: true
 tags:
+  - Technical Leadership
   - GCP
   - BigQuery
   - Dataform
+  - Kimball
+  - Semantic Modelling
   - FastMCP
-  - Cloud Run
   - MCP Servers
-  - LLM
+  - Cloud Run
+  - OAuth/JWT
+  - Vertex AI
+  - Data Governance
   - Claude
-  - OpenAI
+  - LLM
   - Python
   - SQL
-  - Semantic Modelling
-summary: Built CAIA's semantic data layer and exposed it through an MCP server so non-SQL teammates can self-serve answers from BigQuery in natural language.
+summary: Built CAIAverse, CAIA's semantic data layer on BigQuery, exposed through an MCP server so colleagues can query company data in natural language.
 ---
 
 ## Context
 
-CAIA Cosmetics is a Stockholm-based DTC beauty brand (makeup, skincare, haircare, fragrance) selling across the Nordics. As the org grew, every product, marketing, and merchandising data question queued behind a small SQL-fluent analyst team. CAIA wanted non-technical teammates to query the warehouse directly without learning SQL.
+CAIA Cosmetics is a Stockholm-founded direct-to-consumer beauty brand (makeup, skincare, haircare and fragrance) selling across the Nordics and Europe. Data lived in dozens of SaaS tools and every question queued behind a small SQL-fluent team. As AI Lead I own CAIA's AI roadmap and build it hands-on, reporting to CAIA's leadership and to Verdane, CAIA's part-owner. The first goal was to make the warehouse the single, AI-readable source of truth.
 
 ## What I did
 
-- Built a Snowflake-style semantic data layer on BigQuery + Dataform — a single coherent view of product, order, marketing, and customer data.
-- Built an MCP server on FastMCP + Cloud Run that exposes the semantic layer to LLMs (Claude, OpenAI, Gemini). The MCP knows the schema, respects table-level access, and translates natural-language questions into safe BigQuery reads.
-- Wired the MCP into the team's agent workflows (Claude Code, custom agents) so data questions get grounded answers instead of guesses.
+- Designed and built CAIAverse in Dataform on BigQuery: a Kimball-style layered model (sources → staging → intermediate → outputs) with 415 output models, on scheduled daily and hourly workflows with freshness monitoring.
+- Built ingestion for 20 sources, including Voyado, Sitoo, Klarna, Zendesk, Meta, TikTok, Snapchat, Google Ads and GA4, mostly as Cloud Run Jobs, with a data contract per source.
+- Built the CAIAverse MCP server on FastMCP + Cloud Run with domain-restricted Google OAuth. Queries run under the caller's own identity, so BigQuery permissions and column-level policy tags (PII, Restricted) are enforced per person.
+- Made the layer discoverable to LLMs: a catalog-search tool matches questions against a registry of 726 answerable questions (September 2026) using Vertex AI embeddings, and logs unanswerable ones as a gap list that drives the modelling backlog.
+- Packaged CAIAverse as organisation-wide Claude skills, so every colleague's Claude knows how to find, query and cite the right data.
 
 ## Outcome
 
-Non-SQL teammates now self-serve answers directly. Product managers, marketing, and merchandising can ask questions like "which fragrance SKUs grew most in Sweden last month?" and get a grounded answer — without the analyst loop.
+Colleagues ask CAIAverse questions directly from Claude and get answers grounded in governed warehouse data, with access controls following each person. Usage grew from 7 colleagues in the first two days after launch (March 2026) to 34 colleagues making 10,181 authenticated requests in a single week (31 August to 7 September 2026), peaking at 40 colleagues in a three-day window in late September. The same layer now feeds the AI council, the Power BI migration and new dashboards.

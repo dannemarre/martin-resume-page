@@ -4,7 +4,9 @@ import type { SkillGroup } from "~/generated/content";
 export function Skills({ groups }: { groups: SkillGroup[] }) {
   return (
     <section id="skills" className="mt-24">
-      <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500">Toolbelt</h2>
+      <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500">
+        Keywords for search
+      </h2>
       <div className="mt-8 space-y-8">
         {groups.map((g) => (
           <div key={g.name}>

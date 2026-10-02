@@ -46,7 +46,7 @@ export function personJsonLd() {
 }
 
 /**
- * `ProfilePage` is what Google's profile-page rich result key off — wraps the
+ * `ProfilePage` is what Google's profile-page rich result keys off. It wraps the
  * `Person` graph as the page's mainEntity. Required shape per
  * https://developers.google.com/search/docs/appearance/structured-data/profile-page
  */
@@ -57,7 +57,7 @@ export function profilePageJsonLd() {
     "@type": "ProfilePage",
     "@id": `${ORIGIN}/#profilepage`,
     url: `${ORIGIN}/`,
-    name: `${profile.bio.name} — ${profile.bio.headline}`,
+    name: `${profile.bio.name} | ${profile.bio.headline}`,
     description: profile.bio.tagline,
     dateCreated: today,
     dateModified: today,
@@ -67,7 +67,7 @@ export function profilePageJsonLd() {
 }
 
 /**
- * `WebSite` node — helps search engines understand the canonical site identity
+ * `WebSite` node: helps search engines understand the canonical site identity
  * and connect multiple URLs to one entity. We deliberately omit `potentialAction`
  * because the site has no real search endpoint.
  */

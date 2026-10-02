@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://martin-dannelind-7f7f0.web.app/</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q1-tink-cloud-migration</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
-  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q3-theodora-tech</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-council</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q4-caia-plm</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q3-caia-design-system</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-conversational-analytics</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2024-q1-tink-cloud-migration</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2023-q1-tink-ai-engineer-merchant</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-mach-talent-programme</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq></url>
 </urlset>

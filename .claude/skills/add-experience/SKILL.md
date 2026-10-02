@@ -9,7 +9,7 @@ Add a new experience entry to the resume site.
 
 ## Before you touch anything
 
-**Read [docs/STYLE.md](../../../docs/STYLE.md)** — the canonical writing guide. It defines voice, structure, length, tag conventions, and anti-patterns. Every line you write should pass that guide's bar.
+**Read [docs/STYLE.md](../../../docs/STYLE.md)**, the canonical writing guide. It defines voice, structure, length, tag conventions, and anti-patterns. Every line you write should pass that guide's bar.
 
 ## What to collect from Martin
 
@@ -20,13 +20,13 @@ If he didn't already volunteer them, ask for:
 | Role | e.g. "AI Engineer", "Data Scientist". Match LinkedIn or his usual framing; don't inflate. |
 | Company | Real name. If NDA, ask whether to anonymize. |
 | Company URL | Homepage. e.g. `https://tink.com/`. Omit only for NDA/defunct. |
-| Project title | Short label — what the engagement was about. |
+| Project title | Short label: what the engagement was about. |
 | Industry | Pick from `docs/profile/identity.md` (Fintech, Advertising, Healthcare, Fashion, Media, Broadcasting, …). |
 | Start | `YYYY-Qn`. |
 | End | `YYYY-Qn` or "ongoing". |
 | Tags | Tech stack + concepts. See "Tag hygiene" below. |
-| Summary | One sentence — see STYLE.md for the bar. |
-| Context / What I did / Outcome | 1–3 paragraphs each, or notes you'll shape into bullets. |
+| Summary | One sentence; see STYLE.md for the bar. |
+| Context / What I did / Outcome | 1 to 3 paragraphs each, or notes you'll shape into bullets. |
 
 If Martin gave you a blob of prose, extract the fields yourself and confirm before writing the file.
 
@@ -37,7 +37,7 @@ If Martin gave you a blob of prose, extract the fields yourself and confirm befo
 3. **Tag hygiene** before writing the frontmatter:
    - Run `grep -hE "^  - " docs/experience/*.md | sort -u | head -80` to see the canonical tag set.
    - Reuse existing casing (`Vertex AI`, not `VertexAI`; `BigQuery`, not `Big Query`).
-   - 8–20 tags. Both broad (`LLM`, `RAG`) and specific (`LangChain`, `FAISS`).
+   - 8 to 20 tags. Both broad (`LLM`, `RAG`) and specific (`LangChain`, `FAISS`).
 4. **Write the file** using this template, then fill in the body per STYLE.md:
 
    ```markdown
@@ -56,32 +56,32 @@ If Martin gave you a blob of prose, extract the fields yourself and confirm befo
    tags:
      - Tag1
      - Tag2
-   summary: One-line elevator pitch (12–25 words; see STYLE.md).
+   summary: One-line elevator pitch (12 to 25 words; see STYLE.md).
    ---
 
    ## Context
 
-   1–3 sentences on the client and what they needed. Third person.
+   1 to 3 sentences on the client and what they needed. Third person.
 
    ## What I did
 
    - Verb-first bullet, past tense, named tech.
-   - 3–6 bullets total.
+   - 3 to 6 bullets total.
 
    ## Outcome
 
-   1–3 sentences on what changed. Customer/business value framing.
+   1 to 3 sentences on what changed. Customer/business value framing.
    ```
 
-5. **Quality bar — verify before saving**:
+5. **Quality bar (verify before saving)**:
    - [ ] Summary doesn't use any banned adjective (*robust*, *scalable*, *innovative*, *significant*, *pivotal*) without backing it with a number.
    - [ ] Every "What I did" bullet starts with a specific verb (*Built*, *Migrated*, *Led*), not vague ones (*Worked on*, *Contributed to*).
-   - [ ] Body 100–350 words total. If longer, cut elaboration.
+   - [ ] Body 100 to 500 words total. If longer, cut elaboration.
    - [ ] Tags use canonical casing.
    - [ ] If the role was teamwork, language reflects that ("co-led", "as part of a team that…").
 6. **Regenerate** with `pnpm content`. Frontmatter validates; the script fails loudly on a missing required field.
-7. **Verify** — if the dev server is running, the new entry should appear in the experience list and at `/experience/{slug}`. Otherwise spin up `pnpm dev` and walk it once.
-8. **Commit** the new `docs/experience/{slug}.md` plus the regenerated `site/app/generated/content.ts`, `site/public/llms.txt`, `site/public/llms-full.txt`, `site/public/sitemap.xml`. Don't deploy — that's `/deploy-site`'s job.
+7. **Verify**: if the dev server is running, the new entry should appear in the experience list and at `/experience/{slug}`. Otherwise spin up `pnpm dev` and walk it once.
+8. **Commit** the new `docs/experience/{slug}.md` plus the regenerated `site/app/generated/content.ts`, `site/public/llms.txt`, `site/public/llms-full.txt`, `site/public/sitemap.xml`. Don't deploy; that's `/deploy-site`'s job.
 
 ## Common pitfalls
 

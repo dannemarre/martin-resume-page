@@ -22,3 +22,11 @@ firebase-debug.log
 
 # Raw scrape outputs (may contain unredacted personal data)
 docs/.raw/
+
+# Private application research (company notes, job ads, letter drafts). Local only:
+# this repo is public, so nothing under research/ may be committed or deployed.
+research/
+
+# Personal letters are application-specific and private until sent. The repo is public, so
+# letters stay local; draft letters only reach the dev server (see build-content.ts).
+docs/letter/

@@ -1,4 +1,4 @@
-# docs/ — ground truth
+# docs/: ground truth
 
 This folder is the **single source of truth** for everything on the public site. Humans (and Martin) edit the markdown here. Agents read these files, transform them, and write `site/app/generated/content.ts`. The React app renders only from the generated file.
 
@@ -57,11 +57,15 @@ The result and business value.
 
 ### Required fields
 
-`slug`, `role`, `company`, `industry`, `start`, `ongoing`, `tags`, `summary`. Optional: `companyUrl`, `projectTitle`, `end`, `nda`, `featured`. The build script validates against the schema in `site/scripts/build-content.ts` and fails loudly on a missing required field.
+`slug`, `role`, `company`, `industry`, `start`, `ongoing`, `tags`, `summary`. Optional: `companyUrl`, `projectTitle`, `end`, `nda`, `featured`, `priority`, `references`. The build script validates against the schema in `site/scripts/build-content.ts` and fails loudly on a missing required field.
+
+### References
+
+Projects that link to public sources (product pages, articles, papers, regulations) list them under `references:`, each with a `title` and an `http(s)` `url`. They appear as a **References** section at the bottom of the project page, and the experience card shows how many there are. Inline links in the body can stay as well; `references` is the clear, complete list. Never add internal links (SharePoint, Drive, private repos).
 
 ### Sorting
 
-Items are sorted automatically: ongoing first (newest `start` wins), then by `end` descending. No `order` field needed.
+Items are sorted automatically: ongoing first (`featured: true` entries lead, then higher `priority`, then newest `start`), then ended ones by `end` descending, then `start` descending, with `priority` breaking exact date ties. `priority` is an optional number (default 0, higher first); use it to pin the current employer to the top. No `order` field needed.
 
 ## Skills file format
 
@@ -69,10 +73,10 @@ Items are sorted automatically: ongoing first (newest `start` wins), then by `en
 
 ## Adding a new experience
 
-Prefer the `/add-experience` skill — it scaffolds the file with valid frontmatter and re-runs the content build. Manual editing works too; just `pnpm content` afterward.
+Prefer the `/add-experience` skill. It scaffolds the file with valid frontmatter and re-runs the content build. Manual editing works too; just `pnpm content` afterward.
 
 ## What NOT to put here
 
 - Anything under NDA that you don't want published. Mark `nda: true` to anonymize the company name, or omit the file entirely.
-- Personal contact info beyond what should be public (no phone, no postal address).
-- Build artifacts. `site/app/generated/content.ts` is committed, but it's regenerated from this folder — never hand-edit it.
+- Personal contact info beyond what should be public (no postal address). The phone number in `profile/contact.md` is published deliberately.
+- Build artifacts. `site/app/generated/content.ts` is committed, but it's regenerated from this folder, so never hand-edit it.

@@ -3,6 +3,9 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --color-paper: oklch(0.99 0 0);
+  /* Gray surround behind the paper column on wide screens. */
+  --color-canvas: oklch(0.968 0.002 286);
+  --color-column-edge: oklch(0.91 0.003 286);
   --color-ink: oklch(0.18 0 0);
 }
 
@@ -12,6 +15,45 @@
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  /* Wide screens: patterned gray canvas at the sides so the centred paper column
+     stands out. The column itself is painted into the root background (not just
+     the wrapper div), so it continues through overscroll/rubber-banding instead of
+     ending at the top or bottom of the document. Phones and tablets stay
+     edge-to-edge paper. Keep --column-half in sync with .page-column. */
+  :root {
+    --column-half: 26rem;
+  }
+  @media (min-width: 64rem) {
+    html {
+      --l: calc(50% - var(--column-half));
+      --r: calc(50% + var(--column-half));
+      background-color: var(--color-canvas);
+      background-image:
+        /* paper column with 1px edges */
+        linear-gradient(
+          to right,
+          transparent var(--l),
+          var(--color-column-edge) var(--l),
+          var(--color-column-edge) calc(var(--l) + 1px),
+          var(--color-paper) calc(var(--l) + 1px),
+          var(--color-paper) calc(var(--r) - 1px),
+          var(--color-column-edge) calc(var(--r) - 1px),
+          var(--color-column-edge) var(--r),
+          transparent var(--r)
+        ),
+        /* soft shadow falling off either side of the column */
+        linear-gradient(
+          to right,
+          transparent calc(var(--l) - 48px),
+          rgb(0 0 0 / 0.045) var(--l),
+          rgb(0 0 0 / 0.045) var(--r),
+          transparent calc(var(--r) + 48px)
+        ),
+        /* fine grayscale pattern: hairline crosses on a 40px grid */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 16.5v7M16.5 20h7' stroke='%23000' stroke-opacity='.11' stroke-width='1'/%3E%3C/svg%3E");
+      background-position: center top;
+    }
   }
   body {
     font-family: var(--font-sans);
@@ -33,6 +75,16 @@
 }
 
 @layer components {
+  .page-column {
+    margin-inline: auto;
+    min-height: 100vh;
+  }
+  @media (min-width: 64rem) {
+    .page-column {
+      max-width: calc(var(--column-half) * 2);
+    }
+  }
+
   .prose-resume :where(h2) {
     @apply mt-10 mb-3 text-xl font-medium tracking-tight;
   }

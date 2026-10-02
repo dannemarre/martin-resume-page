@@ -1,6 +1,6 @@
 ---
 name: analytics-report
-description: Use when Martin wants a summary of visitor activity on the resume site — pageviews, unique visitors, top pages, top countries, top referrers. Queries the Google Analytics 4 Data API and returns a one-screen report.
+description: Use when Martin wants a summary of visitor activity on the resume site (pageviews, unique visitors, top pages, top countries, top referrers). Queries the Google Analytics 4 Data API and returns a one-screen report.
 ---
 
 # /analytics-report
@@ -37,7 +37,7 @@ Last 7 days. Offer to switch to 30 days if Martin asks.
 4. Print the result as a compact one-screen summary:
 
    ```
-   Resume site — last 7 days
+   Resume site: last 7 days
 
    Pageviews:        324
    Unique users:     189
@@ -57,4 +57,4 @@ Last 7 days. Offer to switch to 30 days if Martin asks.
 
 - Never commit the service account key file. It belongs at `~/.config/martin-resume-analytics.json`, not in the repo.
 - Don't fetch personal-identifying dimensions (city-level location, device IDs, IP addresses). Country + page + referrer is enough.
-- If the GA4 API call fails with a 403, the service account doesn't have access — ask Martin to add it in Google Analytics admin.
+- If the GA4 API call fails with a 403, the service account doesn't have access. Ask Martin to add it in Google Analytics admin.
