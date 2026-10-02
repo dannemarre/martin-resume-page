@@ -732,6 +732,11 @@ function main() {
   const letterOut = path.join(REPO_ROOT, "site/app/generated/letter.json");
   if (letter) writeFileSync(letterOut, JSON.stringify(letter, null, 2), "utf8");
   else if (existsSync(letterOut)) rmSync(letterOut);
+  console.log(
+    letter
+      ? `[build-content] letter: included (${letter.draft ? "draft, dev only" : "published"})`
+      : "[build-content] letter: none (no published letter in docs/letter/; the Personal letter tab is hidden)",
+  );
   writeFileSync(path.join(REPO_ROOT, "site/public/llms.txt"), buildLlmsTxt(profile, experiences, education, origin), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/llms-full.txt"), buildLlmsFullTxt(profile, experiences, education, origin), "utf8");
   writeFileSync(path.join(REPO_ROOT, "site/public/sitemap.xml"), buildSitemapXml(experiences, origin), "utf8");
