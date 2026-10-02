@@ -30,3 +30,4 @@ research/
 # Personal letters are application-specific and private until sent. The repo is public, so
 # letters stay local; draft letters only reach the dev server (see build-content.ts).
 docs/letter/
+site/app/generated/letter.json

@@ -1124,4 +1124,3 @@ export const skillGroups: SkillGroup[] = [
   }
 ];
 
-export const letter: Letter | null = null;

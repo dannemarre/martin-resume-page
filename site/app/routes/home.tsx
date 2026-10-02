@@ -7,7 +7,13 @@ import { Hero } from "~/components/Hero";
 import { Letter } from "~/components/Letter";
 import { type ResumeTab, ResumeTabs } from "~/components/ResumeTabs";
 import { Skills } from "~/components/Skills";
-import { education, experiences, letter, profile, skillGroups } from "~/generated/content";
+import {
+  type Letter as LetterEntry,
+  education,
+  experiences,
+  profile,
+  skillGroups,
+} from "~/generated/content";
 import { profilePageJsonLd, websiteJsonLd } from "~/lib/seo";
 
 export const meta = () => [
@@ -18,6 +24,13 @@ export const meta = () => [
   { "script:ld+json": profilePageJsonLd() },
   { "script:ld+json": websiteJsonLd() },
 ];
+
+// The letter is generated into a git-ignored file that only exists locally; the glob is
+// empty (and the tab hidden) on a fresh clone or when no letter is included.
+const letterModules = import.meta.glob<{ default: LetterEntry }>("../generated/letter.json", {
+  eager: true,
+});
+const letter = Object.values(letterModules)[0]?.default ?? null;
 
 const tabs: ResumeTab[] = [
   {
