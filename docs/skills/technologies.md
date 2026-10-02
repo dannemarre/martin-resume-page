@@ -29,11 +29,25 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Data Mesh
 - Data Products
 - Semantic Modelling
+- Data Modelling
+- Data Governance
+- Data Lake
+- PLM
 - Data Transformation
 - Data Visualization
 
 ## ML & AI
 
+- Facebook Prophet
+- Account Balance Forecasting
+- Multi-agent Systems
+- AI Agents
+- Document Extraction
+- Web Search
+- Anthropic SDK
+- Claude Skills
+- Claude Code
+- Pydantic
 - LLM
 - RAG
 - OpenAI
@@ -49,6 +63,7 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - LibreChat
 - PyTorch
 - TensorFlow
+- Keras
 - Scikit-learn
 - XGBoost
 - Fasttext
@@ -62,6 +77,9 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Analytics & BI
 
+- Conversational Analytics
+- Self-service BI
+- Kimball
 - PowerBI
 - Looker
 - Tableau
@@ -72,6 +90,8 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Languages
 
+- Go
+- Regex
 - Python
 - TypeScript
 - JavaScript
@@ -88,6 +108,14 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Frameworks
 
+- Frontend
+- Backend
+- Design Systems
+- Design Tokens
+- shadcn/ui
+- Next.js
+- Tailwind
+- Vite
 - React
 - React Native
 - VueJS
@@ -98,11 +126,15 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## DevOps & tooling
 
+- Terraform
+- Cloud Scheduler
+- IAP
 - Docker
 - Kubernetes
 - CI/CD
 - Buildkite
 - GitHub
+- GitHub Packages
 - GitLab
 - Bitbucket
 - Git
@@ -113,6 +145,16 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Security & auth
 
+- PII
+- Data Security
+- Access Control
+- Authentication
+- Security Champion
+- Secure Coding
+- Code Review
+- Reliability
+- Regulatory Compliance
+- PPWR
 - Code Security
 - Sonarcloud
 - Checkmarx
@@ -120,9 +162,13 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Integrations
 
+- Payments
+- Legacy Integration
 - API
 - Webhooks
 - Microservices
+- Headless
+- Cloud-native
 - Stripe
 - MongoDB
 - MySQL
@@ -132,6 +178,14 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Soft
 
+- Startup
+- Product Development
+- Remote Collaboration
+- Technical Leadership
+- People Management
+- Recruitment
+- Consulting
+- Productisation
 - Stakeholder management
 - Cross-functional teams
 - Staff management

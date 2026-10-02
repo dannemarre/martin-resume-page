@@ -1,6 +1,6 @@
 ---
 name: refresh-from-linkedin
-description: Use when Martin wants to pull updates from his LinkedIn profile into the docs/ folder — e.g. after adding a new role, recommendation, or certificate on LinkedIn that should be reflected on the site.
+description: Use when Martin wants to pull updates from his LinkedIn profile into the docs/ folder, e.g. after adding a new role, recommendation, or certificate on LinkedIn that should be reflected on the site.
 ---
 
 # /refresh-from-linkedin
@@ -19,7 +19,7 @@ Pull fresh content from Martin's LinkedIn profile into the resume docs.
 3. **Extract** the profile content with `mcp__Claude_in_Chrome__get_page_text`. Scroll if needed to load the full experience section.
 4. **Save the raw extraction** to `docs/.raw/linkedin-{YYYY-MM-DD}.md` (gitignored). Include a fenced metadata block at the top with `scrapedAt`, `url`, `userAgent` if known.
 5. **Diff against existing docs**:
-   - Compare each LinkedIn experience to `docs/experience/*.md` — match by company + start date.
+   - Compare each LinkedIn experience to `docs/experience/*.md`, matching by company + start date.
    - For new experiences not present in `docs/`: propose adding them via the `/add-experience` flow.
    - For existing experiences with new bullets / changed dates: surface the diff and ask Martin which changes to apply.
    - For recommendations and other content not currently rendered on the site: collect into `docs/.raw/recommendations-{YYYY-MM-DD}.md` for future use.
@@ -47,5 +47,5 @@ Wait for explicit approval per item before editing.
 ## What not to do
 
 - Don't auto-apply changes. Martin reviews each one.
-- Don't commit `docs/.raw/` files — they're gitignored intentionally because they can contain unredacted recommendations / contact info.
+- Don't commit `docs/.raw/` files. They're gitignored intentionally because they can contain unredacted recommendations / contact info.
 - Don't fabricate content. If a LinkedIn field is empty, leave the corresponding doc untouched.

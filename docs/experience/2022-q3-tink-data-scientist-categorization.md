@@ -10,6 +10,8 @@ end: 2024-Q3
 ongoing: false
 nda: false
 tags:
+  - NER
+  - Data Lake
   - Python
   - Apache Airflow
   - AWS
@@ -24,18 +26,22 @@ tags:
   - Label Studio
   - Regex
   - Sonarcloud
-summary: Refactored Tink's long-running transaction categorization product and migrated the backend from Go to Python on Vertex AI — making the first Tink product to run on Vertex AI.
+references:
+  - title: "What is data categorisation?, Tink blog"
+    url: https://tink.com/blog/open-banking/what-is-data-categorisation/
+summary: Refactored Tink's transaction categorization, moved it from Go to Python as Tink's first Vertex AI product, and introduced a new NER and tagging approach.
 ---
 
 ## Context
 
-Tink had offered transaction categorization to its customers for years. By the time I joined the categorization team, the need to improve quality had become acute — recurring transaction prediction, risk work, and customer complaints all surfaced the same underlying issues. The product had been developed over several years by multiple authors, with a Fasttext + XGBoost classifier stack and a layer of static regex patterns. Newer model architectures were on the table, but the Go backend made experimentation painful.
+Categorization is harder than it looks. A single wrong label turns a user's weekly groceries at their local store into "gifts", and every budget, insight and risk signal built on top of it is wrong. Tink had offered [categorization](https://tink.com/blog/open-banking/what-is-data-categorisation/) for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.
 
 ## What I did
 
-- Led a refactoring pass through the codebase: fixed bugs, removed dead code, introduced testing methodologies the team didn't have.
-- Migrated the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
+- Led the refactoring of the codebase: fixed bugs, removed dead code and introduced testing methods the team didn't have.
+- Migrated the categorization service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
+- Introduced a new categorization approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.
 
 ## Outcome
 
-The data-science team could iterate on model architecture again without backend rewrites. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move.
+The data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorization beyond static rules. Customer complaints about wrong categories dropped as quality improved.

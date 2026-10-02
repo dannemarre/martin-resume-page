@@ -11,7 +11,7 @@ Build the site for production and deploy it to Firebase Hosting.
 
 - `firebase` CLI installed (`npm install -g firebase-tools`). If missing, install and ask Martin to run `firebase login`.
 - `.firebaserc` has a real project ID under `projects.default` (not `REPLACE_WITH_PROJECT_ID`). If it doesn't, stop and walk Martin through `firebase init hosting` for the personal `martin-dannelind-site` GCP project.
-- `site/.env.production` contains `VITE_GA4_MEASUREMENT_ID=G-XXXXXXXXXX` (real ID, not placeholder). If it doesn't, GA4 will be disabled in the deployed site — confirm with Martin whether to proceed.
+- `site/.env.production` contains `VITE_GA4_MEASUREMENT_ID=G-XXXXXXXXXX` (real ID, not placeholder). If it doesn't, GA4 will be disabled in the deployed site, so confirm with Martin whether to proceed.
 
 ## Steps
 
@@ -30,5 +30,5 @@ Build the site for production and deploy it to Firebase Hosting.
 
 - Never run `firebase deploy` without Martin's explicit go-ahead in chat.
 - Never use `--force` or `--no-localhost` to bypass auth.
-- Never deploy with uncommitted changes unless Martin confirms — note them and ask first.
+- Never deploy with uncommitted changes unless Martin confirms. Note them and ask first.
 - Never deploy if `.firebaserc` still has the placeholder project ID.

@@ -25,12 +25,12 @@ tags:
   - Retrieval QA Chains
   - Pydantic
   - Prompt engineering
-summary: Built a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their database of consultants and projects.
+summary: Built an AI search on Vertex AI so our operations team could match consultants and projects to new assignments by asking in natural language.
 ---
 
 ## Context
 
-Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for managing clients, leads, consultants, and subcontractors. Sales reps spent meaningful time hunting through Momang's database to find the right consultants and projects for each lead. Momang wanted natural-language search on top of it.
+Momang is a CRM tailored for consultancy and staffing businesses: a SaaS for managing clients, leads, consultants and subcontractors. Our consultancy's operations team used it to match consultants with incoming assignments, and finding the right match meant hunting through the database by hand. The goal was natural-language search on top of it, used in-house first.
 
 ## What I did
 
@@ -40,4 +40,4 @@ Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for m
 
 ## Outcome
 
-Sales reps now find the right consultants and projects faster, asking the system in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question.
+The operations team finds matching consultants and past projects for new assignments faster, by asking in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question.

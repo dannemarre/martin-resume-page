@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { Link, useParams } from "react-router";
 
 import { MarkdownBody } from "~/components/MarkdownBody";
@@ -8,11 +9,11 @@ import { ORIGIN, roleJsonLd } from "~/lib/seo";
 
 export const meta = ({ params }: { params: { slug?: string } }) => {
   const exp = experiences.find((e) => e.slug === params.slug);
-  if (!exp) return [{ title: `Not found — ${profile.bio.name}` }];
+  if (!exp) return [{ title: `Not found | ${profile.bio.name}` }];
   const company = exp.nda ? "Confidential client" : exp.company;
   const url = `${ORIGIN}/experience/${exp.slug}`;
   return [
-    { title: `${exp.role} at ${company} — ${profile.bio.name}` },
+    { title: `${exp.role} at ${company} | ${profile.bio.name}` },
     { name: "description", content: exp.summary },
     { property: "og:title", content: `${exp.role} at ${company}` },
     { property: "og:description", content: exp.summary },
@@ -49,15 +50,11 @@ export default function ExperienceDetailRoute() {
       </Link>
       <header className="mt-10">
         <p className="text-sm font-medium uppercase tracking-wider text-zinc-500">
+          {exp.ongoing ? <span>Since </span> : null}
           <time dateTime={exp.start}>{exp.start}</time>
-          {exp.ongoing ? (
+          {!exp.ongoing && exp.end ? (
             <>
-              <span> — </span>
-              <span>ongoing</span>
-            </>
-          ) : exp.end ? (
-            <>
-              <span> — </span>
+              <span> to </span>
               <time dateTime={exp.end}>{exp.end}</time>
             </>
           ) : null}
@@ -93,6 +90,43 @@ export default function ExperienceDetailRoute() {
       <article className="prose-resume mt-12">
         <MarkdownBody html={exp.bodyHtml} />
       </article>
+
+      {exp.references.length > 0 ? (
+        <section aria-labelledby="references" className="mt-14 border-t border-zinc-200 pt-8">
+          <h2
+            id="references"
+            className="text-sm font-medium uppercase tracking-wider text-zinc-500"
+          >
+            References
+          </h2>
+          <ul className="mt-4 space-y-2">
+            {exp.references.map((ref) => (
+              <li key={ref.url}>
+                <a
+                  href={ref.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 rounded-md border border-zinc-200 bg-white p-3 transition hover:border-zinc-400"
+                >
+                  <ArrowUpRight
+                    size={16}
+                    aria-hidden
+                    className="mt-0.5 shrink-0 text-zinc-400 transition group-hover:text-zinc-900"
+                  />
+                  <span className="min-w-0">
+                    <span className="block text-sm font-medium text-zinc-900 group-hover:underline underline-offset-2 decoration-zinc-300">
+                      {ref.title}
+                    </span>
+                    <span className="block text-xs text-zinc-500">
+                      {new URL(ref.url).hostname.replace(/^www\./, "")}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </main>
   );
 }

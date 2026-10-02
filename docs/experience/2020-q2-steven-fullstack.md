@@ -15,19 +15,25 @@ tags:
   - SQL
   - JavaScript
   - Stakeholder management
-summary: Built a PII-safe support web platform for Steven so a new support contractor could handle cases without seeing more user data than they needed.
+  - PII
+  - Data Security
+  - Access Control
+  - Frontend
+  - Backend
+  - Remote Collaboration
+summary: Built a support platform for Steven that let an outsourced support vendor handle cases while seeing only the personal data each task required.
 ---
 
 ## Context
 
-Steven is an app for splitting shared expenses — people log what they bought for an event or trip and the app evens everyone out. After a change of support contractor, Steven prioritized data security: keep effective support operations, but minimize what personal information the new vendor could see.
+Steven is an app for splitting shared expenses: people log what they bought for an event or trip and the app evens everyone out. I joined for a summer, working with a development team that was fully remote in another country, so all collaboration happened online. Steven had outsourced its customer support to a third party it did not fully trust, and needed support to keep working while the vendor saw as little personal data as possible.
 
 ## What I did
 
-- Mapped the data flows between Steven's database, support system, and the new contractor's view — identifying what PII could be hidden and what had to remain visible for support agents to do their job.
+- Mapped the data flows between Steven's database, support system and the vendor's view, identifying which personal data could be hidden and what support agents needed to see to do their job.
+- Designed tiers of access, so each support task exposed only the data it required, and enforced them in the JavaScript backend with query filters, auth scopes and per-page field allowlists.
 - Built the new support pages in React and wired them into Steven's existing support system.
-- Updated the JavaScript backend's database interactions so the new pages exposed only the minimum data each support task required — query filters, auth scopes, and per-page field allowlists.
 
 ## Outcome
 
-A PII-safe support web platform shipped on time. The support contractor sees only the data they need to do their job — reducing risk without compromising support quality.
+A support platform that protected users' personal data shipped on time. The outside vendor sees only the data each task needs, which reduced the risk of handing support to a third party without hurting support quality.

@@ -18,7 +18,7 @@ import "./styles/app.css";
 // Note: per-route meta exports REPLACE root meta in RR7. Tags that should
 // appear on every page live in <head> JSX below instead.
 export const meta = () => [
-  { title: `${profile.bio.name} — ${profile.bio.headline}` },
+  { title: `${profile.bio.name} | ${profile.bio.headline}` },
   { name: "description", content: profile.bio.tagline },
 ];
 
@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const ga4 = data?.ga4 ?? null;
   const location = useLocation();
   const pageUrl = `${ORIGIN}${location.pathname === "/" ? "/" : location.pathname}`;
-  const ogImage = `${ORIGIN}/og-image.svg`;
+  const ogImage = `${ORIGIN}/og-image.jpg`;
   return (
     <html lang="en">
       <head>
@@ -48,9 +48,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={`${profile.bio.name} — ${profile.bio.headline}`} />
+        <meta property="og:image:alt" content={`${profile.bio.name} | ${profile.bio.headline}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImage} />
         <Meta />
@@ -86,7 +87,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         ) : null}
       </head>
       <body>
-        {children}
+        <div className="page-column">
+          {children}
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>

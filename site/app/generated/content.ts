@@ -13,8 +13,10 @@ export type Experience = {
   ongoing: boolean;
   nda: boolean;
   featured: boolean;
+  priority: number;
   tags: string[];
   summary: string;
+  references: { title: string; url: string }[];
   bodyHtml: string;
   bodyMarkdown: string;
 };
@@ -25,6 +27,7 @@ export type Education = {
   field: string;
   institution: string;
   location: string;
+  url: string | null;
   bodyHtml: string;
 };
 
@@ -35,8 +38,13 @@ export type Profile = {
     subhead: string;
     location: string;
     employerOfRecord: string | null;
+    headshot: string | null;
+    headshotBackground: string | null;
+    headshotBackdrop: string | null;
     tagline: string;
+    intro: string | null;
     bodyHtml: string;
+    gallery: GalleryItem[];
   };
   identity: {
     roles: string[];
@@ -46,6 +54,8 @@ export type Profile = {
   };
   contact: {
     email: string | null;
+    emails: { address: string; label: string }[];
+    phone: string | null;
     linkedin: string;
     github: string | null;
   };
@@ -53,49 +63,257 @@ export type Profile = {
 
 export type SkillGroup = { name: string; items: string[] };
 
+export type GalleryItem = {
+  type: "image" | "video";
+  src: string;
+  poster: string | null;
+  alt: string;
+  tile: "big" | "wide" | "tall" | "small";
+  focus: string | null;
+  width: number;
+  height: number;
+};
+
+export type LetterVideo = {
+  url: string;
+  youtubeId: string;
+  title: string;
+  channel: string;
+  note: string | null;
+};
+
+export type Letter = {
+  title: string;
+  role: string;
+  company: string;
+  date: string;
+  draft: boolean;
+  bodyHtml: string;
+  videosHeading: string | null;
+  videosIntro: string | null;
+  videos: LetterVideo[];
+};
+
 export const experiences: Experience[] = [
   {
+    "slug": "2024-q3-theodora-tech",
+    "role": "Senior AI Consultant",
+    "company": "Theodora Tech",
+    "companyUrl": "https://www.theodoratech.se/",
+    "projectTitle": "AI consulting and recruitment",
+    "industry": "Consulting",
+    "start": "2024-Q3",
+    "end": null,
+    "ongoing": true,
+    "nda": false,
+    "featured": true,
+    "priority": 10,
+    "tags": [
+      "Technical Leadership",
+      "Recruitment",
+      "Consulting",
+      "Conversational Analytics",
+      "Productisation",
+      "LLM",
+      "GCP",
+      "BigQuery"
+    ],
+    "summary": "Theodora Tech is a growing team of expert data enthusiasts building smart systems with and for AI, across a wide range of companies and initiatives.",
+    "references": [
+      {
+        "title": "Theodora Tech",
+        "url": "https://www.theodoratech.se/"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>Theodora Tech is a smaller, gradually growing team of expert data enthusiasts. We build smart systems using and for AI from the ground up, from the data platform underneath to the AI products on top. I joined in September 2024, and it is my employer of record for my consulting assignments.</p>\n<h2>What I did</h2>\n<ul>\n<li>Delivered Theodora&#39;s client assignments as a Senior AI Consultant: data and AI engineering at SVT, AI search for Momang, and AI Lead at CAIA Cosmetics, where I own the AI roadmap.</li>\n<li>Productised the work from SVT and CAIA into a conversational analytics offering: a governed data layer that people can query in natural language from their AI tools. Theodora now delivers it to other companies, including companies in Verdane&#39;s portfolio.</li>\n<li>Took on part of the responsibility for recruitment, and held interviews for many of the colleagues I work with today.</li>\n</ul>\n<h2>Outcome</h2>\n<p>What started as client assignments is now a product Theodora sells to other companies. The team keeps growing, and many of the people I interviewed are now my colleagues. The assignments listed below under CAIA Cosmetics, SVT and Momang were all delivered through Theodora.</p>\n",
+    "bodyMarkdown": "## Context\n\nTheodora Tech is a smaller, gradually growing team of expert data enthusiasts. We build smart systems using and for AI from the ground up, from the data platform underneath to the AI products on top. I joined in September 2024, and it is my employer of record for my consulting assignments.\n\n## What I did\n\n- Delivered Theodora's client assignments as a Senior AI Consultant: data and AI engineering at SVT, AI search for Momang, and AI Lead at CAIA Cosmetics, where I own the AI roadmap.\n- Productised the work from SVT and CAIA into a conversational analytics offering: a governed data layer that people can query in natural language from their AI tools. Theodora now delivers it to other companies, including companies in Verdane's portfolio.\n- Took on part of the responsibility for recruitment, and held interviews for many of the colleagues I work with today.\n\n## Outcome\n\nWhat started as client assignments is now a product Theodora sells to other companies. The team keeps growing, and many of the people I interviewed are now my colleagues. The assignments listed below under CAIA Cosmetics, SVT and Momang were all delivered through Theodora."
+  },
+  {
     "slug": "2026-q1-caia-cosmetics",
-    "role": "AI Engineer",
+    "role": "AI Lead",
     "company": "CAIA Cosmetics",
     "companyUrl": "https://caiacosmetics.com/",
-    "projectTitle": "Semantic data layer + MCP exposure",
+    "projectTitle": "CAIAverse: semantic data layer + MCP",
     "industry": "Fashion",
     "start": "2026-Q1",
     "end": null,
     "ongoing": true,
     "nda": false,
     "featured": true,
+    "priority": 0,
     "tags": [
+      "Technical Leadership",
       "GCP",
       "BigQuery",
       "Dataform",
+      "Kimball",
+      "Semantic Modelling",
       "FastMCP",
-      "Cloud Run",
       "MCP Servers",
+      "Cloud Run",
+      "OAuth/JWT",
+      "Vertex AI",
+      "Data Governance",
+      "Claude",
+      "LLM",
+      "Python",
+      "SQL"
+    ],
+    "summary": "Built CAIAverse, CAIA's semantic data layer on BigQuery, exposed through an MCP server so colleagues can query company data in natural language.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>CAIA Cosmetics is a Stockholm-founded direct-to-consumer beauty brand (makeup, skincare, haircare and fragrance) selling across the Nordics and Europe. Data lived in dozens of SaaS tools and every question queued behind a small SQL-fluent team. As AI Lead I own CAIA&#39;s AI roadmap and build it hands-on, reporting to CAIA&#39;s leadership and to Verdane, CAIA&#39;s part-owner. The first goal was to make the warehouse the single, AI-readable source of truth.</p>\n<h2>What I did</h2>\n<ul>\n<li>Designed and built CAIAverse in Dataform on BigQuery: a Kimball-style layered model (sources → staging → intermediate → outputs) with 415 output models, on scheduled daily and hourly workflows with freshness monitoring.</li>\n<li>Built ingestion for 20 sources, including Voyado, Sitoo, Klarna, Zendesk, Meta, TikTok, Snapchat, Google Ads and GA4, mostly as Cloud Run Jobs, with a data contract per source.</li>\n<li>Built the CAIAverse MCP server on FastMCP + Cloud Run with domain-restricted Google OAuth. Queries run under the caller&#39;s own identity, so BigQuery permissions and column-level policy tags (PII, Restricted) are enforced per person.</li>\n<li>Made the layer discoverable to LLMs: a catalog-search tool matches questions against a registry of 726 answerable questions (September 2026) using Vertex AI embeddings, and logs unanswerable ones as a gap list that drives the modelling backlog.</li>\n<li>Packaged CAIAverse as organisation-wide Claude skills, so every colleague&#39;s Claude knows how to find, query and cite the right data.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Colleagues ask CAIAverse questions directly from Claude and get answers grounded in governed warehouse data, with access controls following each person. Usage grew from 7 colleagues in the first two days after launch (March 2026) to 34 colleagues making 10,181 authenticated requests in a single week (31 August to 7 September 2026), peaking at 40 colleagues in a three-day window in late September. The same layer now feeds the AI council, the Power BI migration and new dashboards.</p>\n",
+    "bodyMarkdown": "## Context\n\nCAIA Cosmetics is a Stockholm-founded direct-to-consumer beauty brand (makeup, skincare, haircare and fragrance) selling across the Nordics and Europe. Data lived in dozens of SaaS tools and every question queued behind a small SQL-fluent team. As AI Lead I own CAIA's AI roadmap and build it hands-on, reporting to CAIA's leadership and to Verdane, CAIA's part-owner. The first goal was to make the warehouse the single, AI-readable source of truth.\n\n## What I did\n\n- Designed and built CAIAverse in Dataform on BigQuery: a Kimball-style layered model (sources → staging → intermediate → outputs) with 415 output models, on scheduled daily and hourly workflows with freshness monitoring.\n- Built ingestion for 20 sources, including Voyado, Sitoo, Klarna, Zendesk, Meta, TikTok, Snapchat, Google Ads and GA4, mostly as Cloud Run Jobs, with a data contract per source.\n- Built the CAIAverse MCP server on FastMCP + Cloud Run with domain-restricted Google OAuth. Queries run under the caller's own identity, so BigQuery permissions and column-level policy tags (PII, Restricted) are enforced per person.\n- Made the layer discoverable to LLMs: a catalog-search tool matches questions against a registry of 726 answerable questions (September 2026) using Vertex AI embeddings, and logs unanswerable ones as a gap list that drives the modelling backlog.\n- Packaged CAIAverse as organisation-wide Claude skills, so every colleague's Claude knows how to find, query and cite the right data.\n\n## Outcome\n\nColleagues ask CAIAverse questions directly from Claude and get answers grounded in governed warehouse data, with access controls following each person. Usage grew from 7 colleagues in the first two days after launch (March 2026) to 34 colleagues making 10,181 authenticated requests in a single week (31 August to 7 September 2026), peaking at 40 colleagues in a three-day window in late September. The same layer now feeds the AI council, the Power BI migration and new dashboards."
+  },
+  {
+    "slug": "2026-q1-caia-council",
+    "role": "AI Lead",
+    "company": "CAIA Cosmetics",
+    "companyUrl": "https://caiacosmetics.com/",
+    "projectTitle": "CAIAcouncil: multi-agent business review",
+    "industry": "Fashion",
+    "start": "2026-Q1",
+    "end": null,
+    "ongoing": true,
+    "nda": false,
+    "featured": true,
+    "priority": 0,
+    "tags": [
+      "Technical Leadership",
+      "Multi-agent Systems",
       "LLM",
       "Claude",
+      "Claude Skills",
       "OpenAI",
       "Python",
-      "SQL",
-      "Semantic Modelling"
+      "BigQuery",
+      "Web Search",
+      "API",
+      "FastMCP",
+      "MCP Servers",
+      "Cloud Run",
+      "Cloud Scheduler",
+      "Terraform",
+      "GCS"
     ],
-    "summary": "Built CAIA's semantic data layer and exposed it through an MCP server so non-SQL teammates can self-serve answers from BigQuery in natural language.",
-    "bodyHtml": "<h2>Context</h2>\n<p>CAIA Cosmetics is a Stockholm-based DTC beauty brand (makeup, skincare, haircare, fragrance) selling across the Nordics. As the org grew, every product, marketing, and merchandising data question queued behind a small SQL-fluent analyst team. CAIA wanted non-technical teammates to query the warehouse directly without learning SQL.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built a Snowflake-style semantic data layer on BigQuery + Dataform — a single coherent view of product, order, marketing, and customer data.</li>\n<li>Built an MCP server on FastMCP + Cloud Run that exposes the semantic layer to LLMs (Claude, OpenAI, Gemini). The MCP knows the schema, respects table-level access, and translates natural-language questions into safe BigQuery reads.</li>\n<li>Wired the MCP into the team&#39;s agent workflows (Claude Code, custom agents) so data questions get grounded answers instead of guesses.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Non-SQL teammates now self-serve answers directly. Product managers, marketing, and merchandising can ask questions like &quot;which fragrance SKUs grew most in Sweden last month?&quot; and get a grounded answer — without the analyst loop.</p>\n",
-    "bodyMarkdown": "## Context\n\nCAIA Cosmetics is a Stockholm-based DTC beauty brand (makeup, skincare, haircare, fragrance) selling across the Nordics. As the org grew, every product, marketing, and merchandising data question queued behind a small SQL-fluent analyst team. CAIA wanted non-technical teammates to query the warehouse directly without learning SQL.\n\n## What I did\n\n- Built a Snowflake-style semantic data layer on BigQuery + Dataform — a single coherent view of product, order, marketing, and customer data.\n- Built an MCP server on FastMCP + Cloud Run that exposes the semantic layer to LLMs (Claude, OpenAI, Gemini). The MCP knows the schema, respects table-level access, and translates natural-language questions into safe BigQuery reads.\n- Wired the MCP into the team's agent workflows (Claude Code, custom agents) so data questions get grounded answers instead of guesses.\n\n## Outcome\n\nNon-SQL teammates now self-serve answers directly. Product managers, marketing, and merchandising can ask questions like \"which fragrance SKUs grew most in Sweden last month?\" and get a grounded answer — without the analyst loop."
+    "summary": "Built CAIAcouncil: 23 specialist AI experts that investigate CAIA's week across company data, the web and APIs, reconciled into one weekly council report.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>CAIA&#39;s leadership needed a weekly read of the business that cut across finance, marketing channels, retail, assortment and press, faster than analysts could assemble by hand, and honest about what the data could and could not support.</p>\n<h2>What I did</h2>\n<ul>\n<li>Designed the council: 23 specialist experts across finance, marketing channels, product, assortment, retail and press, defined in one roster file. Each runs as its own service account with scoped tools: governed CAIAverse queries in BigQuery, web search and external APIs.</li>\n<li>Ran the experts on both Anthropic and OpenAI models on purpose. Different model families read the same week differently, so the council gets genuinely different views instead of one model agreeing with itself.</li>\n<li>Gave each expert a role, not an assignment. Experts decide how to investigate their own area, guided by skills for doing the work and for writing free-form reports, so every run takes a partly randomised path through the data. Over time that gives a fuller, more interesting picture of the company than a hardcoded checklist.</li>\n<li>Built the orchestrator that reconciles the expert reports into ranked decisions and open questions, guarded by six hard vetoes (attribution override, stock, margin floor, data freshness, magnitude sanity and unverified urgency).</li>\n<li>Scheduled weekly runs over the closed ISO week with Cloud Scheduler and Terraform, and built a read-only CAIAcouncil MCP server (FastMCP, Cloud Run) that serves the reports to Claude, ChatGPT and Cursor.</li>\n<li>Turned the council into a feedback loop for CAIAverse. The experts put the data layer under realistic, artificial load every week, and what they can&#39;t answer shows where data or aggregates are missing. Those gaps drive what gets modelled next, steering the build-out of conversational analytics.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Everyone at CAIA can read the weekly reports, and leadership goes through them in its weekly meeting. Teams use their own experts: marketing gets weekly press mentions of CAIA from the press expert, the product team follows how products perform, and customer support tracks its own performance and recurring ticket themes. Disagreements, caveats and vetoes are shown, not hidden, and figures are checked against CAIAverse before they reach finance or leadership. It also keeps improving the data platform that everyone else queries, week by week.</p>\n",
+    "bodyMarkdown": "## Context\n\nCAIA's leadership needed a weekly read of the business that cut across finance, marketing channels, retail, assortment and press, faster than analysts could assemble by hand, and honest about what the data could and could not support.\n\n## What I did\n\n- Designed the council: 23 specialist experts across finance, marketing channels, product, assortment, retail and press, defined in one roster file. Each runs as its own service account with scoped tools: governed CAIAverse queries in BigQuery, web search and external APIs.\n- Ran the experts on both Anthropic and OpenAI models on purpose. Different model families read the same week differently, so the council gets genuinely different views instead of one model agreeing with itself.\n- Gave each expert a role, not an assignment. Experts decide how to investigate their own area, guided by skills for doing the work and for writing free-form reports, so every run takes a partly randomised path through the data. Over time that gives a fuller, more interesting picture of the company than a hardcoded checklist.\n- Built the orchestrator that reconciles the expert reports into ranked decisions and open questions, guarded by six hard vetoes (attribution override, stock, margin floor, data freshness, magnitude sanity and unverified urgency).\n- Scheduled weekly runs over the closed ISO week with Cloud Scheduler and Terraform, and built a read-only CAIAcouncil MCP server (FastMCP, Cloud Run) that serves the reports to Claude, ChatGPT and Cursor.\n- Turned the council into a feedback loop for CAIAverse. The experts put the data layer under realistic, artificial load every week, and what they can't answer shows where data or aggregates are missing. Those gaps drive what gets modelled next, steering the build-out of conversational analytics.\n\n## Outcome\n\nEveryone at CAIA can read the weekly reports, and leadership goes through them in its weekly meeting. Teams use their own experts: marketing gets weekly press mentions of CAIA from the press expert, the product team follows how products perform, and customer support tracks its own performance and recurring ticket themes. Disagreements, caveats and vetoes are shown, not hidden, and figures are checked against CAIAverse before they reach finance or leadership. It also keeps improving the data platform that everyone else queries, week by week."
+  },
+  {
+    "slug": "2026-q4-caia-plm",
+    "role": "AI Lead",
+    "company": "CAIA Cosmetics",
+    "companyUrl": "https://caiacosmetics.com/",
+    "projectTitle": "PLM: product, packaging and compliance data",
+    "industry": "Fashion",
+    "start": "2026-Q4",
+    "end": null,
+    "ongoing": true,
+    "nda": false,
+    "featured": false,
+    "priority": 0,
+    "tags": [
+      "Technical Leadership",
+      "PLM",
+      "Data Modelling",
+      "Data Governance",
+      "Regulatory Compliance",
+      "PPWR",
+      "Semantic Modelling",
+      "BigQuery",
+      "Dataform",
+      "GCS",
+      "Cloud Run",
+      "Document Extraction"
+    ],
+    "summary": "Leading CAIA's new PLM system, one source of truth for products, packaging, materials and compliance documents, built to meet the EU's new packaging regulation (PPWR).",
+    "references": [
+      {
+        "title": "Regulation (EU) 2025/40 on packaging and packaging waste (PPWR), EUR-Lex",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500040"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>CAIA&#39;s product, packaging and compliance data lived in supplier documents and shared folders. The EU Packaging and Packaging Waste Regulation (<a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500040\">PPWR, Regulation (EU) 2025/40</a>) requires brands to know, for every packaging, what it is made of, how much of it is recycled, how recyclable it is and how much was placed on each market. CAIA needed one system to hold that, next to the product and ingredient data that cosmetics regulation already demands, and chose to build its own PLM in-house.</p>\n<h2>What I did</h2>\n<ul>\n<li>Designed the data model that links each SKU to its packaging, each packaging to its components (bottle, pump, cap, carton) and each component to its materials. Packaging gets its own ID, because one packaging is often shared by many shades, and each is tagged by level: sales, grouped, transport or e-commerce packaging.</li>\n<li>Defined the compliance data per component and material: supplier article code, weight, dimensions, whether it can be separated by hand, virgin or recycled material, recycled share, recyclability class and heavy-metal content (sum below 100 mg/kg). Each packaging also carries a versioned, dated PPWR traceability number.</li>\n<li>Specified document tracking for drawings, material specifications, heavy-metal and recycled-content certificates and declarations of conformity, each with version, date and status (complete, missing or expired).</li>\n<li>Added the product side: formula ID and version, ingredient lists with concentrations and CAS numbers, ingredient origin, PAO, warnings, approved markets, substantiated claims, and links to each product&#39;s PIF and CPSR.</li>\n<li>Built the platform on GCS file storage with extractors that read product drawings, packaging plans, specifications and legal contracts and turn them into structured data, a supplier portal where suppliers upload their documents, and a web app on Cloud Run for the team to review and complete the data.</li>\n<li>Building the integration with CAIAverse, so units sold per SKU, year, country and channel (with Sweden separate), together with purchased component volumes, turn into tonnes of each material placed on each market.</li>\n</ul>\n<h2>Outcome</h2>\n<p>In progress. When complete, CAIA will have one place to answer what PPWR asks per packaging and per market, and material reporting can be produced from data instead of assembled by hand from documents.</p>\n",
+    "bodyMarkdown": "## Context\n\nCAIA's product, packaging and compliance data lived in supplier documents and shared folders. The EU Packaging and Packaging Waste Regulation ([PPWR, Regulation (EU) 2025/40](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202500040)) requires brands to know, for every packaging, what it is made of, how much of it is recycled, how recyclable it is and how much was placed on each market. CAIA needed one system to hold that, next to the product and ingredient data that cosmetics regulation already demands, and chose to build its own PLM in-house.\n\n## What I did\n\n- Designed the data model that links each SKU to its packaging, each packaging to its components (bottle, pump, cap, carton) and each component to its materials. Packaging gets its own ID, because one packaging is often shared by many shades, and each is tagged by level: sales, grouped, transport or e-commerce packaging.\n- Defined the compliance data per component and material: supplier article code, weight, dimensions, whether it can be separated by hand, virgin or recycled material, recycled share, recyclability class and heavy-metal content (sum below 100 mg/kg). Each packaging also carries a versioned, dated PPWR traceability number.\n- Specified document tracking for drawings, material specifications, heavy-metal and recycled-content certificates and declarations of conformity, each with version, date and status (complete, missing or expired).\n- Added the product side: formula ID and version, ingredient lists with concentrations and CAS numbers, ingredient origin, PAO, warnings, approved markets, substantiated claims, and links to each product's PIF and CPSR.\n- Built the platform on GCS file storage with extractors that read product drawings, packaging plans, specifications and legal contracts and turn them into structured data, a supplier portal where suppliers upload their documents, and a web app on Cloud Run for the team to review and complete the data.\n- Building the integration with CAIAverse, so units sold per SKU, year, country and channel (with Sweden separate), together with purchased component volumes, turn into tonnes of each material placed on each market.\n\n## Outcome\n\nIn progress. When complete, CAIA will have one place to answer what PPWR asks per packaging and per market, and material reporting can be produced from data instead of assembled by hand from documents."
+  },
+  {
+    "slug": "2026-q3-caia-design-system",
+    "role": "AI Lead",
+    "company": "CAIA Cosmetics",
+    "companyUrl": "https://caiacosmetics.com/",
+    "projectTitle": "CAIA Design System",
+    "industry": "Fashion",
+    "start": "2026-Q3",
+    "end": null,
+    "ongoing": true,
+    "nda": false,
+    "featured": false,
+    "priority": 0,
+    "tags": [
+      "Design Systems",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "shadcn/ui",
+      "Next.js",
+      "Design Tokens",
+      "Claude",
+      "Claude Skills",
+      "GitHub Packages",
+      "CI/CD"
+    ],
+    "summary": "Built the CAIA Design System, capturing CAIA's look, tone of voice and feeling for people and AI agents, now the default for AI-generated work.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>With more of CAIA&#39;s reports, decks and dashboards being produced with AI, CAIA needed one source of brand truth that both people and agents could apply. The interesting part is that a design system for AI agents has to describe more than colours and components: it has to capture CAIA&#39;s tone of voice, vibe and feeling, so an agent can create any kind of content that still feels like CAIA.</p>\n<h2>What I did</h2>\n<ul>\n<li>Wrote down CAIA&#39;s tone of voice, vibe and feeling in a form AI agents can follow, alongside the visual rules, so generated copy and layouts sound and look like CAIA.</li>\n<li>Built shared foundations (colour and type tokens, the Artico typeface, radius and wordmark assets), split into an internal track and a website track that share foundations but keep distinct voices.</li>\n<li>Built the internal component set (Button, Badge, Chip, Card, Field, KPI tile, Callout, bar chart, data table) plus templates for leadership reports, market dashboards and board decks, with 36 slide archetypes.</li>\n<li>Wrote the website track&#39;s guidance for the Next.js / Tailwind / shadcn/ui stack, including a Tailwind v4 token bridge.</li>\n<li>Published it as an npm package on GitHub Packages and as the organisation&#39;s default design system skill on claude.ai, guarded by an adherence CI that lints brand values, token parity and assets.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Colleagues use it daily in Claude: when someone asks for a deck, dashboard or memo, the brand and voice are applied through the organisation skill rather than by hand, including for board and leadership decks. The website track is planned for adoption with CAIA&#39;s new website from 2027.</p>\n",
+    "bodyMarkdown": "## Context\n\nWith more of CAIA's reports, decks and dashboards being produced with AI, CAIA needed one source of brand truth that both people and agents could apply. The interesting part is that a design system for AI agents has to describe more than colours and components: it has to capture CAIA's tone of voice, vibe and feeling, so an agent can create any kind of content that still feels like CAIA.\n\n## What I did\n\n- Wrote down CAIA's tone of voice, vibe and feeling in a form AI agents can follow, alongside the visual rules, so generated copy and layouts sound and look like CAIA.\n- Built shared foundations (colour and type tokens, the Artico typeface, radius and wordmark assets), split into an internal track and a website track that share foundations but keep distinct voices.\n- Built the internal component set (Button, Badge, Chip, Card, Field, KPI tile, Callout, bar chart, data table) plus templates for leadership reports, market dashboards and board decks, with 36 slide archetypes.\n- Wrote the website track's guidance for the Next.js / Tailwind / shadcn/ui stack, including a Tailwind v4 token bridge.\n- Published it as an npm package on GitHub Packages and as the organisation's default design system skill on claude.ai, guarded by an adherence CI that lints brand values, token parity and assets.\n\n## Outcome\n\nColleagues use it daily in Claude: when someone asks for a deck, dashboard or memo, the brand and voice are applied through the organisation skill rather than by hand, including for board and leadership decks. The website track is planned for adoption with CAIA's new website from 2027."
+  },
+  {
+    "slug": "2026-q1-caia-conversational-analytics",
+    "role": "AI Lead",
+    "company": "CAIA Cosmetics",
+    "companyUrl": "https://caiacosmetics.com/",
+    "projectTitle": "From Power BI to conversational analytics",
+    "industry": "Fashion",
+    "start": "2026-Q1",
+    "end": null,
+    "ongoing": true,
+    "nda": false,
+    "featured": false,
+    "priority": 0,
+    "tags": [
+      "Technical Leadership",
+      "PowerBI",
+      "Conversational Analytics",
+      "BigQuery",
+      "Dataform",
+      "MCP Servers",
+      "Claude",
+      "Self-service BI",
+      "React",
+      "Vite",
+      "Cloud Run",
+      "IAP",
+      "SQL"
+    ],
+    "summary": "Leading CAIA's move from a Power BI-centred reporting stack to conversational analytics, migrating 22 reports onto CAIAverse and making ad-hoc analysis a conversation with Claude.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>CAIA&#39;s reporting ran on 22 Power BI reports, and a new question typically meant a new dashboard request. The goal is to make the governed semantic layer the single source of truth and let people ask questions directly instead of waiting for a report.</p>\n<h2>What I did</h2>\n<ul>\n<li>Catalogued all 22 Power BI reports from their PBIP sources into a migration matrix, and rebuilt their marts on top of CAIAverse in Dataform, validating parity against the originals (all within 1% at validation).</li>\n<li>Moved ad-hoc analysis onto the CAIAverse MCP, so questions that used to become dashboard requests are answered in Claude against the same governed models.</li>\n<li>Built a dashboard app on Cloud Run behind IAP where colleagues create and change dashboards by describing them in plain language, with a path to bring claude.ai live artifacts into it.</li>\n<li>Connected the CAIAverse and CAIAcouncil connectors in Claude, so teams build their own dashboards and reports in Claude on governed data instead of filing dashboard requests.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Dashboarding and reporting can now be built directly in Claude through the CAIAverse and CAIAcouncil connectors, and teams have taken ownership of their own data and reports. Dashboard requests have dropped, Power BI reports have been retired and licences saved, and Power BI is now being shut down completely.</p>\n",
+    "bodyMarkdown": "## Context\n\nCAIA's reporting ran on 22 Power BI reports, and a new question typically meant a new dashboard request. The goal is to make the governed semantic layer the single source of truth and let people ask questions directly instead of waiting for a report.\n\n## What I did\n\n- Catalogued all 22 Power BI reports from their PBIP sources into a migration matrix, and rebuilt their marts on top of CAIAverse in Dataform, validating parity against the originals (all within 1% at validation).\n- Moved ad-hoc analysis onto the CAIAverse MCP, so questions that used to become dashboard requests are answered in Claude against the same governed models.\n- Built a dashboard app on Cloud Run behind IAP where colleagues create and change dashboards by describing them in plain language, with a path to bring claude.ai live artifacts into it.\n- Connected the CAIAverse and CAIAcouncil connectors in Claude, so teams build their own dashboards and reports in Claude on governed data instead of filing dashboard requests.\n\n## Outcome\n\nDashboarding and reporting can now be built directly in Claude through the CAIAverse and CAIAcouncil connectors, and teams have taken ownership of their own data and reports. Dashboard requests have dropped, Power BI reports have been retired and licences saved, and Power BI is now being shut down completely."
   },
   {
     "slug": "2025-q1-svt-ai-engineer",
     "role": "AI Engineer",
     "company": "SVT",
     "companyUrl": "https://www.svt.se/",
-    "projectTitle": "Corporate Domain — MCP mesh & Survey Insights",
+    "projectTitle": "Corporate Domain: MCP mesh & Survey Insights",
     "industry": "Broadcasting",
     "start": "2025-Q1",
     "end": "2026-Q1",
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
       "Python",
       "DBT",
@@ -104,7 +322,6 @@ export const experiences: Experience[] = [
       "LLM",
       "PowerBI",
       "SQL",
-      "Data Analysis",
       "Prompt engineering",
       "GitLab",
       "DBT Fusion",
@@ -115,22 +332,25 @@ export const experiences: Experience[] = [
       "LibreChat"
     ],
     "summary": "Proposed and built SVT's first MCP server so analytics teams could query BigQuery in natural language; grew into an org-wide MCP mesh on LibreChat.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Sveriges Television (SVT) is Sweden&#39;s national public broadcaster, producing impartial, high-quality content across news, entertainment, and culture. As AI became increasingly central to content creation and data analysis, SVT wanted to leverage these capabilities while building strong internal expertise. They specifically needed a way for analytics teams and content producers to perform fast, interactive data analysis without requiring SQL proficiency.</p>\n<h2>What I did</h2>\n<ul>\n<li>Proposed an MCP server that lets teams query data using natural language. The idea grew into an SVT-wide initiative — an MCP mesh accessible through an internally hosted version of LibreChat, with individual MCP servers owned by separate teams but available to the whole organisation.</li>\n<li>Spearheaded development of a <strong>Survey Insights</strong> MCP server that exposes SVT&#39;s extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.</li>\n<li>Extended the MCP to support PowerBI work — it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.</li>\n</ul>\n<h2>Outcome</h2>\n<p>By the end of the engagement, multiple MCP servers were live across SVT — extending from ad-hoc data Q&amp;A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.</p>\n",
-    "bodyMarkdown": "## Context\n\nSveriges Television (SVT) is Sweden's national public broadcaster, producing impartial, high-quality content across news, entertainment, and culture. As AI became increasingly central to content creation and data analysis, SVT wanted to leverage these capabilities while building strong internal expertise. They specifically needed a way for analytics teams and content producers to perform fast, interactive data analysis without requiring SQL proficiency.\n\n## What I did\n\n- Proposed an MCP server that lets teams query data using natural language. The idea grew into an SVT-wide initiative — an MCP mesh accessible through an internally hosted version of LibreChat, with individual MCP servers owned by separate teams but available to the whole organisation.\n- Spearheaded development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.\n- Extended the MCP to support PowerBI work — it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.\n\n## Outcome\n\nBy the end of the engagement, multiple MCP servers were live across SVT — extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst."
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Sveriges Television (SVT) is Sweden&#39;s national public broadcaster, producing impartial, high-quality content across news, entertainment, and culture. As AI became increasingly central to content creation and data analysis, SVT wanted to leverage these capabilities while building strong internal expertise. They specifically needed a way for analytics teams and content producers to perform fast, interactive data analysis without requiring SQL proficiency.</p>\n<h2>What I did</h2>\n<ul>\n<li>Proposed and built SVT&#39;s first MCP server, letting teams query data in natural language. The idea grew into an SVT-wide initiative: an MCP mesh accessible through an internally hosted version of LibreChat, with MCP servers owned by separate teams but available to the whole organisation.</li>\n<li>Coached other teams as they built their own MCP servers for the mesh, and presented the initiative internally to spread it across SVT.</li>\n<li>Led development of a <strong>Survey Insights</strong> MCP server that exposes SVT&#39;s extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.</li>\n<li>Extended the MCP to support PowerBI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.</li>\n</ul>\n<h2>Outcome</h2>\n<p>By the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&amp;A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.</p>\n",
+    "bodyMarkdown": "## Context\n\nSveriges Television (SVT) is Sweden's national public broadcaster, producing impartial, high-quality content across news, entertainment, and culture. As AI became increasingly central to content creation and data analysis, SVT wanted to leverage these capabilities while building strong internal expertise. They specifically needed a way for analytics teams and content producers to perform fast, interactive data analysis without requiring SQL proficiency.\n\n## What I did\n\n- Proposed and built SVT's first MCP server, letting teams query data in natural language. The idea grew into an SVT-wide initiative: an MCP mesh accessible through an internally hosted version of LibreChat, with MCP servers owned by separate teams but available to the whole organisation.\n- Coached other teams as they built their own MCP servers for the mesh, and presented the initiative internally to spread it across SVT.\n- Led development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.\n- Extended the MCP to support PowerBI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.\n\n## Outcome\n\nBy the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst."
   },
   {
     "slug": "2024-q4-svt-data-engineer",
     "role": "Data Engineer",
     "company": "SVT",
     "companyUrl": "https://www.svt.se/",
-    "projectTitle": "Corporate Domain — Survey pipeline & PSR",
+    "projectTitle": "Corporate Domain: Survey pipeline & PSR",
     "industry": "Broadcasting",
     "start": "2024-Q4",
     "end": "2026-Q1",
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
+      "AI Agents",
       "BigQuery",
       "DBT",
       "DBT Fusion",
@@ -146,17 +366,15 @@ export const experiences: Experience[] = [
       "Data Products",
       "Tableau",
       "Semantic Modelling",
-      "Data Analysis",
       "Data Mesh",
       "Alteryx",
       "Cloud Functions",
-      "Stakeholder management",
-      "Cross-functional teams",
-      "Agile development"
+      "Stakeholder management"
     ],
-    "summary": "Built SVT's end-to-end survey data pipeline and a centralized PowerBI semantic model — now the single source of truth for survey data across the organisation.",
-    "bodyHtml": "<h2>Context</h2>\n<p>SVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables — including the Public Service Report (PSR) and user demographic reporting — that needed both new data products and continued maintenance.</p>\n<h2>What I did</h2>\n<ul>\n<li>Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.</li>\n<li>Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model — now the single source of truth for survey data.</li>\n<li>Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on — turning what had been multiple legacy systems into one source of truth.</p>\n",
-    "bodyMarkdown": "## Context\n\nSVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables — including the Public Service Report (PSR) and user demographic reporting — that needed both new data products and continued maintenance.\n\n## What I did\n\n- Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.\n- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model — now the single source of truth for survey data.\n- Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.\n\n## Outcome\n\nMulti-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on — turning what had been multiple legacy systems into one source of truth."
+    "summary": "Built SVT's end-to-end survey data pipeline and a centralized PowerBI semantic model, now the single source of truth for survey data across the organisation.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>SVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables, including the Public Service Report (PSR) and user demographic reporting, that needed both new data products and continued maintenance. Every year SVT sends out several nationwide surveys, about SVT itself and about the &quot;temperature&quot; of the Swedish public, which over the years add up to hundreds of thousands of responses.</p>\n<h2>What I did</h2>\n<ul>\n<li>Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.</li>\n<li>Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model, now the single source of truth for survey data.</li>\n<li>Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.</li>\n<li>Gave analysts an early agent-based way to analyse the survey data, with AI agents querying BigQuery through the bq CLI. That work led directly to the MCP servers that followed.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Multi-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on, turning what had been multiple legacy systems into one source of truth.</p>\n",
+    "bodyMarkdown": "## Context\n\nSVT had made a strategic shift toward becoming a more data-driven organisation with a strong user focus, driven in part by declining viewership and the need for deeper audience insights. The corporate domain owned several contracted deliverables, including the Public Service Report (PSR) and user demographic reporting, that needed both new data products and continued maintenance. Every year SVT sends out several nationwide surveys, about SVT itself and about the \"temperature\" of the Swedish public, which over the years add up to hundreds of thousands of responses.\n\n## What I did\n\n- Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.\n- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model, now the single source of truth for survey data.\n- Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.\n- Gave analysts an early agent-based way to analyse the survey data, with AI agents querying BigQuery through the bq CLI. That work led directly to the MCP servers that followed.\n\n## Outcome\n\nMulti-year survey analyses became faster and more reliable; teams can ingest and visualize a new survey within minutes. The pipeline became the foundation that the contracted Public Service Report (PSR) and demographic reporting deliverables run on, turning what had been multiple legacy systems into one source of truth."
   },
   {
     "slug": "2024-q3-momang-data-scientist",
@@ -170,6 +388,7 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
       "LLM",
       "RAG",
@@ -187,38 +406,10 @@ export const experiences: Experience[] = [
       "Pydantic",
       "Prompt engineering"
     ],
-    "summary": "Built a Retrieval-Augmented Generation system on Vertex AI so Momang's users could ask natural-language questions across their database of consultants and projects.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Momang is a CRM tailored for sales-consultant staffing agencies — a SaaS for managing clients, leads, consultants, and subcontractors. Sales reps spent meaningful time hunting through Momang&#39;s database to find the right consultants and projects for each lead. Momang wanted natural-language search on top of it.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built a Retrieval-Augmented Generation pipeline on Vertex AI: vector database via Vector Search, LangChain for orchestration, OpenAI models for embeddings and retrieval QA chains.</li>\n<li>Modelled Momang&#39;s consultant + project data so the RAG system could answer cross-entity questions (e.g. &quot;which Stockholm-based React developers worked on healthcare projects?&quot;).</li>\n<li>Tuned prompts and retrieval to balance recall (don&#39;t miss a real match) against precision (don&#39;t surface noise).</li>\n</ul>\n<h2>Outcome</h2>\n<p>Sales reps now find the right consultants and projects faster, asking the system in natural language instead of building filter queries. What used to require knowing Momang&#39;s schema is now one question.</p>\n",
-    "bodyMarkdown": "## Context\n\nMomang is a CRM tailored for sales-consultant staffing agencies — a SaaS for managing clients, leads, consultants, and subcontractors. Sales reps spent meaningful time hunting through Momang's database to find the right consultants and projects for each lead. Momang wanted natural-language search on top of it.\n\n## What I did\n\n- Built a Retrieval-Augmented Generation pipeline on Vertex AI: vector database via Vector Search, LangChain for orchestration, OpenAI models for embeddings and retrieval QA chains.\n- Modelled Momang's consultant + project data so the RAG system could answer cross-entity questions (e.g. \"which Stockholm-based React developers worked on healthcare projects?\").\n- Tuned prompts and retrieval to balance recall (don't miss a real match) against precision (don't surface noise).\n\n## Outcome\n\nSales reps now find the right consultants and projects faster, asking the system in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question."
-  },
-  {
-    "slug": "2024-q1-tink-cloud-migration",
-    "role": "Cloud Migration Engineer",
-    "company": "Tink",
-    "companyUrl": "https://tink.com/",
-    "projectTitle": "AWS → GCP migration",
-    "industry": "Fintech",
-    "start": "2024-Q1",
-    "end": "2024-Q3",
-    "ongoing": false,
-    "nda": false,
-    "featured": false,
-    "tags": [
-      "Python",
-      "SQL",
-      "BigQuery",
-      "Athena",
-      "AWS",
-      "GCP",
-      "GCS",
-      "S3",
-      "Pydantic",
-      "Stakeholder management",
-      "Cross-functional teams"
-    ],
-    "summary": "Co-led a major customer's AWS → GCP migration — Tink's first time hosting transactional PII on GCP — and delivered it without service disruption.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Tink needed to move a major customer&#39;s data from AWS to GCP, primarily to unlock GCP-only products for upsell. Constraint: the live service had to stay live, and this would be the first time the customer&#39;s transactional personally identifiable information (PII) sat on GCP — a security and compliance bar to clear before the cutover.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS) — table-by-table moves with parity checks to prove the new side matched the old before cutting traffic over.</li>\n<li>Designed the PII-handling on GCP: encryption, IAM scoping, and audit trails good enough to satisfy the security review before any production data landed.</li>\n<li>Coordinated the cutover across Tink&#39;s and the customer&#39;s teams: sequencing, rollback path, who-owns-what on the day.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The customer&#39;s infrastructure moved to GCP cleanly, with no service disruption during cutover. With transactional PII now on GCP, the customer became eligible for the GCP-only products Tink couldn&#39;t previously sell into them — turning the migration from a cost line into an upsell channel.</p>\n",
-    "bodyMarkdown": "## Context\n\nTink needed to move a major customer's data from AWS to GCP, primarily to unlock GCP-only products for upsell. Constraint: the live service had to stay live, and this would be the first time the customer's transactional personally identifiable information (PII) sat on GCP — a security and compliance bar to clear before the cutover.\n\n## What I did\n\n- Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS) — table-by-table moves with parity checks to prove the new side matched the old before cutting traffic over.\n- Designed the PII-handling on GCP: encryption, IAM scoping, and audit trails good enough to satisfy the security review before any production data landed.\n- Coordinated the cutover across Tink's and the customer's teams: sequencing, rollback path, who-owns-what on the day.\n\n## Outcome\n\nThe customer's infrastructure moved to GCP cleanly, with no service disruption during cutover. With transactional PII now on GCP, the customer became eligible for the GCP-only products Tink couldn't previously sell into them — turning the migration from a cost line into an upsell channel."
+    "summary": "Built an AI search on Vertex AI so our operations team could match consultants and projects to new assignments by asking in natural language.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Momang is a CRM tailored for consultancy and staffing businesses: a SaaS for managing clients, leads, consultants and subcontractors. Our consultancy&#39;s operations team used it to match consultants with incoming assignments, and finding the right match meant hunting through the database by hand. The goal was natural-language search on top of it, used in-house first.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built a Retrieval-Augmented Generation pipeline on Vertex AI: vector database via Vector Search, LangChain for orchestration, OpenAI models for embeddings and retrieval QA chains.</li>\n<li>Modelled Momang&#39;s consultant + project data so the RAG system could answer cross-entity questions (e.g. &quot;which Stockholm-based React developers worked on healthcare projects?&quot;).</li>\n<li>Tuned prompts and retrieval to balance recall (don&#39;t miss a real match) against precision (don&#39;t surface noise).</li>\n</ul>\n<h2>Outcome</h2>\n<p>The operations team finds matching consultants and past projects for new assignments faster, by asking in natural language instead of building filter queries. What used to require knowing Momang&#39;s schema is now one question.</p>\n",
+    "bodyMarkdown": "## Context\n\nMomang is a CRM tailored for consultancy and staffing businesses: a SaaS for managing clients, leads, consultants and subcontractors. Our consultancy's operations team used it to match consultants with incoming assignments, and finding the right match meant hunting through the database by hand. The goal was natural-language search on top of it, used in-house first.\n\n## What I did\n\n- Built a Retrieval-Augmented Generation pipeline on Vertex AI: vector database via Vector Search, LangChain for orchestration, OpenAI models for embeddings and retrieval QA chains.\n- Modelled Momang's consultant + project data so the RAG system could answer cross-entity questions (e.g. \"which Stockholm-based React developers worked on healthcare projects?\").\n- Tuned prompts and retrieval to balance recall (don't miss a real match) against precision (don't surface noise).\n\n## Outcome\n\nThe operations team finds matching consultants and past projects for new assignments faster, by asking in natural language instead of building filter queries. What used to require knowing Momang's schema is now one question."
   },
   {
     "slug": "2024-q1-visa-security-engineer",
@@ -232,17 +423,53 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 1,
     "tags": [
       "Python",
       "CI/CD",
       "Checkmarx",
       "Code Security",
       "Code maintenance",
-      "Staff management"
+      "Security Champion",
+      "Secure Coding",
+      "Code Review",
+      "Reliability"
     ],
-    "summary": "Joined Visa's security task force as a Security Champion, validating CI/CD-flagged findings and leading a team of Tink staff through Visa's security standards.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Visa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink&#39;s platform up to Visa&#39;s stringent security standards — establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.</p>\n<h2>What I did</h2>\n<ul>\n<li>Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.</li>\n<li>Completed an intensive multi-day security course through Visa University.</li>\n<li>Stepped into a leadership role after the course — led a Visa team that rotated trained Tink staff through the queue of open security findings until it drained.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Tink&#39;s codebase stability climbed toward Visa&#39;s 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down.</p>\n",
-    "bodyMarkdown": "## Context\n\nVisa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink's platform up to Visa's stringent security standards — establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.\n\n## What I did\n\n- Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.\n- Completed an intensive multi-day security course through Visa University.\n- Stepped into a leadership role after the course — led a Visa team that rotated trained Tink staff through the queue of open security findings until it drained.\n\n## Outcome\n\nTink's codebase stability climbed toward Visa's 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down."
+    "summary": "Given a mandate by Visa to raise code quality and uptime across Tink's full product suite after downtime incidents, working through a security task force.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Visa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink&#39;s platform up to Visa&#39;s stringent security standards, establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.</p>\n<h2>What I did</h2>\n<ul>\n<li>Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.</li>\n<li>Completed an intensive multi-day security course through Visa University.</li>\n<li>Was given the role by Visa to improve code quality and uptime across Tink&#39;s entire product suite, after a period of downtime incidents. Together with the task force I made sure other teams followed high code standards and drained their backlog of flagged findings.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Tink&#39;s codebase stability climbed toward Visa&#39;s 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down.</p>\n",
+    "bodyMarkdown": "## Context\n\nVisa is a global leader in digital payments. Since Visa acquired Tink in 2021, the two companies have worked to bring Tink's platform up to Visa's stringent security standards, establishing task forces to drive availability, resilience, and attack-surface improvements across the platform.\n\n## What I did\n\n- Joined one of the task forces as a Security Champion: reviewed CI/CD-flagged findings and worked directly with code authors to fix them, not just file tickets.\n- Completed an intensive multi-day security course through Visa University.\n- Was given the role by Visa to improve code quality and uptime across Tink's entire product suite, after a period of downtime incidents. Together with the task force I made sure other teams followed high code standards and drained their backlog of flagged findings.\n\n## Outcome\n\nTink's codebase stability climbed toward Visa's 99.99% monthly uptime target as the volume of unresolved CI/CD-flagged findings drained down."
+  },
+  {
+    "slug": "2024-q1-tink-cloud-migration",
+    "role": "Cloud Migration Engineer",
+    "company": "Tink",
+    "companyUrl": "https://tink.com/",
+    "projectTitle": "AWS → GCP migration",
+    "industry": "Fintech",
+    "start": "2024-Q1",
+    "end": "2024-Q3",
+    "ongoing": false,
+    "nda": false,
+    "featured": false,
+    "priority": 0,
+    "tags": [
+      "Python",
+      "SQL",
+      "BigQuery",
+      "Athena",
+      "AWS",
+      "GCP",
+      "GCS",
+      "S3",
+      "Pydantic",
+      "Stakeholder management",
+      "Cross-functional teams"
+    ],
+    "summary": "Co-led moving one of Sweden's major banks and all its transactional and personal data from AWS to GCP, without disruption, opening a high-impact upsell.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Tink needed to move the data of one of Sweden&#39;s major banks, a Tink customer, from AWS to GCP. The point was commercial: some of Tink&#39;s products ran only on GCP, so the move would let Tink sell them to the bank. It was also complex. All of the bank&#39;s transactional and personal data had to move, the live service had to stay live, and it was the first time this customer&#39;s personally identifiable information (PII) would sit on GCP, a security and compliance bar to clear before the cutover.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS), moving table by table with parity checks to prove the new side matched the old before any traffic moved.</li>\n<li>Designed the PII-handling on GCP: encryption, IAM scoping, and audit trails good enough to satisfy the security review before any production data landed.</li>\n<li>Built the migration as a job that ran for months, moving the bank&#39;s customers to GCP gradually instead of in one big cutover, so risk and downtime for end users stayed minimal.</li>\n<li>Coordinated the rollout across Tink&#39;s and the bank&#39;s teams: sequencing, rollback paths and who owned what at each step.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The bank&#39;s data moved to GCP cleanly over several months, without service disruption for its users. With its transactional and personal data on GCP, the bank became eligible for Tink&#39;s GCP-only products, which made the migration a high-impact sale: a cost line turned into an upsell channel into the bank.</p>\n",
+    "bodyMarkdown": "## Context\n\nTink needed to move the data of one of Sweden's major banks, a Tink customer, from AWS to GCP. The point was commercial: some of Tink's products ran only on GCP, so the move would let Tink sell them to the bank. It was also complex. All of the bank's transactional and personal data had to move, the live service had to stay live, and it was the first time this customer's personally identifiable information (PII) would sit on GCP, a security and compliance bar to clear before the cutover.\n\n## What I did\n\n- Built the data-copy and verification pipelines between AWS (Athena/S3) and GCP (BigQuery/GCS), moving table by table with parity checks to prove the new side matched the old before any traffic moved.\n- Designed the PII-handling on GCP: encryption, IAM scoping, and audit trails good enough to satisfy the security review before any production data landed.\n- Built the migration as a job that ran for months, moving the bank's customers to GCP gradually instead of in one big cutover, so risk and downtime for end users stayed minimal.\n- Coordinated the rollout across Tink's and the bank's teams: sequencing, rollback paths and who owned what at each step.\n\n## Outcome\n\nThe bank's data moved to GCP cleanly over several months, without service disruption for its users. With its transactional and personal data on GCP, the bank became eligible for Tink's GCP-only products, which made the migration a high-impact sale: a cost line turned into an upsell channel into the bank."
   },
   {
     "slug": "2023-q1-tink-ai-engineer-merchant",
@@ -256,7 +483,10 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
+      "Technical Leadership",
+      "People Management",
       "Python",
       "LLM",
       "NER",
@@ -273,9 +503,19 @@ export const experiences: Experience[] = [
       "BigQuery",
       "SQL"
     ],
-    "summary": "Built the AI pipeline that turned raw transaction descriptions into structured merchant, product, and location data — the entity backbone for Tink's Merchant Information product.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Tink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard&#39;s mandate required banks to surface richer transaction detail to customers — but Tink&#39;s existing data sources didn&#39;t have the merchant, product, or location detail the mandate demanded. Merchant Information had to be built from scratch.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.</li>\n<li>Built the entity database that mapped extracted strings to canonical brands and merchants — disambiguating &quot;AMZN MKTPL&quot;, &quot;Amazon.de&quot;, and &quot;Amazon EU SARL&quot; as the same entity.</li>\n<li>Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.</li>\n</ul>\n<h2>Outcome</h2>\n<p>With richer enrichment, Tink&#39;s customer banks could now surface &quot;what is this charge?&quot; answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity — use cases not reachable from the raw transaction strings alone.</p>\n",
-    "bodyMarkdown": "## Context\n\nTink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to surface richer transaction detail to customers — but Tink's existing data sources didn't have the merchant, product, or location detail the mandate demanded. Merchant Information had to be built from scratch.\n\n## What I did\n\n- Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.\n- Built the entity database that mapped extracted strings to canonical brands and merchants — disambiguating \"AMZN MKTPL\", \"Amazon.de\", and \"Amazon EU SARL\" as the same entity.\n- Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.\n\n## Outcome\n\nWith richer enrichment, Tink's customer banks could now surface \"what is this charge?\" answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity — use cases not reachable from the raw transaction strings alone."
+    "summary": "Built the AI behind Tink's Merchant Information product, turning raw transaction descriptions into structured merchant, product and location data for banks across Europe.",
+    "references": [
+      {
+        "title": "Merchant Information, Tink product page",
+        "url": "https://tink.com/products/merchant-information/"
+      },
+      {
+        "title": "Meet Merchant Information, Tink launch announcement",
+        "url": "https://tink.com/blog/news/meet-merchant-information/"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>Tink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard&#39;s mandate required banks to surface richer transaction detail to customers, but Tink&#39;s existing data sources didn&#39;t have the merchant, product, or location detail the mandate demanded. <a href=\"https://tink.com/products/merchant-information/\">Merchant Information</a> had to be built from scratch: a product that tells banks and their users which merchant, brand and location is behind every transaction.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.</li>\n<li>Built the entity database that mapped extracted strings to canonical brands and merchants, disambiguating &quot;AMZN MKTPL&quot;, &quot;Amazon.de&quot;, and &quot;Amazon EU SARL&quot; as the same entity.</li>\n<li>Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.</li>\n<li>Held personnel responsibility for a team of six labellers and developers while the product was built.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Merchant Information <a href=\"https://tink.com/blog/news/meet-merchant-information/\">went live</a> in Europe, enriching millions of transactions per day. With richer enrichment, Tink&#39;s customer banks could now surface &quot;what is this charge?&quot; answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity. None of these were reachable from the raw transaction strings alone.</p>\n",
+    "bodyMarkdown": "## Context\n\nTink is an open banking platform in Europe, used by banks, fintechs, and startups to build data-driven financial services. Mastercard's mandate required banks to surface richer transaction detail to customers, but Tink's existing data sources didn't have the merchant, product, or location detail the mandate demanded. [Merchant Information](https://tink.com/products/merchant-information/) had to be built from scratch: a product that tells banks and their users which merchant, brand and location is behind every transaction.\n\n## What I did\n\n- Built the NER pipeline that pulled organizations, products, payment providers, and locations out of raw transaction descriptions.\n- Built the entity database that mapped extracted strings to canonical brands and merchants, disambiguating \"AMZN MKTPL\", \"Amazon.de\", and \"Amazon EU SARL\" as the same entity.\n- Built the vector-search layer that fell back to fuzzy matching when string extraction was ambiguous, and managed the labelling pipeline (Label Studio + a small team of labellers) that kept ground truth fresh.\n- Held personnel responsibility for a team of six labellers and developers while the product was built.\n\n## Outcome\n\nMerchant Information [went live](https://tink.com/blog/news/meet-merchant-information/) in Europe, enriching millions of transactions per day. With richer enrichment, Tink's customer banks could now surface \"what is this charge?\" answers to end users, segment transactions by merchant category for budgeting features, and run real-time fraud signals keyed off merchant identity. None of these were reachable from the raw transaction strings alone."
   },
   {
     "slug": "2022-q3-tink-data-scientist-categorization",
@@ -289,7 +529,10 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
+      "NER",
+      "Data Lake",
       "Python",
       "Apache Airflow",
       "AWS",
@@ -305,9 +548,15 @@ export const experiences: Experience[] = [
       "Regex",
       "Sonarcloud"
     ],
-    "summary": "Refactored Tink's long-running transaction categorization product and migrated the backend from Go to Python on Vertex AI — making the first Tink product to run on Vertex AI.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Tink had offered transaction categorization to its customers for years. By the time I joined the categorization team, the need to improve quality had become acute — recurring transaction prediction, risk work, and customer complaints all surfaced the same underlying issues. The product had been developed over several years by multiple authors, with a Fasttext + XGBoost classifier stack and a layer of static regex patterns. Newer model architectures were on the table, but the Go backend made experimentation painful.</p>\n<h2>What I did</h2>\n<ul>\n<li>Led a refactoring pass through the codebase: fixed bugs, removed dead code, introduced testing methodologies the team didn&#39;t have.</li>\n<li>Migrated the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The data-science team could iterate on model architecture again without backend rewrites. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move.</p>\n",
-    "bodyMarkdown": "## Context\n\nTink had offered transaction categorization to its customers for years. By the time I joined the categorization team, the need to improve quality had become acute — recurring transaction prediction, risk work, and customer complaints all surfaced the same underlying issues. The product had been developed over several years by multiple authors, with a Fasttext + XGBoost classifier stack and a layer of static regex patterns. Newer model architectures were on the table, but the Go backend made experimentation painful.\n\n## What I did\n\n- Led a refactoring pass through the codebase: fixed bugs, removed dead code, introduced testing methodologies the team didn't have.\n- Migrated the categorization service from Go to Python on Vertex AI — the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.\n\n## Outcome\n\nThe data-science team could iterate on model architecture again without backend rewrites. The next planned step — moving from text classification to a tag-based categorization scheme — became feasible thanks to the refactor and the Vertex AI move."
+    "summary": "Refactored Tink's transaction categorization, moved it from Go to Python as Tink's first Vertex AI product, and introduced a new NER and tagging approach.",
+    "references": [
+      {
+        "title": "What is data categorisation?, Tink blog",
+        "url": "https://tink.com/blog/open-banking/what-is-data-categorisation/"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>Categorization is harder than it looks. A single wrong label turns a user&#39;s weekly groceries at their local store into &quot;gifts&quot;, and every budget, insight and risk signal built on top of it is wrong. Tink had offered <a href=\"https://tink.com/blog/open-banking/what-is-data-categorisation/\">categorization</a> for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.</p>\n<h2>What I did</h2>\n<ul>\n<li>Led the refactoring of the codebase: fixed bugs, removed dead code and introduced testing methods the team didn&#39;t have.</li>\n<li>Migrated the categorization service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.</li>\n<li>Introduced a new categorization approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorization beyond static rules. Customer complaints about wrong categories dropped as quality improved.</p>\n",
+    "bodyMarkdown": "## Context\n\nCategorization is harder than it looks. A single wrong label turns a user's weekly groceries at their local store into \"gifts\", and every budget, insight and risk signal built on top of it is wrong. Tink had offered [categorization](https://tink.com/blog/open-banking/what-is-data-categorisation/) for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.\n\n## What I did\n\n- Led the refactoring of the codebase: fixed bugs, removed dead code and introduced testing methods the team didn't have.\n- Migrated the categorization service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.\n- Introduced a new categorization approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.\n\n## Outcome\n\nThe data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorization beyond static rules. Customer complaints about wrong categories dropped as quality improved."
   },
   {
     "slug": "2022-q1-tink-ml-engineer-forecasting",
@@ -321,11 +570,13 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
+      "TensorFlow",
+      "Keras",
       "Python",
       "SQL",
       "Jupyter",
-      "Transformer models",
       "Facebook Prophet",
       "PyTorch",
       "Regression Models",
@@ -338,9 +589,15 @@ export const experiences: Experience[] = [
       "Account Balance Forecasting",
       "Supervised Machine Learning"
     ],
-    "summary": "Investigated feasibility of forecasting checking-account balances so banks could warn customers before they overdrafted — the prototype became a production product.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Tink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master&#39;s thesis at Uppsala, partnered with one of Tink&#39;s product teams.</p>\n<h2>What I did</h2>\n<ul>\n<li>Tested a range of model families on anonymised checking-account data — regression baselines, XGBoost, Facebook Prophet, and RNN variants (GRU/LSTM) — to find what gave acceptable error rates for forward-looking predictions.</li>\n<li>Found that splitting transactional data into subgroups (e.g. recurring bills, salary inflows, one-off purchases) and forecasting each separately minimised the error contribution from rare high-variance transactions.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy.</p>\n",
-    "bodyMarkdown": "## Context\n\nTink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master's thesis at Uppsala, partnered with one of Tink's product teams.\n\n## What I did\n\n- Tested a range of model families on anonymised checking-account data — regression baselines, XGBoost, Facebook Prophet, and RNN variants (GRU/LSTM) — to find what gave acceptable error rates for forward-looking predictions.\n- Found that splitting transactional data into subgroups (e.g. recurring bills, salary inflows, one-off purchases) and forecasting each separately minimised the error contribution from rare high-variance transactions.\n\n## Outcome\n\nThe subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy."
+    "summary": "Investigated feasibility of forecasting checking-account balances so banks could warn customers before they overdrafted. The prototype became a production product.",
+    "references": [
+      {
+        "title": "Forecasting checking account balance using supervised machine learning, Master's thesis, Uppsala University (2022)",
+        "url": "https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>Tink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master&#39;s thesis at Uppsala University, partnered with one of Tink&#39;s product teams: <a href=\"https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf\">Forecasting checking account balance using supervised machine learning</a> (UPTEC IT 22011, June 2022).</p>\n<h2>What I did</h2>\n<ul>\n<li>Built a comparison framework that ran seven models (a naive baseline, Facebook Prophet, XGBoost, LSTM and GRU, including two optimised variants) on 24 datasets built from 377 anonymised checking accounts, scored on RMSE, MAE and MAPE.</li>\n<li>Found that splitting transactions into subgroups (recurring income, recurring bills, one-off purchases) and forecasting each separately limited the damage from rare, large, random transactions. Recurring income was the easiest subgroup to forecast.</li>\n<li>Found multivariate XGBoost with feature selection performed best overall, with GRU close behind and best at rebuilding the full balance from its subgroups.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy.</p>\n",
+    "bodyMarkdown": "## Context\n\nTink wanted a new feature: account-balance forecasting. A user would get a predicted balance for a future date based on their previous spending patterns, letting banks proactively warn customers about overdraft risk. I ran the feasibility investigation as my Master's thesis at Uppsala University, partnered with one of Tink's product teams: [Forecasting checking account balance using supervised machine learning](https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf) (UPTEC IT 22011, June 2022).\n\n## What I did\n\n- Built a comparison framework that ran seven models (a naive baseline, Facebook Prophet, XGBoost, LSTM and GRU, including two optimised variants) on 24 datasets built from 377 anonymised checking accounts, scored on RMSE, MAE and MAPE.\n- Found that splitting transactions into subgroups (recurring income, recurring bills, one-off purchases) and forecasting each separately limited the damage from rare, large, random transactions. Recurring income was the easiest subgroup to forecast.\n- Found multivariate XGBoost with feature selection performed best overall, with GRU close behind and best at rebuilding the full balance from its subgroups.\n\n## Outcome\n\nThe subgroup-then-forecast approach proved viable; Tink later productionised it as a real account-balance-forecasting service. The thesis itself documented the comparison across model families and the subgroup-splitting strategy."
   },
   {
     "slug": "2021-q1-mender-lead-developer",
@@ -354,30 +611,66 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
       "VueJS",
       "NodeJS",
       "MongoDB",
       "S3",
       "Stripe",
-      "Webhooks"
+      "Webhooks",
+      "Startup",
+      "Product Development",
+      "Payments",
+      "AWS"
     ],
-    "summary": "Co-built Mender end-to-end with a small team — a sustainable-fashion app connecting users with clothing-repair professionals, monetised via Stripe.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Mender is a sustainable-fashion app: users find and book clothing-repair professionals near them. Turning the idea into a real product needed three pieces — a responsive web platform usable on desktop and mobile, an in-app chat between users and repair pros, and a payment system that took Mender&#39;s percentage from each transaction.</p>\n<h2>What I did</h2>\n<ul>\n<li>Co-built the Mender app with a small team — Vue.js frontend, Node.js backend, MongoDB, AWS S3 for metadata.</li>\n<li>Wired the webhook-based chat between users and repair professionals, and integrated the Stripe SDK to handle payments plus Mender&#39;s per-transaction cut.</li>\n<li>Owned architecture decisions and the path from concept to public launch as a co-founder alongside the engineering work.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Mender launched as a working clothing-repair marketplace — users booking actual services through the app, with the architecture small enough that the team could maintain it post-launch without rewrites.</p>\n",
-    "bodyMarkdown": "## Context\n\nMender is a sustainable-fashion app: users find and book clothing-repair professionals near them. Turning the idea into a real product needed three pieces — a responsive web platform usable on desktop and mobile, an in-app chat between users and repair pros, and a payment system that took Mender's percentage from each transaction.\n\n## What I did\n\n- Co-built the Mender app with a small team — Vue.js frontend, Node.js backend, MongoDB, AWS S3 for metadata.\n- Wired the webhook-based chat between users and repair professionals, and integrated the Stripe SDK to handle payments plus Mender's per-transaction cut.\n- Owned architecture decisions and the path from concept to public launch as a co-founder alongside the engineering work.\n\n## Outcome\n\nMender launched as a working clothing-repair marketplace — users booking actual services through the app, with the architecture small enough that the team could maintain it post-launch without rewrites."
+    "summary": "Co-founded Mender with a group of friends and built it as lead developer: a sustainable-fashion marketplace connecting people with clothing-repair professionals.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Mender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals (&quot;menders&quot;) near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.</p>\n<h2>What I did</h2>\n<ul>\n<li>Co-built the Mender app as the team&#39;s lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.</li>\n<li>Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender&#39;s cut of each transaction.</li>\n<li>Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Mender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company&#39;s life, and the product had to be built to move with it.</p>\n",
+    "bodyMarkdown": "## Context\n\nMender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals (\"menders\") near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.\n\n## What I did\n\n- Co-built the Mender app as the team's lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.\n- Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender's cut of each transaction.\n- Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.\n\n## Outcome\n\nMender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company's life, and the product had to be built to move with it."
   },
   {
-    "slug": "2021-q3-valtech-radon-fullstack",
+    "slug": "2021-q3-valtech-mach-talent-programme",
     "role": "Fullstack Developer",
-    "company": "Valtech (Radon)",
+    "company": "Valtech",
     "companyUrl": "https://www.valtech.com/",
-    "projectTitle": "Digital marketing platform",
+    "projectTitle": "MACH talent programme",
     "industry": "Advertising",
     "start": "2021-Q3",
     "end": "2022-Q1",
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 1,
+    "tags": [
+      "MACH",
+      "Headless",
+      "Microservices",
+      "API",
+      "Cloud-native",
+      "Frontend",
+      "Backend",
+      "JavaScript",
+      "Java"
+    ],
+    "summary": "Joined Valtech's talent programme on the MACH track, training in headless, API-first development while working full-time alongside full-time university studies.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Valtech is a global digital consultancy. Its talent programme brings in developers early and trains them in the way Valtech builds for clients. I chose the MACH track: Microservices, API-first, Cloud-native and Headless architecture.</p>\n<h2>What I did</h2>\n<ul>\n<li>Followed the MACH track, learning to design systems as independent services behind clean APIs, with the frontend decoupled from the backend.</li>\n<li>Worked full-time at Valtech while studying full-time at Uppsala University.</li>\n<li>Put the training straight into client work on the Radon assignment, where the platform was rebuilt around exactly these patterns.</li>\n</ul>\n<h2>Outcome</h2>\n<p>The programme gave me the architecture habits I still build with: small services with clear contracts, so one part of a system can change without breaking the rest. I left Valtech when the chance came to write my Master&#39;s thesis at Tink.</p>\n",
+    "bodyMarkdown": "## Context\n\nValtech is a global digital consultancy. Its talent programme brings in developers early and trains them in the way Valtech builds for clients. I chose the MACH track: Microservices, API-first, Cloud-native and Headless architecture.\n\n## What I did\n\n- Followed the MACH track, learning to design systems as independent services behind clean APIs, with the frontend decoupled from the backend.\n- Worked full-time at Valtech while studying full-time at Uppsala University.\n- Put the training straight into client work on the Radon assignment, where the platform was rebuilt around exactly these patterns.\n\n## Outcome\n\nThe programme gave me the architecture habits I still build with: small services with clear contracts, so one part of a system can change without breaking the rest. I left Valtech when the chance came to write my Master's thesis at Tink."
+  },
+  {
+    "slug": "2021-q3-valtech-radon-fullstack",
+    "role": "Fullstack Developer",
+    "company": "Valtech",
+    "companyUrl": "https://www.valtech.com/",
+    "projectTitle": "Radon: digital marketing platform",
+    "industry": "Advertising",
+    "start": "2021-Q3",
+    "end": "2022-Q1",
+    "ongoing": false,
+    "nda": false,
+    "featured": false,
+    "priority": 0,
     "tags": [
       "Java",
       "Python",
@@ -393,32 +686,44 @@ export const experiences: Experience[] = [
       "HTML",
       "React Native"
     ],
-    "summary": "Rebuilt the backend of Radon's digital marketing platform — restored social-media API integrations and split them out into independent microservices.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Valtech is a global consultancy. I joined their MACH talent program — structured onboarding for fullstack developers specialising in Microservices, API-first, Cloud-native, and Headless architectures — and was placed on their recently acquired agency Radon. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking clients paid for.</p>\n<h2>What I did</h2>\n<ul>\n<li>Owned the backend rewrites for Radon&#39;s campaign platform: re-integrated with each social-media API (Facebook, Google, etc.) so campaign metrics flowed accurately again.</li>\n<li>Restructured the backend around microservices and API-first patterns so each social integration could evolve independently of the others.</li>\n<li>Touched the frontend where the new backend exposed new fields — extending the campaign-config UI to match.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Radon could once again manage and track multi-channel campaigns reliably. With per-integration microservices in place, future API changes from any one social platform became localised patches instead of full backend reworks.</p>\n",
-    "bodyMarkdown": "## Context\n\nValtech is a global consultancy. I joined their MACH talent program — structured onboarding for fullstack developers specialising in Microservices, API-first, Cloud-native, and Headless architectures — and was placed on their recently acquired agency Radon. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking clients paid for.\n\n## What I did\n\n- Owned the backend rewrites for Radon's campaign platform: re-integrated with each social-media API (Facebook, Google, etc.) so campaign metrics flowed accurately again.\n- Restructured the backend around microservices and API-first patterns so each social integration could evolve independently of the others.\n- Touched the frontend where the new backend exposed new fields — extending the campaign-config UI to match.\n\n## Outcome\n\nRadon could once again manage and track multi-channel campaigns reliably. With per-integration microservices in place, future API changes from any one social platform became localised patches instead of full backend reworks."
+    "summary": "Rebuilt the backend of Radon's digital marketing platform: restored the social-media API integrations and split them out into independent microservices.",
+    "references": [
+      {
+        "title": "Valtech Radon",
+        "url": "https://www.valtechradon.com/"
+      }
+    ],
+    "bodyHtml": "<h2>Context</h2>\n<p>My main assignment at Valtech was for Radon (House of Radon, now Valtech Radon), a creative agency Valtech acquired in February 2021. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking its clients paid for.</p>\n<h2>What I did</h2>\n<ul>\n<li>Owned the backend rewrite of Radon&#39;s campaign platform and re-integrated it with Twitter (now X), Facebook, LinkedIn and Instagram, so campaign metrics flowed accurately again.</li>\n<li>Restructured the backend around microservices and API-first patterns, so each social integration could evolve on its own when a platform changed its API.</li>\n<li>Extended the frontend where the new backend exposed new fields, so the campaign-config UI matched.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Radon could once again manage and track multi-channel campaigns reliably. With one microservice per integration, a change from any single social platform became a local patch instead of a backend rework.</p>\n",
+    "bodyMarkdown": "## Context\n\nMy main assignment at Valtech was for Radon (House of Radon, now Valtech Radon), a creative agency Valtech acquired in February 2021. Radon ran a digital marketing platform that had drifted out of sync with the social-media APIs, eroding the accuracy of the campaign tracking its clients paid for.\n\n## What I did\n\n- Owned the backend rewrite of Radon's campaign platform and re-integrated it with Twitter (now X), Facebook, LinkedIn and Instagram, so campaign metrics flowed accurately again.\n- Restructured the backend around microservices and API-first patterns, so each social integration could evolve on its own when a platform changed its API.\n- Extended the frontend where the new backend exposed new fields, so the campaign-config UI matched.\n\n## Outcome\n\nRadon could once again manage and track multi-channel campaigns reliably. With one microservice per integration, a change from any single social platform became a local patch instead of a backend rework."
   },
   {
     "slug": "2021-q2-healthcare-fullstack",
     "role": "Fullstack Developer",
     "company": "Decerno AB",
     "companyUrl": "https://www.decerno.se/",
-    "projectTitle": "Authentication and login for a healthcare client",
+    "projectTitle": "Login solution for a healthcare region",
     "industry": "Healthcare",
     "start": "2021-Q2",
     "end": "2021-Q3",
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
       "React",
       "TypeScript",
       ".NET",
       "C#",
-      "OAuth/JWT"
+      "OAuth/JWT",
+      "Authentication",
+      "Frontend",
+      "Backend",
+      "Legacy Integration"
     ],
-    "summary": "Built a new OAuth/JWT auth system for a healthcare client's web platform — had to work both standalone and integrated with their existing legacy platform.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Interned at <strong>Decerno AB</strong>, a Swedish IT consultancy, on a project for a healthcare-sector client (under NDA). The client needed help with login and authentication on their new web platform. The auth flow had to function as a standalone system <strong>and</strong> integrate with the client&#39;s existing legacy platform — on a tight deadline.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the frontend pieces — new login page, logout flow — for the new web platform.</li>\n<li>Coordinated the backend changes across the legacy platform and the new one so the same OAuth/JWT identity model worked from either entry point.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Shipped on the tight timeline. The auth system worked standalone for the new platform and as the entry point into the client&#39;s legacy system — a single identity model spanning both surfaces.</p>\n",
-    "bodyMarkdown": "## Context\n\nInterned at **Decerno AB**, a Swedish IT consultancy, on a project for a healthcare-sector client (under NDA). The client needed help with login and authentication on their new web platform. The auth flow had to function as a standalone system **and** integrate with the client's existing legacy platform — on a tight deadline.\n\n## What I did\n\n- Built the frontend pieces — new login page, logout flow — for the new web platform.\n- Coordinated the backend changes across the legacy platform and the new one so the same OAuth/JWT identity model worked from either entry point.\n\n## Outcome\n\nShipped on the tight timeline. The auth system worked standalone for the new platform and as the entry point into the client's legacy system — a single identity model spanning both surfaces."
+    "summary": "Built a custom OAuth/JWT login solution in .NET and React for a Swedish healthcare region, working both standalone and with its legacy platform.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Interned at <strong>Decerno AB</strong>, a Swedish IT consultancy, on a project for a Swedish healthcare region (under NDA). The region needed login and authentication for its new web platform. Instead of an off-the-shelf product, it was a login solution of its own, which had to work as a standalone system <strong>and</strong> integrate with the region&#39;s existing legacy platform, on a tight deadline.</p>\n<h2>What I did</h2>\n<ul>\n<li>Built the frontend for the new web platform in React: a new login page and logout flow.</li>\n<li>Worked on the .NET backend and coordinated the changes across the legacy platform and the new one, so the same OAuth/JWT identity model worked from either entry point.</li>\n</ul>\n<h2>Outcome</h2>\n<p>Shipped on the tight timeline. The login solution worked standalone for the new platform and as the entry point into the region&#39;s legacy system, giving one identity model across both. The internship ended with a job offer from Decerno.</p>\n",
+    "bodyMarkdown": "## Context\n\nInterned at **Decerno AB**, a Swedish IT consultancy, on a project for a Swedish healthcare region (under NDA). The region needed login and authentication for its new web platform. Instead of an off-the-shelf product, it was a login solution of its own, which had to work as a standalone system **and** integrate with the region's existing legacy platform, on a tight deadline.\n\n## What I did\n\n- Built the frontend for the new web platform in React: a new login page and logout flow.\n- Worked on the .NET backend and coordinated the changes across the legacy platform and the new one, so the same OAuth/JWT identity model worked from either entry point.\n\n## Outcome\n\nShipped on the tight timeline. The login solution worked standalone for the new platform and as the entry point into the region's legacy system, giving one identity model across both. The internship ended with a job offer from Decerno."
   },
   {
     "slug": "2020-q2-steven-fullstack",
@@ -432,31 +737,118 @@ export const experiences: Experience[] = [
     "ongoing": false,
     "nda": false,
     "featured": false,
+    "priority": 0,
     "tags": [
       "React",
       "TypeScript",
       "SQL",
       "JavaScript",
-      "Stakeholder management"
+      "Stakeholder management",
+      "PII",
+      "Data Security",
+      "Access Control",
+      "Frontend",
+      "Backend",
+      "Remote Collaboration"
     ],
-    "summary": "Built a PII-safe support web platform for Steven so a new support contractor could handle cases without seeing more user data than they needed.",
-    "bodyHtml": "<h2>Context</h2>\n<p>Steven is an app for splitting shared expenses — people log what they bought for an event or trip and the app evens everyone out. After a change of support contractor, Steven prioritized data security: keep effective support operations, but minimize what personal information the new vendor could see.</p>\n<h2>What I did</h2>\n<ul>\n<li>Mapped the data flows between Steven&#39;s database, support system, and the new contractor&#39;s view — identifying what PII could be hidden and what had to remain visible for support agents to do their job.</li>\n<li>Built the new support pages in React and wired them into Steven&#39;s existing support system.</li>\n<li>Updated the JavaScript backend&#39;s database interactions so the new pages exposed only the minimum data each support task required — query filters, auth scopes, and per-page field allowlists.</li>\n</ul>\n<h2>Outcome</h2>\n<p>A PII-safe support web platform shipped on time. The support contractor sees only the data they need to do their job — reducing risk without compromising support quality.</p>\n",
-    "bodyMarkdown": "## Context\n\nSteven is an app for splitting shared expenses — people log what they bought for an event or trip and the app evens everyone out. After a change of support contractor, Steven prioritized data security: keep effective support operations, but minimize what personal information the new vendor could see.\n\n## What I did\n\n- Mapped the data flows between Steven's database, support system, and the new contractor's view — identifying what PII could be hidden and what had to remain visible for support agents to do their job.\n- Built the new support pages in React and wired them into Steven's existing support system.\n- Updated the JavaScript backend's database interactions so the new pages exposed only the minimum data each support task required — query filters, auth scopes, and per-page field allowlists.\n\n## Outcome\n\nA PII-safe support web platform shipped on time. The support contractor sees only the data they need to do their job — reducing risk without compromising support quality."
+    "summary": "Built a support platform for Steven that let an outsourced support vendor handle cases while seeing only the personal data each task required.",
+    "references": [],
+    "bodyHtml": "<h2>Context</h2>\n<p>Steven is an app for splitting shared expenses: people log what they bought for an event or trip and the app evens everyone out. I joined for a summer, working with a development team that was fully remote in another country, so all collaboration happened online. Steven had outsourced its customer support to a third party it did not fully trust, and needed support to keep working while the vendor saw as little personal data as possible.</p>\n<h2>What I did</h2>\n<ul>\n<li>Mapped the data flows between Steven&#39;s database, support system and the vendor&#39;s view, identifying which personal data could be hidden and what support agents needed to see to do their job.</li>\n<li>Designed tiers of access, so each support task exposed only the data it required, and enforced them in the JavaScript backend with query filters, auth scopes and per-page field allowlists.</li>\n<li>Built the new support pages in React and wired them into Steven&#39;s existing support system.</li>\n</ul>\n<h2>Outcome</h2>\n<p>A support platform that protected users&#39; personal data shipped on time. The outside vendor sees only the data each task needs, which reduced the risk of handing support to a third party without hurting support quality.</p>\n",
+    "bodyMarkdown": "## Context\n\nSteven is an app for splitting shared expenses: people log what they bought for an event or trip and the app evens everyone out. I joined for a summer, working with a development team that was fully remote in another country, so all collaboration happened online. Steven had outsourced its customer support to a third party it did not fully trust, and needed support to keep working while the vendor saw as little personal data as possible.\n\n## What I did\n\n- Mapped the data flows between Steven's database, support system and the vendor's view, identifying which personal data could be hidden and what support agents needed to see to do their job.\n- Designed tiers of access, so each support task exposed only the data it required, and enforced them in the JavaScript backend with query filters, auth scopes and per-page field allowlists.\n- Built the new support pages in React and wired them into Steven's existing support system.\n\n## Outcome\n\nA support platform that protected users' personal data shipped on time. The outside vendor sees only the data each task needs, which reduced the risk of handing support to a third party without hurting support quality."
   }
 ];
 
 export const profile: Profile = {
   "bio": {
     "name": "Martin Dannelind",
-    "headline": "AI Engineer",
-    "subhead": "Data Science & Data Engineering",
+    "headline": "Senior AI Consultant · AI Lead",
+    "subhead": "AI, data and product",
     "location": "Stockholm, Sweden",
     "employerOfRecord": "Theodora Tech",
-    "tagline": "I build AI systems that turn raw data into decisions people can act on.",
-    "bodyHtml": "<p>I design and ship AI systems end-to-end — from the data pipelines that feed them to the cloud infrastructure that serves them. My work tends to sit at the seam between raw data and the people who need to act on it: building MCP servers so analysts can query BigQuery in natural language, RAG systems that surface knowledge buried in databases, classifiers that enrich millions of transactions, forecasting models that help banks warn customers before they overdraft.</p>\n<p>I&#39;m hands-on across the stack — Python, SQL, GCP, BigQuery, DBT, Vertex AI, LangChain, OpenAI — and equally comfortable in the fullstack and security work that pays the rent for the AI work. I move fast, learn fast, and care a lot about the colleagues I do it with.</p>\n<p>Recent work has been with <strong>SVT</strong> (Sweden&#39;s national public broadcaster) building an internal MCP mesh that makes data analysis accessible without SQL, and <strong>Tink</strong> (the Visa-owned open banking platform) on merchant enrichment, transaction categorization, and the AWS→GCP migration of a major customer.</p>\n"
+    "headshot": "/martin-dannelind.jpg",
+    "headshotBackground": "#1f2428",
+    "headshotBackdrop": "/martin-dannelind-backdrop.png",
+    "tagline": "I'm a builder who likes to bring ideas into reality and build products that people actually want to use.",
+    "intro": "After shipping data and ML products at Tink, Visa and SVT, and co‑founding a startup along the way, I'm now a Senior AI Consultant at Theodora Tech and AI Lead at CAIA Cosmetics, creating data platforms and AI systems side by side with the people who use them. Much of that work runs on applied brains and artificial users: AI agents that use the platforms the way real colleagues would, so every gap they hit becomes a feedback loop that makes the platform better. We've since turned that approach into conversational analytics that Theodora delivers to other companies. Staying on top of the AI wave has always mattered to me, and I'm excited about where software development, and the way we make things in general, is heading.",
+    "bodyHtml": "<p>Hi, and thanks for stopping by my website and CV!</p>\n<p>I&#39;m Martin, an active guy who loves building and creating new things, everything from kitchen tables to cutting-edge AI platforms. I live in Bromma with my girlfriend Frida. I grew up in Västerhaninge, just south of Stockholm, as the middle child between two sisters, with a little dog called Ralf and family close by.</p>\n<p>Growing up, most of my spare time and weekends were spent in the garage, on the motocross track or out on the enduro trails. Training, racing and competing have been a big part of my life ever since. I&#39;ve skied Vasaloppet seven times and completed two Swedish Classics (En Svensk Klassiker), one of them a Super Classic. In summer much of my time is spent on the bike, and I race for Ängby CC.</p>\n<p>I&#39;m lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains, and in summer in the forests of Småland, where my parents have a summer house in Ventzelholm: an old school house from 1917.</p>\n",
+    "gallery": [
+      {
+        "type": "image",
+        "src": "/about/ventzelholm-summer-house.jpg",
+        "poster": null,
+        "alt": "My parents' summer house in Ventzelholm, Småland: an old yellow wooden school house from 1917 with a red tiled roof among pine trees",
+        "tile": "wide",
+        "focus": "center 44%",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "type": "image",
+        "src": "/about/group-run.jpg",
+        "poster": null,
+        "alt": "Martin smiling with another runner, arms around each other's shoulders, on a city square after a group run",
+        "tile": "tall",
+        "focus": "center 40%",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "type": "image",
+        "src": "/about/summer-lake-fishing.jpg",
+        "poster": null,
+        "alt": "Looking down at bare feet in a clear, shallow lake on a summer evening, holding a fishing rod",
+        "tile": "tall",
+        "focus": null,
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "type": "video",
+        "src": "/about/road-cycling.mp4",
+        "poster": "/about/road-cycling-poster.jpg",
+        "alt": "Martin road cycling on a forest road on a sunny day",
+        "tile": "tall",
+        "focus": null,
+        "width": 720,
+        "height": 960
+      },
+      {
+        "type": "video",
+        "src": "/about/ski-trail.mp4",
+        "poster": "/about/ski-trail-poster.jpg",
+        "alt": "Skiing along a trail through snow-covered spruce forest under a clear blue sky",
+        "tile": "tall",
+        "focus": null,
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "type": "image",
+        "src": "/about/cross-country-skiing.jpg",
+        "poster": null,
+        "alt": "Martin on cross-country skis on a groomed track in a frosty forest",
+        "tile": "small",
+        "focus": "center 40%",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "type": "image",
+        "src": "/about/alpine-skiing.jpg",
+        "poster": null,
+        "alt": "Martin in ski gear and orange goggles on a piste, with jagged snow-covered mountains behind",
+        "tile": "small",
+        "focus": "center 40%",
+        "width": 900,
+        "height": 1200
+      }
+    ]
   },
   "identity": {
     "roles": [
+      "Senior AI Consultant",
+      "AI Lead",
+      "Co-Founder & Lead Developer",
       "AI Engineer",
       "Data Scientist",
       "Machine Learning Engineer",
@@ -468,6 +860,7 @@ export const profile: Profile = {
       "Co-Founder"
     ],
     "industries": [
+      "Consulting",
       "Fintech",
       "SaaS",
       "Advertising",
@@ -478,14 +871,29 @@ export const profile: Profile = {
     ],
     "location": "Stockholm, Sweden",
     "availableFor": [
+      "AI Lead",
+      "AI Consultant",
       "AI Engineer",
-      "Data Scientist",
-      "ML Engineer",
       "Data Engineer"
     ]
   },
   "contact": {
     "email": "martin.dannelind@gmail.com",
+    "emails": [
+      {
+        "address": "martin.dannelind@gmail.com",
+        "label": "Personal"
+      },
+      {
+        "address": "martin@theodoratech.se",
+        "label": "Theodora Tech"
+      },
+      {
+        "address": "martin.dannelind@caiacosmetics.com",
+        "label": "CAIA Cosmetics"
+      }
+    ],
+    "phone": "+46 73 823 99 30",
     "linkedin": "https://www.linkedin.com/in/martin-dannelind-24ab88198/",
     "github": "https://github.com/dannemarre"
   }
@@ -498,7 +906,8 @@ export const education: Education[] = [
     "field": "Software Development",
     "institution": "Uppsala University",
     "location": "Uppsala, Sweden",
-    "bodyHtml": "<h2>Master of Science in Engineering, Software Development</h2>\n<p>Five-year civilingenjör programme at Uppsala University — Sweden&#39;s oldest university and one of the top CS programmes in the Nordics. Coursework across software development, computer science, and engineering fundamentals.</p>\n<p><strong>Activities:</strong> IT-Sektionen board member, 2018.</p>\n"
+    "url": "https://www.uu.se/en/study/programme/masters-programme-computer-and-information-engineering",
+    "bodyHtml": "<h2>Master of Science in Engineering, Software Development</h2>\n<p>Five-year civilingenjör programme at Uppsala University, Sweden&#39;s oldest university and one of the top CS programmes in the Nordics. Coursework across software development, computer science, and engineering fundamentals.</p>\n<p><strong>Activities:</strong> IT-Sektionen board member, 2018.</p>\n"
   }
 ];
 
@@ -533,6 +942,10 @@ export const skillGroups: SkillGroup[] = [
       "Data Mesh",
       "Data Products",
       "Semantic Modelling",
+      "Data Modelling",
+      "Data Governance",
+      "Data Lake",
+      "PLM",
       "Data Transformation",
       "Data Visualization"
     ]
@@ -540,6 +953,16 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "ML & AI",
     "items": [
+      "Facebook Prophet",
+      "Account Balance Forecasting",
+      "Multi-agent Systems",
+      "AI Agents",
+      "Document Extraction",
+      "Web Search",
+      "Anthropic SDK",
+      "Claude Skills",
+      "Claude Code",
+      "Pydantic",
       "LLM",
       "RAG",
       "OpenAI",
@@ -555,6 +978,7 @@ export const skillGroups: SkillGroup[] = [
       "LibreChat",
       "PyTorch",
       "TensorFlow",
+      "Keras",
       "Scikit-learn",
       "XGBoost",
       "Fasttext",
@@ -570,6 +994,9 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Analytics & BI",
     "items": [
+      "Conversational Analytics",
+      "Self-service BI",
+      "Kimball",
       "PowerBI",
       "Looker",
       "Tableau",
@@ -582,6 +1009,8 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Languages",
     "items": [
+      "Go",
+      "Regex",
       "Python",
       "TypeScript",
       "JavaScript",
@@ -600,6 +1029,14 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Frameworks",
     "items": [
+      "Frontend",
+      "Backend",
+      "Design Systems",
+      "Design Tokens",
+      "shadcn/ui",
+      "Next.js",
+      "Tailwind",
+      "Vite",
       "React",
       "React Native",
       "VueJS",
@@ -612,11 +1049,15 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "DevOps & tooling",
     "items": [
+      "Terraform",
+      "Cloud Scheduler",
+      "IAP",
       "Docker",
       "Kubernetes",
       "CI/CD",
       "Buildkite",
       "GitHub",
+      "GitHub Packages",
       "GitLab",
       "Bitbucket",
       "Git",
@@ -629,6 +1070,16 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Security & auth",
     "items": [
+      "PII",
+      "Data Security",
+      "Access Control",
+      "Authentication",
+      "Security Champion",
+      "Secure Coding",
+      "Code Review",
+      "Reliability",
+      "Regulatory Compliance",
+      "PPWR",
       "Code Security",
       "Sonarcloud",
       "Checkmarx",
@@ -638,9 +1089,13 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Integrations",
     "items": [
+      "Payments",
+      "Legacy Integration",
       "API",
       "Webhooks",
       "Microservices",
+      "Headless",
+      "Cloud-native",
       "Stripe",
       "MongoDB",
       "MySQL",
@@ -652,6 +1107,14 @@ export const skillGroups: SkillGroup[] = [
   {
     "name": "Soft",
     "items": [
+      "Startup",
+      "Product Development",
+      "Remote Collaboration",
+      "Technical Leadership",
+      "People Management",
+      "Recruitment",
+      "Consulting",
+      "Productisation",
       "Stakeholder management",
       "Cross-functional teams",
       "Staff management",
@@ -660,3 +1123,4 @@ export const skillGroups: SkillGroup[] = [
     ]
   }
 ];
+

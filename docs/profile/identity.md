@@ -1,10 +1,13 @@
 ---
 location: Stockholm, Sweden
-availableFor: AI Engineer, Data Scientist, ML Engineer, Data Engineer
+availableFor: AI Lead, AI Consultant, AI Engineer, Data Engineer
 ---
 
 ## Roles
 
+- Senior AI Consultant
+- AI Lead
+- Co-Founder & Lead Developer
 - AI Engineer
 - Data Scientist
 - Machine Learning Engineer
@@ -17,6 +20,7 @@ availableFor: AI Engineer, Data Scientist, ML Engineer, Data Engineer
 
 ## Industries
 
+- Consulting
 - Fintech
 - SaaS
 - Advertising

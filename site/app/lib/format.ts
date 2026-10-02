@@ -1,8 +1,8 @@
 export function formatRange(start: string, end: string | null, ongoing: boolean): string {
-  if (ongoing) return `${start} — ongoing`;
+  if (ongoing) return `Since ${start}`;
   if (!end) return start;
   if (end === start) return start;
-  return `${start} — ${end}`;
+  return `${start} to ${end}`;
 }
 
 export function formatQuarter(q: string): string {

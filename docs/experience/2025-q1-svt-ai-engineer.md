@@ -3,7 +3,7 @@ slug: 2025-q1-svt-ai-engineer
 role: AI Engineer
 company: SVT
 companyUrl: https://www.svt.se/
-projectTitle: Corporate Domain — MCP mesh & Survey Insights
+projectTitle: "Corporate Domain: MCP mesh & Survey Insights"
 industry: Broadcasting
 start: 2025-Q1
 end: 2026-Q1
@@ -17,7 +17,6 @@ tags:
   - LLM
   - PowerBI
   - SQL
-  - Data Analysis
   - Prompt engineering
   - GitLab
   - DBT Fusion
@@ -35,10 +34,11 @@ Sveriges Television (SVT) is Sweden's national public broadcaster, producing imp
 
 ## What I did
 
-- Proposed an MCP server that lets teams query data using natural language. The idea grew into an SVT-wide initiative — an MCP mesh accessible through an internally hosted version of LibreChat, with individual MCP servers owned by separate teams but available to the whole organisation.
-- Spearheaded development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.
-- Extended the MCP to support PowerBI work — it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
+- Proposed and built SVT's first MCP server, letting teams query data in natural language. The idea grew into an SVT-wide initiative: an MCP mesh accessible through an internally hosted version of LibreChat, with MCP servers owned by separate teams but available to the whole organisation.
+- Coached other teams as they built their own MCP servers for the mesh, and presented the initiative internally to spread it across SVT.
+- Led development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.
+- Extended the MCP to support PowerBI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
 
 ## Outcome
 
-By the end of the engagement, multiple MCP servers were live across SVT — extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
+By the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
