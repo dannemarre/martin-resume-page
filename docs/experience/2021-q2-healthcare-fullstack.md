@@ -3,7 +3,7 @@ slug: 2021-q2-healthcare-fullstack
 role: Fullstack Developer
 company: Decerno AB
 companyUrl: https://www.decerno.se/
-projectTitle: Login solution for a healthcare region
+projectTitle: "Login for a healthcare region"
 industry: Healthcare
 start: 2021-Q2
 end: 2021-Q3
@@ -16,8 +16,6 @@ tags:
   - C#
   - OAuth/JWT
   - Authentication
-  - Frontend
-  - Backend
   - Legacy Integration
 summary: Built a custom OAuth/JWT login solution in .NET and React for a Swedish healthcare region, working both standalone and with its legacy platform.
 ---

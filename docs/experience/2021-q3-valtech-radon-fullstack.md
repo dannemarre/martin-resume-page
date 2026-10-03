@@ -3,10 +3,10 @@ slug: 2021-q3-valtech-radon-fullstack
 role: Fullstack Developer
 company: Valtech
 companyUrl: https://www.valtech.com/
-projectTitle: "Radon: digital marketing platform"
+projectTitle: "Radon marketing platform"
 industry: Advertising
 start: 2021-Q3
-end: 2022-Q1
+end: 2021-Q4
 ongoing: false
 nda: false
 tags:
@@ -17,8 +17,6 @@ tags:
   - API
   - MACH
   - Microservices
-  - Frontend
-  - Backend
   - CSS
   - Bitbucket
   - HTML

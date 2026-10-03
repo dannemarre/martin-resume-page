@@ -3,7 +3,7 @@ slug: 2022-q1-tink-ml-engineer-forecasting
 role: Machine Learning Engineer
 company: Tink
 companyUrl: https://tink.com/
-projectTitle: Forecasting checking-account balance
+projectTitle: "Account balance forecasting"
 industry: Fintech
 start: 2022-Q1
 end: 2022-Q2
@@ -29,7 +29,7 @@ tags:
 references:
   - title: "Forecasting checking account balance using supervised machine learning, Master's thesis, Uppsala University (2022)"
     url: https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf
-summary: Investigated feasibility of forecasting checking-account balances so banks could warn customers before they overdrafted. The prototype became a production product.
+summary: "Showed that checking-account balances can be forecast so banks can warn customers before an overdraft, a prototype that became a production product."
 ---
 
 ## Context

@@ -30,6 +30,9 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Data Products
 - Semantic Modelling
 - Data Modelling
+- Data Pipelines
+- ETL
+- Data Warehousing
 - Data Governance
 - Data Lake
 - PLM
@@ -41,6 +44,9 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Facebook Prophet
 - Account Balance Forecasting
 - Multi-agent Systems
+- Agentic AI
+- AI Strategy
+- Generative AI
 - AI Agents
 - Document Extraction
 - Web Search
@@ -57,6 +63,7 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - LangChain
 - Retrieval QA Chains
 - NER
+- NLP
 - Prompt engineering
 - MCP Servers
 - FastMCP
@@ -69,6 +76,8 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Fasttext
 - Time Series Forecasting
 - Supervised Machine Learning
+- Deep Learning
+- MLOps
 - Regression Models
 - GRU
 - LSTM
@@ -80,7 +89,7 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Conversational Analytics
 - Self-service BI
 - Kimball
-- PowerBI
+- Power BI
 - Looker
 - Tableau
 - Jupyter
@@ -96,7 +105,6 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - TypeScript
 - JavaScript
 - SQL
-- Go (Golang)
 - Java
 - C
 - C++
@@ -108,8 +116,6 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 
 ## Frameworks
 
-- Frontend
-- Backend
 - Design Systems
 - Design Tokens
 - shadcn/ui
@@ -182,12 +188,11 @@ note: Grouped keyword list. Each H2 is a UI section; bullets under it become bad
 - Product Development
 - Remote Collaboration
 - Technical Leadership
+- Change Management
 - People Management
 - Recruitment
 - Consulting
 - Productisation
-- Stakeholder management
+- Stakeholder Management
 - Cross-functional teams
-- Staff management
-- Code maintenance
 - Monitoring & Alerting

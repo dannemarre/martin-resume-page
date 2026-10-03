@@ -3,7 +3,7 @@ slug: 2024-q4-svt-data-engineer
 role: Data Engineer
 company: SVT
 companyUrl: https://www.svt.se/
-projectTitle: "Corporate Domain: Survey pipeline & PSR"
+projectTitle: "Survey data and government reporting"
 industry: Broadcasting
 start: 2024-Q4
 end: 2026-Q1
@@ -15,7 +15,7 @@ tags:
   - DBT
   - DBT Fusion
   - Snowflake Schema
-  - PowerBI
+  - Power BI
   - Cloud Run
   - GCS
   - GCP
@@ -29,8 +29,8 @@ tags:
   - Data Mesh
   - Alteryx
   - Cloud Functions
-  - Stakeholder management
-summary: Built SVT's end-to-end survey data pipeline and a centralized PowerBI semantic model, now the single source of truth for survey data across the organisation.
+  - Stakeholder Management
+summary: Built SVT's end-to-end survey data pipeline and a centralised Power BI semantic model, now the single source of truth for survey data across the organisation.
 ---
 
 ## Context
@@ -40,7 +40,7 @@ SVT had made a strategic shift toward becoming a more data-driven organisation w
 ## What I did
 
 - Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.
-- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model, now the single source of truth for survey data.
+- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralised Power BI semantic model, now the single source of truth for survey data.
 - Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.
 - Gave analysts an early agent-based way to analyse the survey data, with AI agents querying BigQuery through the bq CLI. That work led directly to the MCP servers that followed.
 

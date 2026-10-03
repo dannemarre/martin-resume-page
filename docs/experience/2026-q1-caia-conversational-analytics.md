@@ -3,7 +3,7 @@ slug: 2026-q1-caia-conversational-analytics
 role: AI Lead
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: From Power BI to conversational analytics
+projectTitle: "Move to conversational analytics"
 industry: Fashion
 start: 2026-Q1
 end: null
@@ -12,7 +12,7 @@ nda: false
 featured: false
 tags:
   - Technical Leadership
-  - PowerBI
+  - Power BI
   - Conversational Analytics
   - BigQuery
   - Dataform

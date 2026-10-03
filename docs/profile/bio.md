@@ -85,4 +85,4 @@ I'm Martin, an active guy who loves building and creating new things, everything
 
 Growing up, most of my spare time and weekends were spent in the garage, on the motocross track or out on the enduro trails. Training, racing and competing have been a big part of my life ever since. I've skied Vasaloppet seven times and completed two Swedish Classics (En Svensk Klassiker), one of them a Super Classic. In summer much of my time is spent on the bike, and I race for Ängby CC.
 
-I'm lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains, and in summer in the forests of Småland, where my parents have a summer house in Ventzelholm: an old school house from 1917.
+I'm lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains. Summers I spend in the forests of Småland, where my parents have a house in Ventzelholm: an old school house from 1917.

@@ -23,7 +23,7 @@ tags:
 references:
   - title: "Theodora Tech"
     url: https://www.theodoratech.se/
-summary: Theodora Tech is a growing team of expert data enthusiasts building smart systems with and for AI, across a wide range of companies and initiatives.
+summary: "Delivering Theodora Tech's client assignments in AI and data, and taking part in recruitment as the team grows."
 ---
 
 ## Context
