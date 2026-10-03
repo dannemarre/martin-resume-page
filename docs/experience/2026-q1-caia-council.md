@@ -3,7 +3,7 @@ slug: 2026-q1-caia-council
 role: AI Lead
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: "CAIAcouncil: multi-agent business review"
+projectTitle: "CAIAcouncil weekly business review"
 industry: Fashion
 start: 2026-Q1
 end: null

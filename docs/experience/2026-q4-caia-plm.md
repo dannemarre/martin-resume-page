@@ -3,7 +3,7 @@ slug: 2026-q4-caia-plm
 role: AI Lead
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: "PLM: product, packaging and compliance data"
+projectTitle: "Product data and PLM"
 industry: Fashion
 start: 2026-Q4
 end: null

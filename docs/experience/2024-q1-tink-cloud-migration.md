@@ -3,7 +3,7 @@ slug: 2024-q1-tink-cloud-migration
 role: Cloud Migration Engineer
 company: Tink
 companyUrl: https://tink.com/
-projectTitle: AWS → GCP migration
+projectTitle: "AWS to GCP migration"
 industry: Fintech
 start: 2024-Q1
 end: 2024-Q3
@@ -19,7 +19,7 @@ tags:
   - GCS
   - S3
   - Pydantic
-  - Stakeholder management
+  - Stakeholder Management
   - Cross-functional teams
 summary: Co-led moving one of Sweden's major banks and all its transactional and personal data from AWS to GCP, without disruption, opening a high-impact upsell.
 ---

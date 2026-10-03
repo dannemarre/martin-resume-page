@@ -3,10 +3,10 @@ slug: 2021-q1-mender-lead-developer
 role: Co-Founder & Lead Developer
 company: Mender
 companyUrl: null
-projectTitle: App development
+projectTitle: "Clothing repair marketplace"
 industry: Fashion
 start: 2021-Q1
-end: 2022-Q2
+end: 2021-Q3
 ongoing: false
 nda: false
 tags:

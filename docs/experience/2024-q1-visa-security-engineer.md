@@ -3,7 +3,7 @@ slug: 2024-q1-visa-security-engineer
 role: Security Engineer
 company: Visa
 companyUrl: https://www.visa.com/
-projectTitle: Code security task force at Tink
+projectTitle: "Code security task force"
 industry: Fintech
 start: 2024-Q1
 end: 2024-Q3
@@ -15,12 +15,11 @@ tags:
   - CI/CD
   - Checkmarx
   - Code Security
-  - Code maintenance
   - Security Champion
   - Secure Coding
   - Code Review
   - Reliability
-summary: Given a mandate by Visa to raise code quality and uptime across Tink's full product suite after downtime incidents, working through a security task force.
+summary: "Joined a Visa-mandated security task force to raise code quality and uptime across Tink's full product suite after downtime incidents."
 ---
 
 ## Context

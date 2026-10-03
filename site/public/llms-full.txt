@@ -24,7 +24,7 @@ I'm Martin, an active guy who loves building and creating new things, everything
 
 Growing up, most of my spare time and weekends were spent in the garage, on the motocross track or out on the enduro trails. Training, racing and competing have been a big part of my life ever since. I've skied Vasaloppet seven times and completed two Swedish Classics (En Svensk Klassiker), one of them a Super Classic. In summer much of my time is spent on the bike, and I race for Ängby CC.
 
-I'm lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains, and in summer in the forests of Småland, where my parents have a summer house in Ventzelholm: an old school house from 1917.
+I'm lucky to have a big circle of friends and training buddies, and much of my time outside work is spent with them and my family. In winter you can usually find me in the Swedish mountains. Summers I spend in the forests of Småland, where my parents have a house in Ventzelholm: an old school house from 1917.
 
 ## Experience
 
@@ -59,7 +59,7 @@ References:
 - Dates: since 2026-Q1
 - Industry: Fashion
 - Company URL: https://caiacosmetics.com/
-- Project: CAIAverse: semantic data layer + MCP
+- Project: CAIAverse data layer
 - Tags: Technical Leadership, GCP, BigQuery, Dataform, Kimball, Semantic Modelling, FastMCP, MCP Servers, Cloud Run, OAuth/JWT, Vertex AI, Data Governance, Claude, LLM, Python, SQL
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-cosmetics
 
@@ -84,7 +84,7 @@ Colleagues ask CAIAverse questions directly from Claude and get answers grounded
 - Dates: since 2026-Q1
 - Industry: Fashion
 - Company URL: https://caiacosmetics.com/
-- Project: CAIAcouncil: multi-agent business review
+- Project: CAIAcouncil weekly business review
 - Tags: Technical Leadership, Multi-agent Systems, LLM, Claude, Claude Skills, OpenAI, Python, BigQuery, Web Search, API, FastMCP, MCP Servers, Cloud Run, Cloud Scheduler, Terraform, GCS
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-council
 
@@ -110,7 +110,7 @@ Everyone at CAIA can read the weekly reports, and leadership goes through them i
 - Dates: since 2026-Q4
 - Industry: Fashion
 - Company URL: https://caiacosmetics.com/
-- Project: PLM: product, packaging and compliance data
+- Project: Product data and PLM
 - Tags: Technical Leadership, PLM, Data Modelling, Data Governance, Regulatory Compliance, PPWR, Semantic Modelling, BigQuery, Dataform, GCS, Cloud Run, Document Extraction
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q4-caia-plm
 
@@ -164,8 +164,8 @@ Colleagues use it daily in Claude: when someone asks for a deck, dashboard or me
 - Dates: since 2026-Q1
 - Industry: Fashion
 - Company URL: https://caiacosmetics.com/
-- Project: From Power BI to conversational analytics
-- Tags: Technical Leadership, PowerBI, Conversational Analytics, BigQuery, Dataform, MCP Servers, Claude, Self-service BI, React, Vite, Cloud Run, IAP, SQL
+- Project: Move to conversational analytics
+- Tags: Technical Leadership, Power BI, Conversational Analytics, BigQuery, Dataform, MCP Servers, Claude, Self-service BI, React, Vite, Cloud Run, IAP, SQL
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2026-q1-caia-conversational-analytics
 
 ## Context
@@ -188,8 +188,8 @@ Dashboarding and reporting can now be built directly in Claude through the CAIAv
 - Dates: 2025-Q1 to 2026-Q1
 - Industry: Broadcasting
 - Company URL: https://www.svt.se/
-- Project: Corporate Domain: MCP mesh & Survey Insights
-- Tags: Python, DBT, BigQuery, OpenAI, LLM, PowerBI, SQL, Prompt engineering, GitLab, DBT Fusion, FastMCP, Cloud Run, MCP Servers, Cursor, LibreChat
+- Project: Natural-language analytics with MCP
+- Tags: Python, DBT, BigQuery, OpenAI, LLM, Power BI, SQL, Prompt engineering, GitLab, DBT Fusion, FastMCP, Cloud Run, MCP Servers, Cursor, LibreChat
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2025-q1-svt-ai-engineer
 
 ## Context
@@ -201,19 +201,19 @@ Sveriges Television (SVT) is Sweden's national public broadcaster, producing imp
 - Proposed and built SVT's first MCP server, letting teams query data in natural language. The idea grew into an SVT-wide initiative: an MCP mesh accessible through an internally hosted version of LibreChat, with MCP servers owned by separate teams but available to the whole organisation.
 - Coached other teams as they built their own MCP servers for the mesh, and presented the initiative internally to spread it across SVT.
 - Led development of a **Survey Insights** MCP server that exposes SVT's extensive history of public surveys to AI agents. Built on FastMCP, hosted on Cloud Run, with tooling that lets agents navigate a Snowflake-style schema of BigQuery tables and respect the access boundaries those tables enforce.
-- Extended the MCP to support PowerBI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
+- Extended the MCP to support Power BI work, so it can automatically generate semantic models and dashboards from its knowledge of the underlying tables.
 
 ## Outcome
 
-By the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&A into PowerBI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
+By the end of the engagement, multiple MCP servers were live across SVT, extending from ad-hoc data Q&A into Power BI semantic-model auto-generation, dashboard creation, and agentic workflows that ground answers directly in survey data. Decision-making no longer queues behind an SQL-fluent analyst.
 
 ### Data Engineer at SVT
 
 - Dates: 2024-Q4 to 2026-Q1
 - Industry: Broadcasting
 - Company URL: https://www.svt.se/
-- Project: Corporate Domain: Survey pipeline & PSR
-- Tags: AI Agents, BigQuery, DBT, DBT Fusion, Snowflake Schema, PowerBI, Cloud Run, GCS, GCP, Python, SQL, Apache Airflow, GitLab, Data Products, Tableau, Semantic Modelling, Data Mesh, Alteryx, Cloud Functions, Stakeholder management
+- Project: Survey data and government reporting
+- Tags: AI Agents, BigQuery, DBT, DBT Fusion, Snowflake Schema, Power BI, Cloud Run, GCS, GCP, Python, SQL, Apache Airflow, GitLab, Data Products, Tableau, Semantic Modelling, Data Mesh, Alteryx, Cloud Functions, Stakeholder Management
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q4-svt-data-engineer
 
 ## Context
@@ -223,7 +223,7 @@ SVT had made a strategic shift toward becoming a more data-driven organisation w
 ## What I did
 
 - Designed and implemented a new end-to-end survey data pipeline that replaced multiple legacy systems and unified survey processing across SVT.
-- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralized PowerBI semantic model, now the single source of truth for survey data.
+- Created a generalized, extensible Snowflake fact-and-dimension schema. This became the foundation for a centralised Power BI semantic model, now the single source of truth for survey data.
 - Built additional pipelines for ingesting operational and content-related data from production teams, and proposed structured data products that improved data collection, quality, and reporting for the PSR.
 - Gave analysts an early agent-based way to analyse the survey data, with AI agents querying BigQuery through the bq CLI. That work led directly to the MCP servers that followed.
 
@@ -236,7 +236,7 @@ Multi-year survey analyses became faster and more reliable; teams can ingest and
 - Dates: 2024-Q3 to 2024-Q4
 - Industry: SaaS
 - Company URL: https://www.momang.com/
-- Project: AI Search
+- Project: AI search for consultant matching
 - Tags: LLM, RAG, GCP, AI Pipelines, Vertex AI, LangChain, OpenAI, BigQuery, Python, SQL, Vector Search, FAISS, Retrieval QA Chains, Pydantic, Prompt engineering
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q3-momang-data-scientist
 
@@ -259,8 +259,8 @@ The operations team finds matching consultants and past projects for new assignm
 - Dates: 2024-Q1 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://www.visa.com/
-- Project: Code security task force at Tink
-- Tags: Python, CI/CD, Checkmarx, Code Security, Code maintenance, Security Champion, Secure Coding, Code Review, Reliability
+- Project: Code security task force
+- Tags: Python, CI/CD, Checkmarx, Code Security, Security Champion, Secure Coding, Code Review, Reliability
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-visa-security-engineer
 
 ## Context
@@ -282,8 +282,8 @@ Tink's codebase stability climbed toward Visa's 99.99% monthly uptime target as 
 - Dates: 2024-Q1 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://tink.com/
-- Project: AWS → GCP migration
-- Tags: Python, SQL, BigQuery, Athena, AWS, GCP, GCS, S3, Pydantic, Stakeholder management, Cross-functional teams
+- Project: AWS to GCP migration
+- Tags: Python, SQL, BigQuery, Athena, AWS, GCP, GCS, S3, Pydantic, Stakeholder Management, Cross-functional teams
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2024-q1-tink-cloud-migration
 
 ## Context
@@ -334,23 +334,23 @@ References:
 - Dates: 2022-Q3 to 2024-Q3
 - Industry: Fintech
 - Company URL: https://tink.com/
-- Project: Transaction categorization
+- Project: Transaction categorisation
 - Tags: NER, Data Lake, Python, Apache Airflow, AWS, GCP, Looker, S3, GCS, Vertex AI, Go, XGBoost, Fasttext, Label Studio, Regex, Sonarcloud
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q3-tink-data-scientist-categorization
 
 ## Context
 
-Categorization is harder than it looks. A single wrong label turns a user's weekly groceries at their local store into "gifts", and every budget, insight and risk signal built on top of it is wrong. Tink had offered [categorization](https://tink.com/blog/open-banking/what-is-data-categorisation/) for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.
+Categorisation is harder than it looks. A single wrong label turns a user's weekly groceries at their local store into "gifts", and every budget, insight and risk signal built on top of it is wrong. Tink had offered [categorisation](https://tink.com/blog/open-banking/what-is-data-categorisation/) for years, and by the time I joined the team the need to improve quality was acute: recurring transaction prediction, risk work and customer complaints all surfaced the same issues. The product combined a Fasttext + XGBoost classifier stack with static regex patterns, and its Go backend made experimentation painful.
 
 ## What I did
 
 - Led the refactoring of the codebase: fixed bugs, removed dead code and introduced testing methods the team didn't have.
-- Migrated the categorization service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
-- Introduced a new categorization approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.
+- Migrated the categorisation service from Go to Python on Vertex AI, making it the first Tink product to run on Vertex AI. The move unlocked the data-science team to iterate on model architecture without the Go backend being a blocker.
+- Introduced a new categorisation approach built on an anonymised data lake, combining transaction tagging with named entity recognition (NER) instead of relying on static regex rules.
 
 ## Outcome
 
-The data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorization beyond static rules. Customer complaints about wrong categories dropped as quality improved.
+The data-science team could iterate on model architecture again without backend rewrites, and the tagging and NER approach moved categorisation beyond static rules. Customer complaints about wrong categories dropped as quality improved.
 
 References:
 - [What is data categorisation?, Tink blog](https://tink.com/blog/open-banking/what-is-data-categorisation/)
@@ -360,7 +360,7 @@ References:
 - Dates: 2022-Q1 to 2022-Q2
 - Industry: Fintech
 - Company URL: https://tink.com/
-- Project: Forecasting checking-account balance
+- Project: Account balance forecasting
 - Tags: TensorFlow, Keras, Python, SQL, Jupyter, Facebook Prophet, PyTorch, Regression Models, Scikit-learn, XGBoost, GRU, LSTM, RNN, Time Series Forecasting, Account Balance Forecasting, Supervised Machine Learning
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2022-q1-tink-ml-engineer-forecasting
 
@@ -381,35 +381,13 @@ The subgroup-then-forecast approach proved viable; Tink later productionised it 
 References:
 - [Forecasting checking account balance using supervised machine learning, Master's thesis, Uppsala University (2022)](https://www.diva-portal.org/smash/get/diva2:1676217/FULLTEXT01.pdf)
 
-### Co-Founder & Lead Developer at Mender
-
-- Dates: 2021-Q1 to 2022-Q2
-- Industry: Fashion
-- Project: App development
-- Tags: VueJS, NodeJS, MongoDB, S3, Stripe, Webhooks, Startup, Product Development, Payments, AWS
-- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer
-
-## Context
-
-Mender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals ("menders") near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.
-
-## What I did
-
-- Co-built the Mender app as the team's lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.
-- Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender's cut of each transaction.
-- Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.
-
-## Outcome
-
-Mender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company's life, and the product had to be built to move with it.
-
 ### Fullstack Developer at Valtech
 
-- Dates: 2021-Q3 to 2022-Q1
+- Dates: 2021-Q3 to 2021-Q4
 - Industry: Advertising
 - Company URL: https://www.valtech.com/
 - Project: MACH talent programme
-- Tags: MACH, Headless, Microservices, API, Cloud-native, Frontend, Backend, JavaScript, Java
+- Tags: MACH, Headless, Microservices, API, Cloud-native, JavaScript, Java
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-mach-talent-programme
 
 ## Context
@@ -428,11 +406,11 @@ The programme gave me the architecture habits I still build with: small services
 
 ### Fullstack Developer at Valtech
 
-- Dates: 2021-Q3 to 2022-Q1
+- Dates: 2021-Q3 to 2021-Q4
 - Industry: Advertising
 - Company URL: https://www.valtech.com/
-- Project: Radon: digital marketing platform
-- Tags: Java, Python, JavaScript, Clojure, API, MACH, Microservices, Frontend, Backend, CSS, Bitbucket, HTML, React Native
+- Project: Radon marketing platform
+- Tags: Java, Python, JavaScript, Clojure, API, MACH, Microservices, CSS, Bitbucket, HTML, React Native
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q3-valtech-radon-fullstack
 
 ## Context
@@ -457,8 +435,8 @@ References:
 - Dates: 2021-Q2 to 2021-Q3
 - Industry: Healthcare
 - Company URL: https://www.decerno.se/
-- Project: Login solution for a healthcare region
-- Tags: React, TypeScript, .NET, C#, OAuth/JWT, Authentication, Frontend, Backend, Legacy Integration
+- Project: Login for a healthcare region
+- Tags: React, TypeScript, .NET, C#, OAuth/JWT, Authentication, Legacy Integration
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q2-healthcare-fullstack
 
 ## Context
@@ -474,12 +452,34 @@ Interned at **Decerno AB**, a Swedish IT consultancy, on a project for a Swedish
 
 Shipped on the tight timeline. The login solution worked standalone for the new platform and as the entry point into the region's legacy system, giving one identity model across both. The internship ended with a job offer from Decerno.
 
+### Co-Founder & Lead Developer at Mender
+
+- Dates: 2021-Q1 to 2021-Q3
+- Industry: Fashion
+- Project: Clothing repair marketplace
+- Tags: VueJS, NodeJS, MongoDB, S3, Stripe, Webhooks, Startup, Product Development, Payments, AWS
+- Page: https://martin-dannelind-7f7f0.web.app/experience/2021-q1-mender-lead-developer
+
+## Context
+
+Mender started with a group of friends with different strengths across design, business and tech. The idea was a sustainable-fashion app where users find and book clothing-repair professionals ("menders") near them. We were part of an incubator in Uppsala, where we learned to iterate on the product and find our audience.
+
+## What I did
+
+- Co-built the Mender app as the team's lead developer: a responsive Vue.js web app on a Node.js backend, with MongoDB and AWS S3.
+- Built the webhook-based chat between users and menders, and integrated Stripe for payments, including Mender's cut of each transaction.
+- Owned the architecture and the path from concept to public launch as a co-founder, while the business idea and direction shifted several times along the way.
+
+## Outcome
+
+Mender launched as a working marketplace. Several menders signed up and real payments went through the platform before the company was shut down. The main lesson I took with me: stay flexible about the business idea itself. Ours moved a lot during the company's life, and the product had to be built to move with it.
+
 ### Fullstack Developer at Steven
 
 - Dates: 2020-Q2 to 2020-Q3
 - Industry: Fintech
-- Project: Data security project
-- Tags: React, TypeScript, SQL, JavaScript, Stakeholder management, PII, Data Security, Access Control, Frontend, Backend, Remote Collaboration
+- Project: Privacy-first support platform
+- Tags: React, TypeScript, SQL, JavaScript, Stakeholder Management, PII, Data Security, Access Control, Remote Collaboration
 - Page: https://martin-dannelind-7f7f0.web.app/experience/2020-q2-steven-fullstack
 
 ## Context

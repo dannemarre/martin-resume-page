@@ -3,7 +3,7 @@ slug: 2020-q2-steven-fullstack
 role: Fullstack Developer
 company: Steven
 companyUrl: null
-projectTitle: Data security project
+projectTitle: "Privacy-first support platform"
 industry: Fintech
 start: 2020-Q2
 end: 2020-Q3
@@ -14,12 +14,10 @@ tags:
   - TypeScript
   - SQL
   - JavaScript
-  - Stakeholder management
+  - Stakeholder Management
   - PII
   - Data Security
   - Access Control
-  - Frontend
-  - Backend
   - Remote Collaboration
 summary: Built a support platform for Steven that let an outsourced support vendor handle cases while seeing only the personal data each task required.
 ---

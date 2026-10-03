@@ -6,7 +6,7 @@ companyUrl: https://www.valtech.com/
 projectTitle: MACH talent programme
 industry: Advertising
 start: 2021-Q3
-end: 2022-Q1
+end: 2021-Q4
 ongoing: false
 nda: false
 priority: 1                 # same dates as the Radon assignment; list the programme first
@@ -16,8 +16,6 @@ tags:
   - Microservices
   - API
   - Cloud-native
-  - Frontend
-  - Backend
   - JavaScript
   - Java
 summary: Joined Valtech's talent programme on the MACH track, training in headless, API-first development while working full-time alongside full-time university studies.

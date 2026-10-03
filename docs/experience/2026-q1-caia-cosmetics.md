@@ -3,7 +3,7 @@ slug: 2026-q1-caia-cosmetics
 role: AI Lead
 company: CAIA Cosmetics
 companyUrl: https://caiacosmetics.com/
-projectTitle: "CAIAverse: semantic data layer + MCP"
+projectTitle: "CAIAverse data layer"
 industry: Fashion
 start: 2026-Q1
 end: null

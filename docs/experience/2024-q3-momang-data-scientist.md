@@ -3,7 +3,7 @@ slug: 2024-q3-momang-data-scientist
 role: Data Scientist
 company: Momang
 companyUrl: https://www.momang.com/
-projectTitle: AI Search
+projectTitle: "AI search for consultant matching"
 industry: SaaS
 start: 2024-Q3
 end: 2024-Q4

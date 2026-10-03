@@ -99,7 +99,7 @@ If a section is longer, ask whether the extra prose adds new information or just
 
 ## Tag conventions
 
-- Canonical forms: check existing entries before adding a new variant. Some that already exist canonically: `Vertex AI` (not VertexAI), `BigQuery`, `Cloud Run`, `DBT` (uppercase), `LLM`, `RAG`, `PyTorch`, `MongoDB`, `OAuth/JWT`, `.NET`, `C#`, `MCP Servers`, `FastMCP`, `LibreChat`, `PowerBI`.
+- Canonical forms: check existing entries before adding a new variant. Some that already exist canonically: `Vertex AI` (not VertexAI), `BigQuery`, `Cloud Run`, `DBT` (uppercase), `LLM`, `RAG`, `PyTorch`, `MongoDB`, `OAuth/JWT`, `.NET`, `C#`, `MCP Servers`, `FastMCP`, `LibreChat`, `Power BI` (with a space), `Stakeholder Management`.
 - See the full canonical list per group in `docs/skills/technologies.md`.
 - To audit current usage: `grep -hE "^  - " docs/experience/*.md | sort | uniq -c | sort -rn` gives a frequency-sorted tag list.
 - Tag count per experience: aim for **8 to 20**. Fewer reads as light; more reads as keyword-stuffing.
