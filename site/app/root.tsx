@@ -9,7 +9,7 @@ import {
   useLocation,
 } from "react-router";
 
-import { GA4_MEASUREMENT_ID } from "~/lib/analytics";
+import { CONSENT_KEY, GA4_MEASUREMENT_ID } from "~/lib/analytics";
 import { ORIGIN, personJsonLd } from "~/lib/seo";
 import { profile } from "~/generated/content";
 
@@ -71,11 +71,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   window.gtag = gtag;
+                  // Re-apply a visitor's earlier choice, so returning visitors who accepted are counted.
+                  var consent = null;
+                  try { consent = localStorage.getItem('${CONSENT_KEY}'); } catch (e) {}
                   gtag('consent', 'default', {
                     'ad_storage': 'denied',
                     'ad_user_data': 'denied',
                     'ad_personalization': 'denied',
-                    'analytics_storage': 'denied',
+                    'analytics_storage': consent === 'granted' ? 'granted' : 'denied',
                     'wait_for_update': 500
                   });
                   gtag('js', new Date());
